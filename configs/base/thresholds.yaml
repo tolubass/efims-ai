@@ -1,0 +1,93 @@
+# =============================================================================
+# EFIMS-AI — Human Review Thresholds
+# =============================================================================
+# Controls when a model prediction must be reviewed by a human before any
+# action is taken on a case.
+#
+# REGULATORY RULE: No AI prediction may trigger an action on its own.
+# Every suggestion is advisory. Below the thresholds here, the suggestion is
+# additionally flagged for MANDATORY human review before it can be used.
+#
+# All values are probabilities / scores in the range 0.0 – 1.0.
+#
+# Read by:
+#   src/utils/config_loader.py        -> load_thresholds()
+#   src/governance/human_review_flag.py
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Global rules — apply to every model, on top of the model-specific values.
+# -----------------------------------------------------------------------------
+global:
+  # Hard floor. Any prediction with confidence below this ALWAYS requires human
+  # review, even if a model-specific threshold is lower.
+  human_review_threshold: 0.60
+
+  # Above this, the suggestion is shown with a "high confidence" badge.
+  # It STILL requires human confirmation — nothing in EFIMS is automatic.
+  auto_action_threshold: 0.90
+
+
+# -----------------------------------------------------------------------------
+# Severity classification (S1 / S2 / S3 / S4)
+# -----------------------------------------------------------------------------
+severity:
+  # Minimum confidence to show the severity suggestion without a review flag.
+  confidence_threshold: 0.70
+  # Below this, a triage officer must confirm the severity first.
+  human_review_below: 0.70
+  description: >-
+    Below 70% confidence the severity suggestion must be confirmed by a
+    triage officer before it appears on the case.
+
+
+# -----------------------------------------------------------------------------
+# Duplicate incident detection
+# -----------------------------------------------------------------------------
+duplicate:
+  # Deliberately conservative: a false duplicate merge loses case history.
+  confidence_threshold: 0.85
+  human_review_below: 0.85
+  description: >-
+    Duplicate matches below 85% confidence must be confirmed by an officer
+    before cases are merged, because false merges lose case history.
+
+
+# -----------------------------------------------------------------------------
+# Transaction anomaly scoring
+# -----------------------------------------------------------------------------
+# NOTE: this is an anomaly SCORE, not a classification confidence, so the
+# direction is reversed — HIGHER scores are more suspicious.
+anomaly:
+  # Transactions scoring at or above this are surfaced to fraud analysts.
+  # Scores below it are not surfaced (they are still logged for audit).
+  score_threshold: 0.75
+  description: >-
+    Transactions with an anomaly score of 0.75 or above are surfaced to fraud
+    analysts for investigation.
+
+
+# -----------------------------------------------------------------------------
+# Recovery propensity prediction
+# -----------------------------------------------------------------------------
+recovery:
+  # Recovery decisions carry legal and financial commitments.
+  confidence_threshold: 0.65
+  human_review_below: 0.65
+  description: >-
+    Recovery propensity predictions below 65% confidence must be reviewed,
+    because recovery decisions involve legal and financial commitments.
+
+
+# -----------------------------------------------------------------------------
+# NLP entity extraction from incident narratives
+# -----------------------------------------------------------------------------
+nlp:
+  # Entities (account numbers, names, amounts, etc.) below this are shown to
+  # the user for confirmation before being saved to the case record.
+  confidence_threshold: 0.60
+  human_review_below: 0.60
+  description: >-
+    Extracted entities below 60% confidence are shown to the user for
+    confirmation before being saved to the case record.

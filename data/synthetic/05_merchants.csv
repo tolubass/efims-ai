@@ -1,0 +1,81 @@
+merchant_id,merchant_name,merchant_category,state,city,terminal_count,risk_flag,registration_date,active
+MERCH-0000001,Akin Hotel,School fees,Delta,Asaba,11,False,2021-01-10,False
+MERCH-0000002,Nwosu Electronics,Hotel,Akwa Ibom,Ikot Ekpene,17,False,2019-04-12,True
+MERCH-0000003,Lawal Hospital,Online marketplace,Cross River,Calabar,10,False,2023-10-22,True
+MERCH-0000004,Adesanya Utility payment,Pharmacy,Plateau,Jos,5,False,2019-05-16,False
+MERCH-0000005,Dike Utility payment,Online marketplace,Enugu,Agbani,17,False,2020-11-26,True
+MERCH-0000006,Olawale Clothing store,Electronics,Kano,Nassarawa,14,True,2023-10-23,True
+MERCH-0000007,Okafor Fuel station,Online marketplace,Rivers,Oyigbo,4,False,2019-03-20,True
+MERCH-0000008,Adesanya Hospital,Restaurant,Oyo,Iseyin,11,False,2020-07-07,True
+MERCH-0000009,Tijani Electronics,Restaurant,Oyo,Ibadan,6,False,2021-12-02,True
+MERCH-0000010,Fashola Transport,Hospital,Kaduna,Zaria,5,False,2022-11-02,True
+MERCH-0000011,Akin Hotel,Hotel,Delta,Asaba,15,False,2023-04-25,False
+MERCH-0000012,Adesanya Telecom airtime,Hotel,Delta,Ughelli,9,False,2023-10-22,True
+MERCH-0000013,Musa Utility payment,Transport,Ogun,Abeokuta,18,True,2018-11-24,True
+MERCH-0000014,Sanni Hardware store,Restaurant,Kano,Fagge,13,False,2023-09-10,True
+MERCH-0000015,Obiora Telecom airtime,School fees,Kaduna,Kafanchan,4,False,2018-12-03,False
+MERCH-0000016,Sanni Transport,Hotel,Plateau,Jos,13,False,2020-09-12,True
+MERCH-0000017,Ezeji Pharmacy,Utility payment,Imo,Okigwe,16,False,2021-11-13,True
+MERCH-0000018,Nduka Fuel station,Telecom airtime,Kano,Fagge,11,False,2023-02-11,True
+MERCH-0000019,Tijani Transport,Hotel,Lagos,Surulere,7,True,2018-03-13,False
+MERCH-0000020,Uzoma Clothing store,Clothing store,Ogun,Ijebu-Ode,6,False,2018-08-04,True
+MERCH-0000021,Bamidele Hardware store,Utility payment,Abuja FCT,Gwarinpa,14,False,2023-09-12,True
+MERCH-0000022,Musa Restaurant,Hotel,Kano,Dala,10,False,2020-12-21,False
+MERCH-0000023,Nduka School fees,Utility payment,Kaduna,Kaduna,14,False,2023-11-23,True
+MERCH-0000024,Okonkwo School fees,Transport,Benue,Katsina-Ala,7,True,2023-09-07,True
+MERCH-0000025,Oduya Telecom airtime,Hardware store,Kano,Dala,1,False,2021-11-26,False
+MERCH-0000026,Oduya Restaurant,Transport,Kaduna,Zaria,14,False,2018-01-12,False
+MERCH-0000027,Osei Telecom airtime,Hospital,Benue,Katsina-Ala,19,False,2019-11-11,True
+MERCH-0000028,Okeke Utility payment,School fees,Rivers,Obio-Akpor,20,False,2020-12-17,True
+MERCH-0000029,Okonkwo Electronics,Hardware store,Rivers,Eleme,1,False,2020-08-11,True
+MERCH-0000030,Bello Utility payment,Hospital,Benue,Katsina-Ala,15,False,2020-12-28,True
+MERCH-0000031,Uzoma School fees,Transport,Enugu,Nsukka,4,False,2021-11-26,True
+MERCH-0000032,Aliyu School fees,Hotel,Kano,Gwale,10,False,2023-11-10,True
+MERCH-0000033,Akin Utility payment,Online marketplace,Ogun,Abeokuta,3,False,2018-11-19,True
+MERCH-0000034,Okeke Restaurant,Hospital,Lagos,Apapa,20,False,2018-11-06,True
+MERCH-0000035,Ibrahim Telecom airtime,Clothing store,Enugu,Nsukka,7,False,2021-11-13,True
+MERCH-0000036,Chukwu Hardware store,Hospital,Abuja FCT,Wuse,12,False,2021-12-12,True
+MERCH-0000037,Sanni Supermarket,Electronics,Benue,Makurdi,17,False,2023-08-09,True
+MERCH-0000038,Okeke Telecom airtime,Pharmacy,Benue,Makurdi,14,True,2018-03-23,True
+MERCH-0000039,Dike Hardware store,Utility payment,Delta,Effurun,11,False,2022-11-13,False
+MERCH-0000040,Sanni Pharmacy,Online marketplace,Rivers,Oyigbo,2,False,2022-12-01,True
+MERCH-0000041,Lawal Utility payment,Fuel station,Ogun,Sagamu,11,False,2021-09-20,True
+MERCH-0000042,Osei School fees,Restaurant,Akwa Ibom,Ikot Ekpene,19,False,2023-05-04,False
+MERCH-0000043,Aliyu Electronics,Pharmacy,Benue,Makurdi,3,True,2018-02-05,True
+MERCH-0000044,Eze Supermarket,Online marketplace,Imo,Okigwe,18,False,2018-09-02,True
+MERCH-0000045,Osei Hospital,Telecom airtime,Lagos,Apapa,12,False,2023-07-21,True
+MERCH-0000046,Chukwu School fees,Hardware store,Oyo,Ogbomosho,13,False,2023-08-11,True
+MERCH-0000047,Eze Telecom airtime,Supermarket,Abuja FCT,Jabi,19,False,2018-12-11,True
+MERCH-0000048,Bello Restaurant,Fuel station,Imo,Orlu,9,False,2018-10-16,True
+MERCH-0000049,Tijani Hardware store,Pharmacy,Benue,Gboko,4,False,2018-03-10,True
+MERCH-0000050,Okafor Pharmacy,Telecom airtime,Kaduna,Kafanchan,13,False,2023-05-23,False
+MERCH-0000051,Aliyu Fuel station,Clothing store,Cross River,Calabar,6,False,2023-05-16,True
+MERCH-0000052,Bello Electronics,Electronics,Lagos,Surulere,20,False,2018-01-16,True
+MERCH-0000053,Fashola Restaurant,Pharmacy,Akwa Ibom,Ikot Ekpene,1,False,2022-05-29,True
+MERCH-0000054,Nwachukwu Hardware store,Electronics,Kano,Kano City,7,True,2019-03-07,True
+MERCH-0000055,Osei Clothing store,Clothing store,Akwa Ibom,Eket,7,False,2020-12-18,True
+MERCH-0000056,Akin Hospital,Utility payment,Ogun,Sagamu,14,False,2021-05-27,False
+MERCH-0000057,Abubakar Pharmacy,Telecom airtime,Oyo,Oyo Town,13,False,2022-12-31,True
+MERCH-0000058,Nwachukwu Utility payment,Hospital,Cross River,Ikom,15,False,2020-04-24,True
+MERCH-0000059,Nwosu Online marketplace,Hotel,Imo,Orlu,7,False,2021-03-07,True
+MERCH-0000060,Okafor Hospital,Fuel station,Benue,Makurdi,17,False,2021-06-27,True
+MERCH-0000061,Dike Electronics,Hotel,Benue,Makurdi,4,False,2020-09-29,True
+MERCH-0000062,Ogundimu Pharmacy,Restaurant,Kano,Fagge,12,False,2020-09-03,True
+MERCH-0000063,Okonkwo Utility payment,Electronics,Delta,Asaba,15,False,2020-09-26,True
+MERCH-0000064,Okafor Hotel,Clothing store,Enugu,Agbani,7,False,2018-11-16,True
+MERCH-0000065,Okafor Online marketplace,Telecom airtime,Akwa Ibom,Eket,14,False,2020-09-21,True
+MERCH-0000066,Ezeji Hospital,Supermarket,Lagos,Lekki,14,False,2021-11-07,True
+MERCH-0000067,Lawal Pharmacy,Online marketplace,Delta,Warri,10,True,2022-11-24,False
+MERCH-0000068,Obiora Clothing store,Fuel station,Plateau,Bukuru,2,False,2022-06-27,True
+MERCH-0000069,Adeyemi Restaurant,Hospital,Ogun,Abeokuta,14,False,2020-05-03,True
+MERCH-0000070,Sanni Restaurant,School fees,Delta,Effurun,16,False,2021-05-07,True
+MERCH-0000071,Ezeji Hardware store,Telecom airtime,Kaduna,Kaduna,12,False,2018-11-16,True
+MERCH-0000072,Okonkwo Fuel station,Restaurant,Lagos,Lekki,14,False,2018-10-01,True
+MERCH-0000073,Tijani Hardware store,School fees,Plateau,Jos,2,False,2018-05-14,True
+MERCH-0000074,Okafor Clothing store,Electronics,Oyo,Iseyin,9,False,2019-03-05,True
+MERCH-0000075,Osei Electronics,Hardware store,Abuja FCT,Garki,19,False,2021-07-08,True
+MERCH-0000076,Bello School fees,School fees,Ogun,Abeokuta,19,False,2022-03-03,False
+MERCH-0000077,Nduka Pharmacy,Restaurant,Delta,Effurun,10,False,2021-01-01,True
+MERCH-0000078,Ogundele Telecom airtime,Telecom airtime,Benue,Katsina-Ala,7,False,2018-08-22,False
+MERCH-0000079,Nwachukwu Supermarket,Telecom airtime,Lagos,Victoria Island,15,False,2019-08-07,True
+MERCH-0000080,Nwachukwu Hardware store,Online marketplace,Delta,Effurun,10,False,2023-07-29,True

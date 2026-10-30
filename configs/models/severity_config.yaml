@@ -1,0 +1,138 @@
+# =============================================================================
+# EFIMS-AI — Severity Classification Model
+# =============================================================================
+# Classifies a newly reported incident as S1 (most critical) to S4 (least).
+# The prediction is a SUGGESTION shown to a triage officer; see
+# configs/base/thresholds.yaml -> severity for the human review threshold.
+#
+# Read by: src/utils/config_loader.py -> load_model_config("severity")
+# =============================================================================
+
+model:
+  name: severity
+  algorithm: lightgbm
+  task: multiclass_classification
+  num_classes: 4
+  classes: [S1, S2, S3, S4]        # S1 = most critical
+  version: "1.0"
+
+
+# -----------------------------------------------------------------------------
+# Training data
+# -----------------------------------------------------------------------------
+training:
+  # Clean, ML-ready file: one row per incident, features known at intake time.
+  data_file: data/synthetic/25_model_labels.csv
+  id_column: incident_id           # identifier only — never a feature
+  split_column: split              # train | validation | test
+  target_column: label_severity    # S1 | S2 | S3 | S4
+
+  # All 11 feature_ columns. Every one is known when the incident is reported.
+  feature_columns:
+    - feature_financial_exposure_ngn   # float
+    - feature_customer_impact_count    # int
+    - feature_ongoing_threat           # bool
+    - feature_insider_involvement      # bool
+    - feature_data_compromise          # bool
+    - feature_regulatory_relevance     # bool
+    - feature_source                   # categorical
+    - feature_channel                  # categorical
+    - feature_incident_type            # categorical
+    - feature_reported_by_type         # categorical
+    - feature_narrative_length         # int
+
+  # Subset of feature_columns to pass to LightGBM as categorical.
+  categorical_columns:
+    - feature_source
+    - feature_channel
+    - feature_incident_type
+    - feature_reported_by_type
+
+  # ---------------------------------------------------------------------------
+  # NEVER USE THESE AS FEATURES — TARGET LEAKAGE.
+  # post_investigation_* values only exist AFTER an investigation is complete,
+  # so they are unavailable when severity must be predicted at intake.
+  # The other label_* columns are targets for other models or are derived from
+  # the severity label itself (label_severity_score).
+  # ---------------------------------------------------------------------------
+  exclude_columns:
+    - post_investigation_gross_loss_ngn
+    - post_investigation_recovery_ngn
+    - label_severity_score           # numeric version of the target
+    - label_duplicate
+    - label_duplicate_group_id
+    - label_case_outcome
+    - label_recovery_success
+    - label_root_cause
+
+
+# -----------------------------------------------------------------------------
+# LightGBM hyperparameters
+# -----------------------------------------------------------------------------
+# Tuned conservatively for a SMALL dataset (84 training rows at present):
+# shallow trees, small leaves, and row/column subsampling to limit overfitting.
+hyperparameters:
+  objective: multiclass
+  num_class: 4
+  n_estimators: 300
+  learning_rate: 0.05
+  max_depth: 4
+  num_leaves: 15                   # < 2^max_depth
+  min_child_samples: 5             # default 20 is too high for ~84 rows
+  subsample: 0.8
+  subsample_freq: 1                # required for subsample to take effect
+  colsample_bytree: 0.8
+  reg_lambda: 1.0                  # L2 regularisation
+  # "balanced" reweights classes inversely to their frequency so rare S1 is
+  # not ignored. Alternative: the fixed weights in
+  # configs/base/model_config.yaml -> fraud_context.severity_weights.
+  class_weight: balanced
+  random_state: 42
+  verbosity: -1                    # silence LightGBM output
+
+
+# -----------------------------------------------------------------------------
+# Evaluation
+# -----------------------------------------------------------------------------
+evaluation:
+  primary_metric: macro_f1
+  secondary_metrics: [accuracy, per_class_f1, confusion_matrix]
+
+  # Fairness slices: performance is compared across these groups to detect
+  # bias. None of them are in 25_model_labels.csv — they must be joined in,
+  # and they are NEVER used as features.
+  fairness_columns: [gender, age_group, customer_segment, state]
+  fairness_sources:
+    state:
+      file: data/synthetic/10_incidents.csv          # incident location
+      join_key: incident_id
+    gender:
+      file: data/synthetic/01_customers.csv          # via 10_incidents.customer_id
+      join_key: customer_id
+    customer_segment:
+      file: data/synthetic/01_customers.csv
+      join_key: customer_id
+    age_group:
+      # Not a stored column: derived by binning 01_customers.age.
+      file: data/synthetic/01_customers.csv
+      join_key: customer_id
+      derived_from: age
+      bins: [18, 25, 35, 45, 55, 65, 120]
+      labels: ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]
+
+  note: >
+    Macro F1 is the primary metric because it weights every severity class
+    equally. S1 incidents are rare (3 of 120 rows) but the most critical;
+    accuracy or weighted F1 would let the model score well while missing
+    every S1. Caution: the current test split contains NO S1 rows, so S1
+    performance can only be read from the validation split until more S1
+    data is generated.
+
+
+# -----------------------------------------------------------------------------
+# Output artefacts
+# -----------------------------------------------------------------------------
+output:
+  model_path: model_registry/severity/v1.0/model.pkl
+  metrics_path: model_registry/severity/v1.0/metrics.json
+  features_path: model_registry/severity/v1.0/features.json   # feature list + order used at training

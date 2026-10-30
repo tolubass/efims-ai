@@ -1,0 +1,109 @@
+# =============================================================================
+# EFIMS-AI — Transaction Anomaly Scoring Model
+# =============================================================================
+# Scores each transaction for how unusual it is. High-scoring transactions are
+# surfaced to fraud analysts; see configs/base/thresholds.yaml -> anomaly.
+#
+# Read by: src/utils/config_loader.py -> load_model_config("anomaly")
+# =============================================================================
+
+model:
+  name: anomaly
+  algorithm: isolation_forest
+  task: unsupervised_anomaly_detection
+  version: "1.0"
+  important_note: >
+    This model is unsupervised. fraud_label is NEVER used
+    during training. It is only used for evaluation after
+    scoring, to measure how well anomaly scores correlate
+    with confirmed fraud.
+
+
+# -----------------------------------------------------------------------------
+# Training data
+# -----------------------------------------------------------------------------
+training:
+  data_file: data/synthetic/08_transactions.csv
+  id_column: transaction_id
+  split_column: split              # fit on train only; evaluate on test
+
+  feature_columns:
+    - amount_ngn                   # float
+    - ip_risk_score                # float
+    - device_risk_score            # float
+    - velocity_indicator           # categorical text -> encoded below
+    - is_reversal                  # bool -> 0/1
+    - is_chargeback                # bool -> 0/1
+
+  # Isolation Forest needs numbers. velocity_indicator is stored as text and
+  # has a natural order, so it is mapped to integers.
+  ordinal_encodings:
+    velocity_indicator:
+      Normal: 0
+      Elevated: 1
+      High: 2
+
+  # Heavily right-skewed amounts are log-transformed before fitting.
+  log_transform_columns: [amount_ngn]
+
+  target_column_for_eval_only: fraud_label
+
+  # ---------------------------------------------------------------------------
+  # NEVER USE THESE AS FEATURES.
+  #   fraud_label       -> the evaluation target (unsupervised model)
+  #   is_fraud_related  -> directly encodes the fraud outcome (leakage)
+  #   anomaly_score     -> the data generator's own score, not ours (leakage)
+  # ---------------------------------------------------------------------------
+  exclude_columns:
+    - fraud_label
+    - is_fraud_related
+    - anomaly_score
+
+  # Expected share of anomalies. Matches the observed fraud rate (3.86%) and
+  # configs/base/model_config.yaml -> fraud_context.fraud_rate_transactions.
+  contamination: 0.04
+
+
+# -----------------------------------------------------------------------------
+# Isolation Forest hyperparameters
+# -----------------------------------------------------------------------------
+hyperparameters:
+  n_estimators: 200                # number of trees
+  max_samples: 256                 # rows per tree (the standard default)
+  contamination: 0.04              # keep in sync with training.contamination
+  max_features: 1.0                # use all features in every tree
+  bootstrap: false
+  random_state: 42
+  n_jobs: -1                       # use all CPU cores
+
+
+# -----------------------------------------------------------------------------
+# Score scaling
+# -----------------------------------------------------------------------------
+# Raw Isolation Forest scores are "lower = more anomalous" and unbounded.
+# thresholds.yaml expects 0-1 where HIGHER = more anomalous, so raw scores are
+# negated and min-max scaled using the TRAIN split's range (then clipped to 0-1).
+scoring:
+  method: minmax_train
+  higher_is_more_anomalous: true
+
+
+# -----------------------------------------------------------------------------
+# Evaluation
+# -----------------------------------------------------------------------------
+evaluation:
+  primary_metric: precision_at_k
+  k_value: 50
+  secondary_metrics: [roc_auc, false_positive_rate]
+  note: >
+    roc_auc uses fraud_label only after scoring, never during training.
+    The test split currently has 40 confirmed fraud transactions, so the
+    best possible precision_at_k with k=50 is 0.80, not 1.0.
+
+
+# -----------------------------------------------------------------------------
+# Output artefacts
+# -----------------------------------------------------------------------------
+output:
+  model_path: model_registry/anomaly/v1.0/model.pkl
+  metrics_path: model_registry/anomaly/v1.0/metrics.json

@@ -1,0 +1,23 @@
+{
+  "model_name": "recovery",
+  "average": "binary",
+  "accuracy": 0.6129,
+  "precision": 0.5,
+  "recall": 0.3333,
+  "f1": 0.4,
+  "confusion_matrix": [
+    [
+      15,
+      4
+    ],
+    [
+      8,
+      4
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n           0       0.65      0.79      0.71        19\n           1       0.50      0.33      0.40        12\n\n    accuracy                           0.61        31\n   macro avg       0.58      0.56      0.56        31\nweighted avg       0.59      0.61      0.59        31\n",
+  "roc_auc": 0.6272,
+  "pr_auc": 0.5848,
+  "brier_score": 0.2558,
+  "cv_folds": 5
+}

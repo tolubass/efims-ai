@@ -1,0 +1,201 @@
+customer_id,customer_type,first_name,last_name,gender,age,date_of_birth,state,city,occupation,customer_segment,account_open_date,customer_risk_category,preferred_channel,kyc_status,customer_status,number_of_accounts,number_of_devices,number_of_cards,phone_number,email,bvn_status
+CUST-0000001,Individual,Oluwaseun,Dangote,M,43,1983-05-24,Ogun,Ijebu-Ode,Architect,Retail,2016-06-24,Medium,Corporate Banking,Full KYC,Active,2,1,0,08085329037,oluwaseun.dangote26@syntheticmail.ng,Verified
+CUST-0000002,Individual,Grace,Anyanwu,F,36,1989-11-27,Akwa Ibom,Uyo,IT professional,Retail,2020-10-15,Medium,Branch,Full KYC,Dormant,3,1,0,08060992979,grace.anyanwu13@syntheticmail.ng,Verified
+CUST-0000003,Individual,Lola,Ibrahim,F,45,1981-02-03,Delta,Ughelli,Teacher,Mass Market,2019-12-27,High,Corporate Banking,Tier 2,Active,2,3,0,08016150444,lola.ibrahim85@syntheticmail.ng,Verified
+CUST-0000004,Individual,Tunde,Nwosu,M,56,1970-03-19,Oyo,Oyo Town,Doctor,Retail,2021-04-19,Medium,USSD,Full KYC,Active,1,3,1,08081691040,tunde.nwosu94@syntheticmail.ng,Verified
+CUST-0000005,Individual,Chiamaka,Adeyinka,F,35,1990-10-09,Kaduna,Kaduna,Lawyer,Retail,2015-07-19,Medium,USSD,Full KYC,Active,3,1,3,08063100814,chiamaka.adeyinka83@syntheticmail.ng,Verified
+CUST-0000006,Individual,Segun,Fashola,M,35,1990-11-29,Oyo,Oyo Town,Lawyer,Mass Market,2017-05-09,Medium,Agent Banking,Full KYC,Active,1,1,1,08066661351,segun.fashola77@syntheticmail.ng,Verified
+CUST-0000007,Corporate,Nneka,Fashola,F,56,1969-12-20,Anambra,Awka,Architect,SME,2019-07-16,Low,USSD,Full KYC,Active,4,1,2,08077187530,nneka.fashola98@syntheticmail.ng,Verified
+CUST-0000008,Individual,Lanre,Ugwu,M,47,1978-11-20,Plateau,Jos,Architect,Retail,2015-01-04,Low,Corporate Banking,Full KYC,Active,3,2,1,08017774584,lanre.ugwu31@syntheticmail.ng,Pending
+CUST-0000009,Individual,Jide,Okafor,M,32,1993-12-25,Abuja FCT,Gwarinpa,Architect,Affluent,2017-10-23,Low,Branch,Full KYC,Active,2,3,1,08051837852,jide.okafor52@syntheticmail.ng,Not Linked
+CUST-0000010,Individual,Kemi,Dike,F,44,1982-02-07,Ogun,Sagamu,Civil servant,Retail,2018-11-30,Low,Corporate Banking,Full KYC,Active,1,1,0,08014216175,kemi.dike43@syntheticmail.ng,Verified
+CUST-0000011,Individual,Hauwa,Ezeji,F,32,1994-06-06,Rivers,Oyigbo,Lawyer,Mass Market,2023-01-17,Medium,Card Payment,Full KYC,Active,4,2,3,08065177213,hauwa.ezeji60@syntheticmail.ng,Pending
+CUST-0000012,Corporate,Ibrahim,Sanni,M,32,1994-04-03,Lagos,Victoria Island,Accountant,SME,2022-08-19,Low,ATM,Full KYC,Active,2,1,3,08083863413,ibrahim.sanni13@syntheticmail.ng,Verified
+CUST-0000013,Individual,Emeka,Ogundele,M,40,1986-07-02,Enugu,Nsukka,Business owner,Mass Market,2017-10-20,Low,Card Payment,Full KYC,Active,4,2,3,08084593961,emeka.ogundele85@syntheticmail.ng,Verified
+CUST-0000014,Individual,Gbenga,Nwachukwu,M,18,2008-08-21,Kano,Dala,Business owner,Mass Market,2015-11-08,Low,Corporate Banking,Full KYC,Dormant,2,1,0,08034941004,gbenga.nwachukwu9@syntheticmail.ng,Verified
+CUST-0000015,Individual,Hakeem,Bello,M,18,2007-12-03,Ogun,Ijebu-Ode,Teacher,Retail,2022-02-17,Medium,Corporate Banking,Full KYC,Active,3,1,2,08042035886,hakeem.bello34@syntheticmail.ng,Verified
+CUST-0000016,Individual,Kemi,Oduya,F,31,1995-08-17,Ogun,Ijebu-Ode,Engineer,Retail,2016-03-31,Medium,Agent Banking,Full KYC,Active,3,1,1,08059597086,kemi.oduya37@syntheticmail.ng,Verified
+CUST-0000017,Individual,Aisha,Dike,F,25,2001-09-17,Benue,Katsina-Ala,Engineer,Affluent,2017-04-14,Medium,Branch,Full KYC,Active,2,2,2,08091178885,aisha.dike27@syntheticmail.ng,Verified
+CUST-0000018,Corporate,Nneka,Ezeji,F,41,1985-05-20,Rivers,Port Harcourt,IT professional,Corporate,2019-09-16,Medium,Mobile Banking,Full KYC,Active,3,1,3,08084045292,nneka.ezeji91@syntheticmail.ng,Verified
+CUST-0000019,Individual,Musa,Eze,M,27,1998-12-17,Lagos,Yaba,Nurse,Retail,2022-04-24,Low,ATM,Full KYC,Active,1,2,1,08043491314,musa.eze86@syntheticmail.ng,Verified
+CUST-0000020,Corporate,Aisha,Eze,F,21,2005-05-22,Cross River,Calabar,IT professional,SME,2015-06-04,High,ATM,Tier 2,Active,4,3,1,08045810056,aisha.eze21@syntheticmail.ng,Verified
+CUST-0000021,Individual,Adaeze,Nduka,F,55,1971-06-08,Abuja FCT,Maitama,Farmer,Retail,2018-11-15,High,POS,Full KYC,Active,3,2,0,08047463522,adaeze.nduka45@syntheticmail.ng,Verified
+CUST-0000022,Individual,Ngozi,Bello,F,35,1991-05-14,Anambra,Nnewi,Business owner,Retail,2016-11-04,High,Corporate Banking,Full KYC,Active,3,2,0,08061700055,ngozi.bello74@syntheticmail.ng,Verified
+CUST-0000023,Individual,Ngozi,Dike,F,38,1987-12-24,Lagos,Apapa,Accountant,Affluent,2021-03-13,High,Card Payment,Full KYC,Active,3,3,2,08099038359,ngozi.dike16@syntheticmail.ng,Verified
+CUST-0000024,Individual,Hauwa,Okeke,F,20,2006-04-06,Oyo,Ogbomosho,Accountant,Mass Market,2022-02-25,Low,Card Payment,Full KYC,Dormant,3,2,0,08050785405,hauwa.okeke37@syntheticmail.ng,Verified
+CUST-0000025,Individual,Kemi,Anyanwu,F,31,1995-02-09,Cross River,Ogoja,Doctor,Affluent,2016-06-10,Low,Branch,Full KYC,Active,3,1,1,08051663795,kemi.anyanwu29@syntheticmail.ng,Pending
+CUST-0000026,Individual,Adebayo,Ogundele,M,39,1987-01-25,Kano,Gwale,IT professional,Mass Market,2018-04-23,Medium,Card Payment,Full KYC,Active,1,1,3,08039372360,adebayo.ogundele23@syntheticmail.ng,Pending
+CUST-0000027,Individual,Adaeze,Ogundele,F,24,2002-07-21,Akwa Ibom,Ikot Ekpene,Pharmacist,Mass Market,2020-05-25,Medium,Bank Transfer,Full KYC,Active,4,3,3,08031361812,adaeze.ogundele96@syntheticmail.ng,Pending
+CUST-0000028,Individual,Bose,Ogundele,F,42,1983-11-04,Kaduna,Kafanchan,Lawyer,Retail,2019-09-03,Medium,Bank Transfer,Full KYC,Active,3,2,2,08082498004,bose.ogundele11@syntheticmail.ng,Verified
+CUST-0000029,Individual,Zainab,Eze,F,30,1995-09-27,Rivers,Eleme,Architect,Retail,2022-12-05,Low,Card Payment,Full KYC,Active,4,3,0,08087267850,zainab.eze49@syntheticmail.ng,Verified
+CUST-0000030,Individual,Bose,Lawal,F,34,1992-02-22,Delta,Asaba,Banker,Mass Market,2018-09-25,Medium,Branch,Full KYC,Active,3,3,3,08032151928,bose.lawal60@syntheticmail.ng,Pending
+CUST-0000031,Individual,Hakeem,Adeyemi,M,30,1996-08-11,Imo,Orlu,Doctor,Mass Market,2015-11-09,Low,Branch,Full KYC,Active,3,2,3,08047346970,hakeem.adeyemi97@syntheticmail.ng,Not Linked
+CUST-0000032,Individual,Chidinma,Nduka,F,60,1966-09-21,Anambra,Nnewi,Lawyer,Affluent,2016-03-02,Low,Mobile Banking,Tier 2,Dormant,2,1,1,08042016960,chidinma.nduka17@syntheticmail.ng,Verified
+CUST-0000033,Individual,Chinedu,Fashola,M,37,1989-03-20,Abuja FCT,Jabi,Engineer,Retail,2017-10-14,Medium,Branch,Full KYC,Active,3,3,3,08063238057,chinedu.fashola92@syntheticmail.ng,Verified
+CUST-0000034,Individual,Taiwo,Bamidele,M,25,2000-10-06,Imo,Okigwe,Business owner,Mass Market,2020-11-27,Low,Agent Banking,Full KYC,Active,3,1,3,08075793759,taiwo.bamidele14@syntheticmail.ng,Verified
+CUST-0000035,Individual,Zainab,Eze,F,47,1979-02-17,Delta,Effurun,Journalist,Retail,2023-03-24,Low,Bank Transfer,Full KYC,Active,3,2,1,08021631697,zainab.eze36@syntheticmail.ng,Pending
+CUST-0000036,Individual,Chinwe,Lawal,F,23,2003-04-02,Rivers,Obio-Akpor,Banker,Retail,2018-08-11,Medium,USSD,Tier 2,Active,3,3,0,08079340535,chinwe.lawal25@syntheticmail.ng,Verified
+CUST-0000037,Individual,Sade,Ogundele,F,40,1985-10-07,Akwa Ibom,Eket,Civil servant,Mass Market,2016-08-01,Medium,Branch,Full KYC,Active,3,3,2,08073519947,sade.ogundele71@syntheticmail.ng,Verified
+CUST-0000038,Individual,Yetunde,Obiora,F,18,2008-05-04,Anambra,Onitsha,Driver,Retail,2017-01-12,Low,Agent Banking,Tier 1,Active,2,1,3,08047111151,yetunde.obiora93@syntheticmail.ng,Verified
+CUST-0000039,Individual,Funmilayo,Chukwu,F,22,2004-04-22,Cross River,Calabar,Architect,Retail,2017-02-25,Low,Branch,Full KYC,Active,3,3,1,08095613415,funmilayo.chukwu97@syntheticmail.ng,Verified
+CUST-0000040,Individual,Gbenga,Nduka,M,40,1986-01-23,Benue,Makurdi,Trader,Mass Market,2023-02-16,Low,Internet Banking,Tier 2,Active,1,3,0,08030364454,gbenga.nduka20@syntheticmail.ng,Pending
+CUST-0000041,Individual,Segun,Bello,M,46,1979-12-16,Oyo,Ogbomosho,Pharmacist,Affluent,2021-06-21,Medium,Bank Transfer,Tier 1,Active,4,2,0,08091823275,segun.bello95@syntheticmail.ng,Verified
+CUST-0000042,Individual,Nnamdi,Fashola,M,40,1985-10-22,Cross River,Ogoja,Teacher,Retail,2017-08-30,Low,Mobile Banking,Full KYC,Active,4,2,0,08041068214,nnamdi.fashola37@syntheticmail.ng,Verified
+CUST-0000043,Corporate,Chidinma,Adeyinka,F,36,1990-05-12,Akwa Ibom,Ikot Ekpene,Accountant,SME,2022-03-26,Medium,Internet Banking,Full KYC,Active,3,1,0,08018004482,chidinma.adeyinka22@syntheticmail.ng,Verified
+CUST-0000044,Individual,Kemi,Bello,F,34,1992-01-28,Imo,Orlu,Pharmacist,Affluent,2023-05-27,Medium,Bank Transfer,Full KYC,Active,4,3,2,08091029073,kemi.bello33@syntheticmail.ng,Verified
+CUST-0000045,Individual,Femi,Ibrahim,M,20,2006-06-23,Rivers,Eleme,Doctor,Mass Market,2022-06-01,Medium,Bank Transfer,Tier 1,Active,4,2,2,08099943797,femi.ibrahim14@syntheticmail.ng,Pending
+CUST-0000046,Individual,Zainab,Ezeji,F,29,1997-04-28,Delta,Warri,Sales executive,Affluent,2016-07-01,Low,USSD,Full KYC,Active,4,3,0,08098269682,zainab.ezeji70@syntheticmail.ng,Verified
+CUST-0000047,Individual,Yusuf,Ezeji,M,32,1993-11-07,Lagos,Lekki,Architect,Mass Market,2017-03-25,Low,Branch,Full KYC,Active,1,1,1,08031257157,yusuf.ezeji40@syntheticmail.ng,Verified
+CUST-0000048,Individual,Chidinma,Adeyinka,F,50,1976-07-31,Enugu,Enugu,Banker,Mass Market,2019-12-19,Low,Agent Banking,Tier 2,Active,4,2,1,08071308842,chidinma.adeyinka71@syntheticmail.ng,Verified
+CUST-0000049,Individual,Musa,Dangote,M,42,1984-02-26,Rivers,Eleme,Civil servant,Retail,2019-10-24,Medium,Branch,Tier 2,Active,4,1,3,08082287061,musa.dangote62@syntheticmail.ng,Verified
+CUST-0000050,Corporate,Kemi,Oduya,F,18,2008-06-15,Enugu,Nsukka,Lawyer,NGO,2021-12-27,Low,Mobile Banking,Full KYC,Active,4,2,1,08076481885,kemi.oduya5@syntheticmail.ng,Verified
+CUST-0000051,Individual,Funmilayo,Anyanwu,F,41,1985-08-05,Imo,Okigwe,Nurse,Mass Market,2021-12-22,Low,ATM,Full KYC,Active,3,2,3,08097219599,funmilayo.anyanwu11@syntheticmail.ng,Pending
+CUST-0000052,Individual,Bukola,Ezeji,F,33,1992-12-20,Benue,Katsina-Ala,Farmer,Retail,2018-11-14,Low,Internet Banking,Full KYC,Active,1,2,1,08050193656,bukola.ezeji4@syntheticmail.ng,Verified
+CUST-0000053,Individual,Gbenga,Ogundimu,M,29,1997-03-15,Cross River,Ikom,Police officer,Mass Market,2018-01-23,Low,ATM,Full KYC,Active,4,3,1,08076795767,gbenga.ogundimu75@syntheticmail.ng,Verified
+CUST-0000054,Individual,Kemi,Fashola,F,45,1980-10-20,Kaduna,Kafanchan,Architect,Retail,2017-09-08,Medium,Internet Banking,Full KYC,Active,3,3,3,08043567615,kemi.fashola59@syntheticmail.ng,Pending
+CUST-0000055,Individual,Sade,Nwosu,F,50,1976-05-29,Rivers,Eleme,Farmer,Mass Market,2015-05-17,Low,Card Payment,Full KYC,Active,1,3,3,08048412328,sade.nwosu30@syntheticmail.ng,Verified
+CUST-0000056,Individual,Chisom,Fashola,M,49,1976-10-15,Delta,Asaba,Engineer,Affluent,2015-09-02,Medium,Branch,Tier 2,Active,3,3,1,08022097496,chisom.fashola38@syntheticmail.ng,Verified
+CUST-0000057,Corporate,Chisom,Osei,M,27,1998-12-20,Anambra,Nnewi,Doctor,SME,2019-05-16,Low,Bank Transfer,Tier 1,Active,3,1,3,08020106509,chisom.osei19@syntheticmail.ng,Verified
+CUST-0000058,Corporate,Lola,Tijani,F,34,1992-08-08,Rivers,Port Harcourt,Sales executive,SME,2021-04-09,Low,Branch,Full KYC,Active,3,1,1,08073280554,lola.tijani4@syntheticmail.ng,Verified
+CUST-0000059,Individual,Aisha,Adeyinka,F,41,1984-10-29,Enugu,Agbani,Farmer,Retail,2021-12-12,Medium,Internet Banking,Full KYC,Dormant,3,2,0,08023044889,aisha.adeyinka31@syntheticmail.ng,Pending
+CUST-0000060,Corporate,Kemi,Tijani,F,49,1976-10-19,Kano,Nassarawa,IT professional,Corporate,2017-08-18,Medium,Card Payment,Full KYC,Active,4,2,0,08059731689,kemi.tijani28@syntheticmail.ng,Verified
+CUST-0000061,Corporate,Funmilayo,Tijani,F,32,1993-12-19,Rivers,Port Harcourt,Retired,Corporate,2019-09-11,Medium,POS,Tier 1,Dormant,4,1,1,08096128115,funmilayo.tijani82@syntheticmail.ng,Verified
+CUST-0000062,Corporate,Suleiman,Ogundele,M,35,1991-07-22,Lagos,Badagry,Architect,SME,2018-07-11,Low,Corporate Banking,Full KYC,Active,3,1,0,08047215199,suleiman.ogundele19@syntheticmail.ng,Not Linked
+CUST-0000063,Individual,Lola,Abubakar,F,24,2002-07-27,Enugu,Enugu,Student,Affluent,2019-01-18,Low,Corporate Banking,Full KYC,Active,1,1,3,08080610004,lola.abubakar15@syntheticmail.ng,Verified
+CUST-0000064,Individual,Bose,Tijani,F,23,2003-01-02,Kaduna,Kaduna,Journalist,Mass Market,2015-09-27,Low,Agent Banking,Full KYC,Active,1,1,3,08063904155,bose.tijani55@syntheticmail.ng,Verified
+CUST-0000065,Individual,Chidinma,Adesanya,F,47,1979-04-16,Kaduna,Kafanchan,Journalist,Mass Market,2020-07-13,Low,Card Payment,Tier 1,Active,4,3,3,08023311507,chidinma.adesanya90@syntheticmail.ng,Verified
+CUST-0000066,Individual,Ikenna,Anyanwu,M,54,1972-06-04,Ogun,Sagamu,IT professional,Mass Market,2016-08-13,Medium,USSD,Full KYC,Active,3,1,3,08019010480,ikenna.anyanwu12@syntheticmail.ng,Pending
+CUST-0000067,Individual,Funmilayo,Tijani,F,37,1989-07-20,Abuja FCT,Asokoro,Architect,Mass Market,2020-08-10,Medium,Internet Banking,Full KYC,Active,4,3,0,08048604965,funmilayo.tijani77@syntheticmail.ng,Verified
+CUST-0000068,Corporate,Rotimi,Nduka,M,50,1976-06-05,Abuja FCT,Asokoro,Student,SME,2016-12-14,Low,Branch,Full KYC,Active,1,3,2,08013886030,rotimi.nduka24@syntheticmail.ng,Verified
+CUST-0000069,Individual,Bukola,Ogundimu,F,42,1984-09-22,Cross River,Ogoja,Retired,Retail,2016-03-08,Low,ATM,Tier 2,Restricted,1,3,1,08060491958,bukola.ogundimu54@syntheticmail.ng,Verified
+CUST-0000070,Individual,Adaora,Oduya,F,30,1995-12-07,Kano,Fagge,Doctor,Mass Market,2015-11-06,Medium,Internet Banking,Full KYC,Active,4,3,3,08065590800,adaora.oduya35@syntheticmail.ng,Verified
+CUST-0000071,Individual,Umar,Uzoma,M,42,1984-07-31,Enugu,Nsukka,Pharmacist,Retail,2020-03-31,Medium,Mobile Banking,Full KYC,Restricted,1,1,1,08050455821,umar.uzoma28@syntheticmail.ng,Verified
+CUST-0000072,Individual,Adaora,Oduya,F,56,1970-07-30,Cross River,Calabar,Nurse,Retail,2021-06-20,Medium,Agent Banking,Tier 2,Active,3,1,3,08015677713,adaora.oduya56@syntheticmail.ng,Verified
+CUST-0000073,Individual,Abubakar,Uzoma,M,37,1988-12-05,Plateau,Bukuru,Engineer,Mass Market,2021-11-21,Medium,Mobile Banking,Tier 1,Active,4,3,2,08021828592,abubakar.uzoma56@syntheticmail.ng,Pending
+CUST-0000074,Individual,Chinwe,Sanni,F,56,1970-01-04,Rivers,Eleme,Lawyer,Retail,2020-08-31,Medium,ATM,Full KYC,Active,2,2,2,08096629889,chinwe.sanni19@syntheticmail.ng,Verified
+CUST-0000075,Individual,Blessing,Abubakar,F,18,2007-11-16,Kano,Kano City,Doctor,Retail,2023-05-29,Medium,Bank Transfer,Tier 2,Active,4,3,2,08094183695,blessing.abubakar41@syntheticmail.ng,Verified
+CUST-0000076,Individual,Kemi,Bamidele,F,47,1979-05-10,Abuja FCT,Wuse,Farmer,Mass Market,2022-11-09,Low,Bank Transfer,Full KYC,Active,3,1,0,08092545028,kemi.bamidele77@syntheticmail.ng,Verified
+CUST-0000077,Individual,Chibuike,Chukwu,M,39,1987-04-14,Kaduna,Kaduna,Sales executive,Mass Market,2016-10-05,Low,USSD,Tier 1,Active,2,1,1,08068754920,chibuike.chukwu57@syntheticmail.ng,Verified
+CUST-0000078,Individual,Yusuf,Tijani,M,34,1992-05-02,Imo,Okigwe,Journalist,Mass Market,2015-11-22,Medium,USSD,Full KYC,Active,4,2,2,08098122539,yusuf.tijani78@syntheticmail.ng,Pending
+CUST-0000079,Corporate,Rotimi,Ogundimu,M,39,1987-04-20,Delta,Ughelli,Nurse,Government,2016-06-10,Medium,Branch,Full KYC,Active,3,1,0,08096707983,rotimi.ogundimu86@syntheticmail.ng,Verified
+CUST-0000080,Corporate,Yusuf,Bamidele,M,18,2008-06-19,Delta,Ughelli,Accountant,Government,2018-11-08,Low,ATM,Full KYC,Active,1,3,0,08098842638,yusuf.bamidele44@syntheticmail.ng,Pending
+CUST-0000081,Individual,Abdullahi,Eze,M,35,1991-07-03,Imo,Okigwe,Doctor,Retail,2022-06-12,Medium,Mobile Banking,Full KYC,Active,2,2,2,08070254091,abdullahi.eze30@syntheticmail.ng,Verified
+CUST-0000082,Corporate,Blessing,Tijani,F,42,1983-10-14,Oyo,Iseyin,Farmer,Corporate,2021-06-30,High,Agent Banking,Full KYC,Restricted,2,3,1,08043554863,blessing.tijani7@syntheticmail.ng,Verified
+CUST-0000083,Corporate,Ifeoma,Nwosu,F,55,1970-09-30,Benue,Gboko,Teacher,SME,2017-09-23,Medium,Branch,Full KYC,Active,4,1,1,08070549373,ifeoma.nwosu45@syntheticmail.ng,Not Linked
+CUST-0000084,Individual,Hakeem,Ugwu,M,31,1995-03-16,Anambra,Nnewi,Lawyer,Retail,2015-06-25,High,USSD,Tier 1,Active,3,1,1,08015140967,hakeem.ugwu37@syntheticmail.ng,Pending
+CUST-0000085,Individual,Ifeanyi,Anyanwu,M,28,1997-11-11,Kaduna,Kafanchan,Accountant,Retail,2017-07-18,Low,Agent Banking,Tier 1,Active,4,1,2,08041895531,ifeanyi.anyanwu39@syntheticmail.ng,Verified
+CUST-0000086,Individual,Maryam,Obiora,F,31,1995-08-22,Rivers,Port Harcourt,Pharmacist,Retail,2019-02-12,High,ATM,Full KYC,Active,3,1,3,08035140847,maryam.obiora86@syntheticmail.ng,Verified
+CUST-0000087,Individual,Chidinma,Dike,F,48,1977-12-23,Enugu,Agbani,Civil servant,Mass Market,2021-08-23,High,Bank Transfer,Full KYC,Active,3,2,0,08057928328,chidinma.dike9@syntheticmail.ng,Verified
+CUST-0000088,Individual,Suleiman,Osei,M,41,1985-09-03,Akwa Ibom,Ikot Ekpene,Doctor,Mass Market,2022-11-27,Low,Bank Transfer,Full KYC,Active,1,3,3,08014963880,suleiman.osei38@syntheticmail.ng,Verified
+CUST-0000089,Individual,Adebayo,Oduya,M,31,1995-04-18,Cross River,Ogoja,Banker,Mass Market,2019-04-24,High,Mobile Banking,Tier 2,Active,3,1,2,08046670512,adebayo.oduya16@syntheticmail.ng,Verified
+CUST-0000090,Individual,Ramatu,Anyanwu,F,44,1982-03-13,Anambra,Ekwulobia,Student,Retail,2023-11-01,Low,Branch,Tier 2,Active,1,2,1,08083212334,ramatu.anyanwu38@syntheticmail.ng,Verified
+CUST-0000091,Individual,Hauwa,Akin,F,39,1987-04-22,Abuja FCT,Garki,Sales executive,Mass Market,2020-12-24,Medium,Bank Transfer,Full KYC,Active,3,3,3,08046850196,hauwa.akin82@syntheticmail.ng,Not Linked
+CUST-0000092,Corporate,Hakeem,Tijani,M,49,1977-01-08,Lagos,Ikeja,Nurse,SME,2022-06-15,Medium,Mobile Banking,Full KYC,Active,3,2,3,08086134287,hakeem.tijani5@syntheticmail.ng,Verified
+CUST-0000093,Individual,Yetunde,Tijani,F,29,1997-02-07,Ogun,Ijebu-Ode,Student,Affluent,2021-10-09,Medium,USSD,Full KYC,Active,1,1,1,08076980546,yetunde.tijani67@syntheticmail.ng,Verified
+CUST-0000094,Individual,Dele,Fashola,M,34,1991-09-29,Enugu,Nsukka,Banker,Mass Market,2018-05-28,High,Internet Banking,Full KYC,Active,2,3,3,08021783073,dele.fashola88@syntheticmail.ng,Not Linked
+CUST-0000095,Individual,Zainab,Okafor,F,33,1992-12-16,Delta,Asaba,Doctor,Mass Market,2021-02-24,Medium,Agent Banking,Full KYC,Restricted,2,1,3,08013527782,zainab.okafor47@syntheticmail.ng,Verified
+CUST-0000096,Corporate,Lola,Osei,F,20,2005-11-11,Delta,Ughelli,Banker,SME,2023-12-11,Low,Card Payment,Tier 2,Active,1,1,2,08096213226,lola.osei10@syntheticmail.ng,Verified
+CUST-0000097,Individual,Amina,Abubakar,F,41,1985-07-21,Ogun,Abeokuta,Engineer,Mass Market,2023-10-25,High,ATM,Full KYC,Active,2,2,2,08020584397,amina.abubakar33@syntheticmail.ng,Verified
+CUST-0000098,Individual,Amina,Bamidele,F,41,1984-11-15,Enugu,Enugu,Police officer,Mass Market,2017-08-16,Low,ATM,Full KYC,Active,3,3,0,08013808225,amina.bamidele11@syntheticmail.ng,Verified
+CUST-0000099,Individual,Maryam,Nwachukwu,F,38,1987-12-07,Ogun,Sagamu,Architect,Mass Market,2019-12-05,Medium,Branch,Full KYC,Active,4,2,3,08019794273,maryam.nwachukwu89@syntheticmail.ng,Verified
+CUST-0000100,Individual,Sade,Obiora,F,35,1991-06-12,Kaduna,Zaria,Driver,Retail,2020-11-16,Low,Card Payment,Full KYC,Active,1,2,1,08072608888,sade.obiora16@syntheticmail.ng,Verified
+CUST-0000101,Corporate,Taiwo,Musa,M,21,2005-04-25,Rivers,Oyigbo,Lawyer,Corporate,2017-09-19,Medium,USSD,Tier 1,Active,2,1,3,08079085198,taiwo.musa60@syntheticmail.ng,Verified
+CUST-0000102,Individual,Ngozi,Adesanya,F,32,1994-03-06,Oyo,Ogbomosho,Police officer,Mass Market,2021-01-01,High,Mobile Banking,Full KYC,Active,4,2,0,08024428014,ngozi.adesanya56@syntheticmail.ng,Verified
+CUST-0000103,Individual,Bose,Sanni,F,33,1993-03-20,Oyo,Ogbomosho,Student,Retail,2019-11-29,Low,Internet Banking,Full KYC,Active,3,3,0,08027268907,bose.sanni13@syntheticmail.ng,Verified
+CUST-0000104,Individual,Ifeoma,Tijani,F,28,1998-07-11,Cross River,Ogoja,Business owner,Retail,2015-10-09,Low,Mobile Banking,Full KYC,Active,4,3,3,08029990477,ifeoma.tijani78@syntheticmail.ng,Pending
+CUST-0000105,Individual,Aisha,Oduya,F,36,1990-07-03,Kano,Dala,Police officer,Mass Market,2020-09-21,Medium,Agent Banking,Tier 2,Active,3,2,0,08059440148,aisha.oduya43@syntheticmail.ng,Verified
+CUST-0000106,Individual,Lola,Adeyemi,F,42,1983-11-25,Anambra,Onitsha,Business owner,Mass Market,2023-03-05,High,ATM,Full KYC,Active,4,1,1,08014237322,lola.adeyemi74@syntheticmail.ng,Not Linked
+CUST-0000107,Individual,Oluwaseun,Anyanwu,M,60,1966-04-23,Abuja FCT,Garki,IT professional,Mass Market,2023-07-16,Low,Corporate Banking,Tier 1,Active,1,3,1,08079616482,oluwaseun.anyanwu27@syntheticmail.ng,Verified
+CUST-0000108,Corporate,Nneka,Lawal,F,40,1986-04-18,Ogun,Ijebu-Ode,Driver,Government,2021-01-10,Low,Branch,Full KYC,Active,2,2,2,08040181142,nneka.lawal39@syntheticmail.ng,Verified
+CUST-0000109,Individual,Jide,Oduya,M,41,1985-01-23,Akwa Ibom,Ikot Ekpene,Trader,Retail,2019-11-24,High,Internet Banking,Full KYC,Active,4,2,1,08048983895,jide.oduya6@syntheticmail.ng,Verified
+CUST-0000110,Individual,Umar,Anyanwu,M,37,1988-10-24,Akwa Ibom,Uyo,Architect,Retail,2019-08-12,Low,Agent Banking,Full KYC,Active,2,1,0,08099903592,umar.anyanwu68@syntheticmail.ng,Verified
+CUST-0000111,Individual,Taiwo,Okeke,M,18,2008-04-03,Rivers,Obio-Akpor,Civil servant,Affluent,2017-09-08,Low,Card Payment,Full KYC,Dormant,4,2,1,08048553376,taiwo.okeke42@syntheticmail.ng,Verified
+CUST-0000112,Individual,Tunde,Ibrahim,M,37,1989-06-27,Lagos,Ikeja,Retired,Mass Market,2023-06-06,Medium,ATM,Tier 1,Restricted,3,1,0,08050049524,tunde.ibrahim73@syntheticmail.ng,Verified
+CUST-0000113,Individual,Adaora,Obiora,F,38,1987-11-01,Plateau,Jos,Pharmacist,Mass Market,2022-12-18,Low,Branch,Full KYC,Active,2,3,3,08097011385,adaora.obiora33@syntheticmail.ng,Verified
+CUST-0000114,Individual,Lola,Akin,F,67,1958-12-16,Lagos,Yaba,Retired,Affluent,2022-04-11,Low,Agent Banking,Full KYC,Active,1,1,1,08074082804,lola.akin42@syntheticmail.ng,Not Linked
+CUST-0000115,Individual,Toyin,Ogundele,F,35,1991-02-08,Lagos,Lekki,Police officer,Affluent,2015-03-13,High,Branch,Full KYC,Active,1,3,0,08072464258,toyin.ogundele40@syntheticmail.ng,Verified
+CUST-0000116,Corporate,Zainab,Bello,F,41,1984-11-02,Ogun,Ijebu-Ode,Lawyer,Corporate,2018-09-23,Low,ATM,Full KYC,Active,3,2,3,08082144402,zainab.bello86@syntheticmail.ng,Pending
+CUST-0000117,Individual,Emeka,Dike,M,37,1989-02-08,Cross River,Ogoja,Engineer,Mass Market,2016-01-19,Low,Agent Banking,Tier 1,Active,2,1,2,08079839059,emeka.dike57@syntheticmail.ng,Verified
+CUST-0000118,Corporate,Chidinma,Ugwu,F,23,2003-02-05,Rivers,Oyigbo,Sales executive,SME,2015-12-25,Low,Agent Banking,Full KYC,Active,1,2,2,08010404729,chidinma.ugwu96@syntheticmail.ng,Verified
+CUST-0000119,Individual,Ikenna,Ogundimu,M,51,1974-10-05,Abuja FCT,Wuse,Banker,Retail,2015-07-17,High,Branch,Full KYC,Active,4,2,3,08070201634,ikenna.ogundimu49@syntheticmail.ng,Verified
+CUST-0000120,Corporate,Umar,Bello,M,47,1979-06-28,Ogun,Abeokuta,Lawyer,NGO,2015-01-22,Low,Mobile Banking,Tier 1,Active,4,3,3,08040824989,umar.bello32@syntheticmail.ng,Verified
+CUST-0000121,Corporate,Blessing,Bello,F,47,1979-09-11,Kano,Kano City,Lawyer,SME,2018-07-04,Low,Internet Banking,Full KYC,Active,1,1,0,08063991141,blessing.bello57@syntheticmail.ng,Verified
+CUST-0000122,Individual,Babatunde,Ugwu,M,27,1999-04-27,Rivers,Eleme,Police officer,Retail,2020-06-15,High,POS,Full KYC,Active,2,2,2,08046930534,babatunde.ugwu8@syntheticmail.ng,Verified
+CUST-0000123,Corporate,Ikenna,Ezeji,M,54,1972-09-04,Imo,Okigwe,Retired,Government,2023-12-03,High,USSD,Full KYC,Active,3,2,1,08082199509,ikenna.ezeji61@syntheticmail.ng,Verified
+CUST-0000124,Corporate,Zainab,Eze,F,21,2005-01-26,Rivers,Oyigbo,Architect,Corporate,2017-04-13,Medium,Card Payment,Full KYC,Active,1,2,2,08022410307,zainab.eze69@syntheticmail.ng,Verified
+CUST-0000125,Individual,Femi,Lawal,M,45,1980-10-17,Rivers,Port Harcourt,Accountant,Mass Market,2018-09-10,Low,Bank Transfer,Full KYC,Dormant,3,1,1,08035504548,femi.lawal95@syntheticmail.ng,Verified
+CUST-0000126,Corporate,Grace,Nwachukwu,F,64,1962-03-12,Cross River,Ikom,Retired,Corporate,2022-12-07,Medium,Agent Banking,Full KYC,Active,3,3,3,08072546007,grace.nwachukwu13@syntheticmail.ng,Pending
+CUST-0000127,Individual,Bose,Oduya,F,26,2000-06-09,Akwa Ibom,Ikot Ekpene,Lawyer,Mass Market,2017-06-25,Low,Mobile Banking,Full KYC,Dormant,4,2,1,08036332415,bose.oduya43@syntheticmail.ng,Verified
+CUST-0000128,Individual,Jide,Olawale,M,31,1995-05-15,Imo,Okigwe,Banker,Affluent,2022-11-03,Low,ATM,Tier 2,Active,2,3,3,08034702473,jide.olawale70@syntheticmail.ng,Not Linked
+CUST-0000129,Individual,Musa,Musa,M,39,1987-09-22,Lagos,Victoria Island,Teacher,Mass Market,2017-07-27,Medium,Mobile Banking,Full KYC,Active,1,3,3,08098487646,musa.musa63@syntheticmail.ng,Verified
+CUST-0000130,Individual,Ngozi,Adeyemi,F,31,1994-12-26,Enugu,Nsukka,Civil servant,Affluent,2023-07-18,Low,Card Payment,Tier 2,Dormant,1,1,1,08042342289,ngozi.adeyemi25@syntheticmail.ng,Verified
+CUST-0000131,Individual,Chiamaka,Sanni,F,19,2007-08-11,Oyo,Ogbomosho,Lawyer,Mass Market,2020-02-07,Low,Internet Banking,Full KYC,Active,1,1,3,08060903955,chiamaka.sanni49@syntheticmail.ng,Verified
+CUST-0000132,Corporate,Kelechi,Adesanya,M,38,1988-01-13,Lagos,Lekki,Police officer,SME,2016-08-15,Medium,Agent Banking,Tier 1,Active,4,2,0,08019978827,kelechi.adesanya88@syntheticmail.ng,Not Linked
+CUST-0000133,Corporate,Uchenna,Oduya,M,25,2001-09-13,Plateau,Shendam,Retired,Government,2016-04-23,Medium,Branch,Full KYC,Active,4,3,2,08061518966,uchenna.oduya97@syntheticmail.ng,Verified
+CUST-0000134,Individual,Wale,Ogundimu,M,43,1983-08-30,Cross River,Calabar,Driver,Retail,2021-10-01,Low,USSD,Full KYC,Active,4,2,1,08057756170,wale.ogundimu71@syntheticmail.ng,Not Linked
+CUST-0000135,Individual,Abdullahi,Adesanya,M,26,1999-11-10,Anambra,Awka,Teacher,Retail,2019-07-24,Low,ATM,Full KYC,Active,2,3,3,08052503832,abdullahi.adesanya47@syntheticmail.ng,Verified
+CUST-0000136,Individual,Kemi,Tijani,F,56,1970-05-14,Lagos,Surulere,Sales executive,Retail,2023-09-20,Low,Card Payment,Full KYC,Active,1,3,2,08061705758,kemi.tijani2@syntheticmail.ng,Verified
+CUST-0000137,Individual,Segun,Dike,M,28,1998-06-28,Anambra,Nnewi,Farmer,Affluent,2019-07-26,Low,Bank Transfer,Full KYC,Active,3,2,2,08074992426,segun.dike10@syntheticmail.ng,Verified
+CUST-0000138,Individual,Aisha,Chukwu,F,34,1992-02-02,Rivers,Oyigbo,Driver,Retail,2021-06-18,Low,USSD,Full KYC,Active,2,2,2,08090961645,aisha.chukwu89@syntheticmail.ng,Verified
+CUST-0000139,Individual,Hakeem,Oduya,M,47,1979-05-01,Delta,Asaba,Driver,Affluent,2021-05-25,Medium,Branch,Tier 2,Active,1,3,1,08089487366,hakeem.oduya70@syntheticmail.ng,Verified
+CUST-0000140,Corporate,Chinedu,Nwachukwu,M,23,2003-02-09,Cross River,Calabar,IT professional,SME,2023-06-30,Medium,ATM,Full KYC,Active,2,3,3,08060598851,chinedu.nwachukwu10@syntheticmail.ng,Verified
+CUST-0000141,Individual,Chinwe,Sanni,F,40,1985-12-26,Imo,Okigwe,IT professional,Mass Market,2015-08-17,High,USSD,Tier 2,Active,1,1,1,08098261798,chinwe.sanni86@syntheticmail.ng,Verified
+CUST-0000142,Individual,Hakeem,Olawale,M,53,1973-02-20,Ogun,Abeokuta,Pharmacist,Retail,2023-10-29,Low,Agent Banking,Full KYC,Active,4,2,3,08072151291,hakeem.olawale99@syntheticmail.ng,Verified
+CUST-0000143,Individual,Umar,Adeyemi,M,18,2008-01-16,Akwa Ibom,Uyo,Engineer,Retail,2017-05-30,Low,USSD,Full KYC,Active,2,3,3,08056748074,umar.adeyemi61@syntheticmail.ng,Verified
+CUST-0000144,Individual,Bukola,Okafor,F,40,1986-04-25,Akwa Ibom,Uyo,Driver,Retail,2016-11-10,Medium,ATM,Tier 1,Active,2,3,1,08054424679,bukola.okafor72@syntheticmail.ng,Verified
+CUST-0000145,Individual,Hakeem,Abubakar,M,41,1985-06-22,Kaduna,Kaduna,Journalist,Mass Market,2018-05-11,Low,Bank Transfer,Full KYC,Active,2,1,2,08018397164,hakeem.abubakar74@syntheticmail.ng,Verified
+CUST-0000146,Individual,Yusuf,Oduya,M,47,1979-06-19,Benue,Gboko,Pharmacist,Mass Market,2020-05-01,Low,Corporate Banking,Full KYC,Active,1,2,2,08071453007,yusuf.oduya80@syntheticmail.ng,Verified
+CUST-0000147,Individual,Aisha,Adesanya,F,23,2002-10-12,Ogun,Sagamu,Engineer,Retail,2018-02-11,Low,USSD,Full KYC,Active,4,3,1,08087149161,aisha.adesanya50@syntheticmail.ng,Verified
+CUST-0000148,Individual,Kelechi,Ezeji,M,22,2004-04-26,Kaduna,Kafanchan,Journalist,Retail,2015-11-30,Low,USSD,Tier 1,Active,2,2,3,08064913082,kelechi.ezeji88@syntheticmail.ng,Verified
+CUST-0000149,Individual,Sade,Aliyu,F,44,1982-08-15,Akwa Ibom,Uyo,Farmer,Mass Market,2015-07-23,Medium,Branch,Full KYC,Active,4,3,3,08083782999,sade.aliyu66@syntheticmail.ng,Verified
+CUST-0000150,Corporate,Bose,Tijani,F,41,1984-12-22,Abuja FCT,Jabi,Sales executive,SME,2018-09-19,Low,Card Payment,Full KYC,Active,2,2,0,08070362053,bose.tijani34@syntheticmail.ng,Verified
+CUST-0000151,Individual,Chibuike,Bello,M,41,1985-05-27,Benue,Katsina-Ala,Student,Retail,2022-04-14,Medium,ATM,Full KYC,Active,2,1,2,08081441519,chibuike.bello36@syntheticmail.ng,Verified
+CUST-0000152,Individual,Zainab,Akin,F,42,1984-04-30,Kano,Nassarawa,Engineer,Mass Market,2017-04-22,High,Card Payment,Tier 1,Restricted,2,3,1,08043511112,zainab.akin19@syntheticmail.ng,Verified
+CUST-0000153,Individual,Hakeem,Ezeji,M,29,1997-07-12,Benue,Gboko,Retired,Mass Market,2022-09-09,Low,Internet Banking,Full KYC,Dormant,1,2,2,08059535894,hakeem.ezeji59@syntheticmail.ng,Not Linked
+CUST-0000154,Individual,Emeka,Obiora,M,40,1985-11-04,Delta,Warri,Architect,Affluent,2021-10-07,Low,POS,Tier 1,Active,4,2,2,08048063218,emeka.obiora44@syntheticmail.ng,Verified
+CUST-0000155,Individual,Lola,Olawale,F,41,1984-10-11,Kano,Gwale,Civil servant,Affluent,2017-02-10,Low,ATM,Full KYC,Active,4,1,1,08097241147,lola.olawale39@syntheticmail.ng,Verified
+CUST-0000156,Individual,Chidinma,Tijani,F,29,1997-05-17,Plateau,Shendam,Doctor,Retail,2015-11-18,Medium,Card Payment,Full KYC,Active,2,2,0,08022775337,chidinma.tijani1@syntheticmail.ng,Verified
+CUST-0000157,Individual,Tunde,Dike,M,60,1965-10-17,Abuja FCT,Maitama,Engineer,Mass Market,2022-03-09,Low,ATM,Full KYC,Active,1,3,0,08023851475,tunde.dike41@syntheticmail.ng,Verified
+CUST-0000158,Corporate,Abdullahi,Osei,M,43,1982-11-02,Oyo,Ibadan,Journalist,NGO,2017-10-16,Low,Bank Transfer,Full KYC,Active,2,2,3,08039158087,abdullahi.osei12@syntheticmail.ng,Pending
+CUST-0000159,Individual,Abdullahi,Ogundimu,M,23,2003-02-14,Kano,Dala,Teacher,Retail,2019-03-23,Low,Agent Banking,Full KYC,Active,3,3,0,08098369672,abdullahi.ogundimu39@syntheticmail.ng,Verified
+CUST-0000160,Individual,Hakeem,Akin,M,45,1980-10-31,Imo,Owerri,Banker,Retail,2021-07-25,Medium,Internet Banking,Full KYC,Active,1,3,0,08058465780,hakeem.akin41@syntheticmail.ng,Verified
+CUST-0000161,Corporate,Yetunde,Abubakar,F,26,2000-01-24,Benue,Makurdi,Police officer,Government,2016-02-24,Medium,Mobile Banking,Full KYC,Active,1,2,2,08094365330,yetunde.abubakar92@syntheticmail.ng,Verified
+CUST-0000162,Individual,Zainab,Sanni,F,47,1979-08-16,Anambra,Onitsha,Trader,Mass Market,2016-06-03,Low,Branch,Full KYC,Dormant,2,3,2,08062443094,zainab.sanni76@syntheticmail.ng,Verified
+CUST-0000163,Individual,Lanre,Uzoma,M,51,1975-05-29,Benue,Gboko,Engineer,Retail,2022-09-18,Low,Corporate Banking,Full KYC,Active,2,1,0,08028416255,lanre.uzoma90@syntheticmail.ng,Verified
+CUST-0000164,Individual,Nneka,Dike,F,28,1998-05-13,Kaduna,Kafanchan,Engineer,Retail,2015-07-02,Low,USSD,Tier 2,Active,1,2,0,08076591799,nneka.dike59@syntheticmail.ng,Verified
+CUST-0000165,Individual,Chinwe,Aliyu,F,49,1977-03-23,Lagos,Yaba,Engineer,Retail,2018-11-20,Medium,Agent Banking,Full KYC,Active,1,1,0,08073319171,chinwe.aliyu47@syntheticmail.ng,Verified
+CUST-0000166,Individual,Adebayo,Okeke,M,42,1984-06-03,Kano,Dala,Trader,Retail,2016-04-28,Low,Corporate Banking,Full KYC,Active,1,1,1,08079226031,adebayo.okeke6@syntheticmail.ng,Not Linked
+CUST-0000167,Individual,Adaora,Bamidele,F,47,1979-04-13,Abuja FCT,Maitama,Accountant,Retail,2019-12-17,Low,Corporate Banking,Tier 2,Active,2,2,2,08089415412,adaora.bamidele64@syntheticmail.ng,Not Linked
+CUST-0000168,Corporate,Segun,Eze,M,60,1966-09-27,Cross River,Ogoja,Student,Corporate,2015-03-01,Low,USSD,Full KYC,Active,3,1,1,08081110496,segun.eze31@syntheticmail.ng,Verified
+CUST-0000169,Corporate,Femi,Adesanya,M,35,1991-09-02,Lagos,Yaba,IT professional,Corporate,2021-05-03,High,Bank Transfer,Tier 1,Active,1,3,1,08095525640,femi.adesanya51@syntheticmail.ng,Verified
+CUST-0000170,Individual,Ikenna,Osei,M,28,1998-05-24,Imo,Orlu,Driver,Retail,2020-05-30,Medium,Bank Transfer,Full KYC,Active,2,1,0,08030858851,ikenna.osei14@syntheticmail.ng,Verified
+CUST-0000171,Individual,Folake,Bello,F,27,1998-12-22,Kaduna,Kafanchan,Farmer,Mass Market,2022-11-19,Medium,Branch,Tier 2,Active,3,3,0,08038859601,folake.bello42@syntheticmail.ng,Verified
+CUST-0000172,Individual,Umar,Sanni,M,28,1998-01-03,Akwa Ibom,Uyo,Civil servant,Retail,2021-11-17,Low,Bank Transfer,Full KYC,Active,1,2,0,08028762704,umar.sanni16@syntheticmail.ng,Verified
+CUST-0000173,Individual,Babatunde,Chukwu,M,37,1989-03-03,Benue,Katsina-Ala,Teacher,Mass Market,2019-05-28,Medium,Internet Banking,Full KYC,Active,4,1,0,08054499873,babatunde.chukwu16@syntheticmail.ng,Verified
+CUST-0000174,Individual,Kelechi,Uzoma,M,42,1984-03-07,Kaduna,Kafanchan,Doctor,Mass Market,2021-01-08,Low,POS,Tier 1,Active,4,1,0,08092423989,kelechi.uzoma80@syntheticmail.ng,Verified
+CUST-0000175,Individual,Sade,Okeke,F,41,1984-12-18,Ogun,Sagamu,Nurse,Mass Market,2022-02-18,Low,POS,Full KYC,Active,2,3,0,08061338023,sade.okeke92@syntheticmail.ng,Verified
+CUST-0000176,Individual,Yetunde,Ugwu,F,47,1979-04-16,Enugu,Nsukka,Journalist,Mass Market,2018-09-22,Low,Mobile Banking,Tier 2,Active,1,2,2,08088381665,yetunde.ugwu30@syntheticmail.ng,Not Linked
+CUST-0000177,Corporate,Segun,Dangote,M,38,1987-12-26,Abuja FCT,Wuse,Lawyer,SME,2021-08-10,High,USSD,Tier 1,Restricted,2,1,1,08089526622,segun.dangote41@syntheticmail.ng,Pending
+CUST-0000178,Individual,Chinwe,Adeyemi,F,55,1970-10-04,Akwa Ibom,Ikot Ekpene,Nurse,Affluent,2018-03-15,High,Bank Transfer,Full KYC,Active,1,1,0,08041222178,chinwe.adeyemi78@syntheticmail.ng,Verified
+CUST-0000179,Individual,Ngozi,Olawale,F,34,1991-11-14,Enugu,Agbani,Doctor,Retail,2020-07-03,Low,Mobile Banking,Full KYC,Active,2,1,2,08019735027,ngozi.olawale48@syntheticmail.ng,Verified
+CUST-0000180,Individual,Chinwe,Nwosu,F,70,1956-04-13,Ogun,Abeokuta,IT professional,Retail,2023-04-16,Low,USSD,Full KYC,Restricted,3,1,1,08060785855,chinwe.nwosu40@syntheticmail.ng,Verified
+CUST-0000181,Corporate,Uchenna,Okonkwo,M,45,1980-10-02,Oyo,Ibadan,Doctor,Corporate,2020-05-31,Low,Corporate Banking,Full KYC,Active,4,1,2,08020443030,uchenna.okonkwo31@syntheticmail.ng,Verified
+CUST-0000182,Individual,Emeka,Olawale,M,27,1999-02-06,Delta,Warri,Student,Retail,2019-05-14,Low,Internet Banking,Tier 2,Active,4,3,3,08032325567,emeka.olawale53@syntheticmail.ng,Verified
+CUST-0000183,Corporate,Ifeoma,Lawal,F,25,2001-08-01,Anambra,Onitsha,Doctor,SME,2022-09-05,Medium,Internet Banking,Tier 2,Active,1,2,2,08024055958,ifeoma.lawal10@syntheticmail.ng,Verified
+CUST-0000184,Corporate,Fatima,Okafor,F,43,1982-12-20,Plateau,Bukuru,Journalist,Corporate,2023-03-19,High,Mobile Banking,Full KYC,Active,4,1,0,08023590593,fatima.okafor43@syntheticmail.ng,Verified
+CUST-0000185,Individual,Zainab,Fashola,F,35,1990-10-21,Rivers,Port Harcourt,Retired,Retail,2023-05-09,Low,ATM,Full KYC,Active,1,2,3,08036799898,zainab.fashola13@syntheticmail.ng,Verified
+CUST-0000186,Individual,Chidinma,Nduka,F,46,1980-07-29,Kano,Gwale,Trader,Retail,2016-07-20,Low,Agent Banking,Full KYC,Active,4,2,1,08069830944,chidinma.nduka6@syntheticmail.ng,Verified
+CUST-0000187,Individual,Grace,Dangote,F,43,1982-12-12,Kaduna,Zaria,Engineer,Retail,2016-06-16,Medium,USSD,Tier 2,Active,2,3,0,08061956500,grace.dangote67@syntheticmail.ng,Verified
+CUST-0000188,Individual,Chinwe,Ogundele,F,37,1989-01-24,Enugu,Agbani,Business owner,Retail,2023-07-17,Low,Corporate Banking,Tier 1,Active,2,1,3,08033203422,chinwe.ogundele22@syntheticmail.ng,Not Linked
+CUST-0000189,Individual,Babatunde,Ibrahim,M,27,1999-02-18,Cross River,Calabar,Nurse,Retail,2019-05-22,Medium,USSD,Tier 1,Dormant,1,1,3,08084673939,babatunde.ibrahim51@syntheticmail.ng,Verified
+CUST-0000190,Corporate,Nneka,Obiora,F,19,2007-09-14,Benue,Katsina-Ala,IT professional,SME,2016-11-30,Medium,Card Payment,Full KYC,Active,1,1,0,08048398732,nneka.obiora69@syntheticmail.ng,Pending
+CUST-0000191,Individual,Chiamaka,Lawal,F,32,1993-10-23,Plateau,Jos,Doctor,Mass Market,2019-09-08,Medium,Card Payment,Full KYC,Active,4,1,3,08054492381,chiamaka.lawal89@syntheticmail.ng,Verified
+CUST-0000192,Individual,Chiamaka,Tijani,F,48,1978-09-17,Akwa Ibom,Eket,Trader,Retail,2023-05-13,Medium,Internet Banking,Tier 1,Active,3,3,3,08053066216,chiamaka.tijani35@syntheticmail.ng,Verified
+CUST-0000193,Corporate,Chisom,Anyanwu,M,40,1986-06-09,Imo,Orlu,Pharmacist,Corporate,2021-05-12,Low,Mobile Banking,Full KYC,Active,3,3,3,08028206610,chisom.anyanwu68@syntheticmail.ng,Pending
+CUST-0000194,Individual,Chisom,Chukwu,M,23,2003-08-23,Lagos,Lekki,Accountant,Retail,2019-08-30,Low,USSD,Tier 2,Active,1,3,0,08042472381,chisom.chukwu48@syntheticmail.ng,Verified
+CUST-0000195,Individual,Ifeanyi,Ogundimu,M,40,1986-04-02,Kaduna,Zaria,Teacher,Retail,2019-11-07,Medium,Mobile Banking,Full KYC,Active,2,1,1,08037746963,ifeanyi.ogundimu35@syntheticmail.ng,Verified
+CUST-0000196,Individual,Chukwuemeka,Nduka,M,42,1984-07-20,Enugu,Enugu,Lawyer,Mass Market,2019-04-18,Medium,Corporate Banking,Tier 2,Active,3,2,3,08056802956,chukwuemeka.nduka59@syntheticmail.ng,Verified
+CUST-0000197,Individual,Hauwa,Dike,F,27,1998-11-07,Kaduna,Zaria,Student,Mass Market,2019-10-23,Low,Branch,Full KYC,Active,3,2,2,08047162866,hauwa.dike34@syntheticmail.ng,Verified
+CUST-0000198,Individual,Blessing,Eze,F,39,1987-01-04,Plateau,Shendam,Retired,Affluent,2020-06-08,Medium,ATM,Tier 2,Active,3,2,3,08064304344,blessing.eze50@syntheticmail.ng,Verified
+CUST-0000199,Individual,Suleiman,Adeyinka,M,38,1987-10-09,Imo,Okigwe,Student,Mass Market,2023-08-19,Medium,Branch,Tier 2,Active,2,2,0,08073187139,suleiman.adeyinka17@syntheticmail.ng,Verified
+CUST-0000200,Individual,Suleiman,Adesanya,M,24,2002-05-31,Akwa Ibom,Eket,IT professional,Mass Market,2020-08-20,Medium,USSD,Full KYC,Active,1,2,0,08095147289,suleiman.adesanya75@syntheticmail.ng,Verified

@@ -1,0 +1,161 @@
+beneficiary_id,beneficiary_name,beneficiary_bank,beneficiary_account_synthetic,beneficiary_type,is_mule_flag,risk_flag,first_seen
+BENE-0009000,Zainab Osei,Zenith Bank,BEN0000000001,Business,True,False,2024-12-18
+BENE-0009001,Chidinma Nduka,Polaris,BEN0000000002,Government,True,False,2023-05-21
+BENE-0009002,Amina Oduya,Stanbic,BEN0000000003,Government,True,False,2024-04-24
+BENE-0009003,Chidinma Ibrahim,NCB,BEN0000000004,Business,True,False,2023-03-16
+BENE-0009004,Jide Nduka,UBA,BEN0000000005,Business,True,False,2024-09-20
+BENE-0009005,Taiwo Abubakar,Fidelity,BEN0000000006,Business,True,False,2023-11-23
+BENE-0009006,Ibrahim Fashola,First Bank,BEN0000000007,Individual,True,False,2023-12-09
+BENE-0009007,Aisha Adeyemi,GTBank,BEN0000000008,Individual,True,False,2023-10-21
+BENE-0009008,Chisom Chukwu,Zenith Bank,BEN0000000009,Individual,True,False,2023-06-25
+BENE-0009009,Kelechi Uzoma,Sterling,BEN0000000010,Business,True,False,2024-03-28
+BENE-0009010,Taiwo Nwachukwu,NCB,BEN0000000011,Business,True,False,2023-10-07
+BENE-0009011,Chinwe Okafor,UBA,BEN0000000012,Individual,True,False,2024-12-08
+BENE-0009012,Blessing Nwachukwu,Stanbic,BEN0000000013,Business,True,False,2023-10-04
+BENE-0009013,Musa Anyanwu,Polaris,BEN0000000014,Individual,True,False,2024-03-18
+BENE-0009014,Babatunde Dike,Zenith Bank,BEN0000000015,Individual,True,False,2023-02-09
+BENE-0000016,Ngozi Adeyinka,Zenith Bank,BEN0000000016,Business,False,False,2024-06-30
+BENE-0000017,Chidinma Aliyu,Zenith Bank,BEN0000000017,Individual,False,False,2024-10-24
+BENE-0000018,Toyin Musa,Sterling,BEN0000000018,Individual,False,False,2024-01-01
+BENE-0000019,Maryam Adeyemi,NCB,BEN0000000019,Individual,False,False,2023-09-17
+BENE-0000020,Babatunde Nwachukwu,Sterling,BEN0000000020,Business,False,False,2024-08-11
+BENE-0000021,Segun Ezeji,First Bank,BEN0000000021,Business,False,False,2024-04-18
+BENE-0000022,Umar Okafor,Polaris,BEN0000000022,Individual,False,False,2023-03-04
+BENE-0000023,Amina Dangote,Fidelity,BEN0000000023,Individual,False,True,2024-01-30
+BENE-0000024,Umar Uzoma,Keystone,BEN0000000024,Individual,False,False,2023-06-26
+BENE-0000025,Ibrahim Adeyemi,Heritage,BEN0000000025,Business,False,False,2024-04-17
+BENE-0000026,Hauwa Adeyemi,Sterling,BEN0000000026,Individual,False,False,2023-10-21
+BENE-0000027,Ikenna Uzoma,Sterling,BEN0000000027,Individual,False,False,2024-11-27
+BENE-0000028,Yetunde Chukwu,UBA,BEN0000000028,Individual,False,False,2023-06-30
+BENE-0000029,Chukwuemeka Adeyinka,Polaris,BEN0000000029,Individual,False,False,2024-09-08
+BENE-0000030,Chukwuemeka Ogundele,NCB,BEN0000000030,Individual,False,False,2023-05-21
+BENE-0000031,Adaeze Oduya,UBA,BEN0000000031,Individual,False,False,2023-08-16
+BENE-0000032,Hakeem Nduka,Eco Bank,BEN0000000032,Individual,False,False,2023-07-14
+BENE-0000033,Jide Ogundimu,Access Bank,BEN0000000033,Individual,False,False,2023-10-13
+BENE-0000034,Maryam Ogundele,Sterling,BEN0000000034,Business,False,False,2024-02-25
+BENE-0000035,Ibrahim Ogundimu,Polaris,BEN0000000035,Individual,False,False,2023-08-06
+BENE-0000036,Nnamdi Osei,Sterling,BEN0000000036,Individual,False,False,2023-06-13
+BENE-0000037,Yusuf Eze,NCB,BEN0000000037,Government,False,False,2024-05-19
+BENE-0000038,Funmilayo Adeyemi,Keystone,BEN0000000038,Business,False,False,2024-04-01
+BENE-0000039,Adaora Adesanya,NCB,BEN0000000039,Individual,False,False,2024-01-20
+BENE-0000040,Abdullahi Lawal,Keystone,BEN0000000040,Individual,False,False,2023-05-24
+BENE-0000041,Ifeoma Musa,Eco Bank,BEN0000000041,Individual,False,False,2023-09-28
+BENE-0000042,Suleiman Fashola,Heritage,BEN0000000042,Business,False,False,2023-01-22
+BENE-0000043,Ramatu Uzoma,Polaris,BEN0000000043,Business,False,False,2024-08-07
+BENE-0000044,Taiwo Lawal,Fidelity,BEN0000000044,Business,False,False,2024-12-29
+BENE-0000045,Folake Dike,Zenith Bank,BEN0000000045,Individual,False,False,2024-08-02
+BENE-0000046,Babatunde Okonkwo,Zenith Bank,BEN0000000046,Business,False,False,2023-03-08
+BENE-0000047,Gbenga Olawale,Stanbic,BEN0000000047,Individual,False,False,2023-10-08
+BENE-0000048,Hauwa Fashola,Heritage,BEN0000000048,Individual,False,False,2023-01-10
+BENE-0000049,Lanre Oduya,Zenith Bank,BEN0000000049,Business,False,False,2023-01-14
+BENE-0000050,Ngozi Obiora,NCB,BEN0000000050,Government,False,False,2024-10-17
+BENE-0000051,Obinna Musa,Stanbic,BEN0000000051,Business,False,False,2024-04-19
+BENE-0000052,Chidinma Anyanwu,GTBank,BEN0000000052,Individual,False,False,2023-07-21
+BENE-0000053,Amina Adeyinka,Eco Bank,BEN0000000053,Individual,False,False,2024-05-24
+BENE-0000054,Tunde Bello,Eco Bank,BEN0000000054,Individual,False,False,2024-10-30
+BENE-0000055,Chinwe Oduya,NCB,BEN0000000055,Individual,False,False,2024-07-09
+BENE-0000056,Chiamaka Adeyemi,Eco Bank,BEN0000000056,Business,False,False,2024-02-24
+BENE-0000057,Segun Ogundimu,First Bank,BEN0000000057,Individual,False,False,2024-02-01
+BENE-0000058,Segun Nwachukwu,UBA,BEN0000000058,Individual,False,False,2024-06-12
+BENE-0000059,Chidinma Uzoma,Zenith Bank,BEN0000000059,Individual,False,False,2024-09-04
+BENE-0000060,Bukola Okeke,Eco Bank,BEN0000000060,Individual,False,False,2023-08-17
+BENE-0000061,Kelechi Tijani,NCB,BEN0000000061,Individual,False,False,2024-04-04
+BENE-0000062,Taiwo Nwachukwu,Heritage,BEN0000000062,Individual,False,False,2024-07-30
+BENE-0000063,Blessing Lawal,Stanbic,BEN0000000063,Individual,False,False,2023-10-24
+BENE-0000064,Musa Adeyinka,Stanbic,BEN0000000064,Individual,False,False,2024-03-01
+BENE-0000065,Ifeoma Bello,Sterling,BEN0000000065,Business,False,False,2024-05-27
+BENE-0000066,Bukola Dangote,Access Bank,BEN0000000066,Business,False,False,2023-07-09
+BENE-0000067,Grace Tijani,Access Bank,BEN0000000067,Individual,False,False,2023-03-31
+BENE-0000068,Chibuike Okeke,UBA,BEN0000000068,Individual,False,False,2023-03-01
+BENE-0000069,Maryam Nduka,Stanbic,BEN0000000069,Individual,False,False,2023-06-28
+BENE-0000070,Segun Okeke,Eco Bank,BEN0000000070,Individual,False,False,2023-07-22
+BENE-0000071,Bukola Oduya,First Bank,BEN0000000071,Individual,False,False,2023-04-26
+BENE-0000072,Maryam Chukwu,GTBank,BEN0000000072,Business,False,True,2023-04-04
+BENE-0000073,Chiamaka Nduka,Fidelity,BEN0000000073,Individual,False,False,2024-10-09
+BENE-0000074,Ngozi Aliyu,First Bank,BEN0000000074,Individual,False,False,2024-12-14
+BENE-0000075,Folake Ogundimu,GTBank,BEN0000000075,Individual,False,False,2024-07-07
+BENE-0000076,Funmilayo Olawale,UBA,BEN0000000076,Individual,False,False,2024-07-14
+BENE-0000077,Musa Ogundimu,Keystone,BEN0000000077,Business,False,False,2024-07-29
+BENE-0000078,Adaora Nduka,Fidelity,BEN0000000078,Individual,False,False,2024-08-17
+BENE-0000079,Rotimi Okonkwo,Stanbic,BEN0000000079,Individual,False,False,2023-12-19
+BENE-0000080,Bukola Anyanwu,GTBank,BEN0000000080,Individual,False,False,2024-08-23
+BENE-0000081,Tunde Bamidele,Keystone,BEN0000000081,Individual,False,False,2024-11-27
+BENE-0000082,Adaora Oduya,Polaris,BEN0000000082,Individual,False,False,2023-04-22
+BENE-0000083,Nnamdi Uzoma,Sterling,BEN0000000083,Individual,False,False,2023-09-02
+BENE-0000084,Umar Akin,GTBank,BEN0000000084,Individual,False,False,2023-12-07
+BENE-0000085,Kelechi Akin,Zenith Bank,BEN0000000085,Government,False,False,2024-12-19
+BENE-0000086,Femi Eze,First Bank,BEN0000000086,Individual,False,False,2024-08-09
+BENE-0000087,Oluwaseun Ibrahim,Sterling,BEN0000000087,Individual,False,False,2024-01-15
+BENE-0000088,Yusuf Nwachukwu,Zenith Bank,BEN0000000088,Business,False,False,2024-07-22
+BENE-0000089,Nneka Osei,Keystone,BEN0000000089,Individual,False,False,2024-07-02
+BENE-0000090,Chibuike Uzoma,Keystone,BEN0000000090,Individual,False,False,2023-08-05
+BENE-0000091,Umar Adesanya,Fidelity,BEN0000000091,Business,False,False,2023-09-12
+BENE-0000092,Wale Olawale,Zenith Bank,BEN0000000092,Individual,False,False,2024-06-06
+BENE-0000093,Abubakar Ibrahim,Polaris,BEN0000000093,Individual,False,False,2024-02-09
+BENE-0000094,Blessing Ibrahim,Eco Bank,BEN0000000094,Individual,False,False,2024-03-31
+BENE-0000095,Grace Chukwu,Zenith Bank,BEN0000000095,Individual,False,False,2023-05-26
+BENE-0000096,Adaora Osei,Access Bank,BEN0000000096,Individual,False,False,2024-02-06
+BENE-0000097,Chukwuemeka Uzoma,First Bank,BEN0000000097,Individual,False,False,2024-07-05
+BENE-0000098,Adebayo Okeke,Fidelity,BEN0000000098,Individual,False,False,2024-03-29
+BENE-0000099,Umar Nduka,Sterling,BEN0000000099,Individual,False,False,2023-08-22
+BENE-0000100,Gbenga Ezeji,Keystone,BEN0000000100,Business,False,False,2023-10-05
+BENE-0000101,Adaora Nwosu,Access Bank,BEN0000000101,Individual,False,False,2024-08-09
+BENE-0000102,Folake Anyanwu,UBA,BEN0000000102,Individual,False,False,2023-05-17
+BENE-0000103,Bukola Bello,UBA,BEN0000000103,Individual,False,False,2024-08-23
+BENE-0000104,Lola Ezeji,Stanbic,BEN0000000104,Individual,False,False,2023-08-14
+BENE-0000105,Nneka Nwachukwu,Heritage,BEN0000000105,Individual,False,False,2023-09-09
+BENE-0000106,Hauwa Oduya,Polaris,BEN0000000106,Individual,False,False,2023-11-06
+BENE-0000107,Adaeze Dangote,Keystone,BEN0000000107,Individual,False,False,2024-09-27
+BENE-0000108,Lanre Anyanwu,Polaris,BEN0000000108,Individual,False,False,2024-02-21
+BENE-0000109,Kehinde Olawale,GTBank,BEN0000000109,Individual,False,True,2024-07-14
+BENE-0000110,Abdullahi Adesanya,Heritage,BEN0000000110,Individual,False,False,2024-08-18
+BENE-0000111,Ibrahim Dike,Access Bank,BEN0000000111,Individual,False,False,2023-05-02
+BENE-0000112,Zainab Adeyinka,Zenith Bank,BEN0000000112,Business,False,False,2023-09-15
+BENE-0000113,Blessing Ogundele,NCB,BEN0000000113,Individual,False,True,2024-12-31
+BENE-0000114,Wale Sanni,Heritage,BEN0000000114,Individual,False,False,2023-08-23
+BENE-0000115,Tunde Ogundele,NCB,BEN0000000115,Individual,False,False,2024-08-31
+BENE-0000116,Maryam Sanni,GTBank,BEN0000000116,Business,False,False,2024-10-31
+BENE-0000117,Musa Okafor,Sterling,BEN0000000117,Individual,False,False,2023-11-19
+BENE-0000118,Chukwuemeka Eze,First Bank,BEN0000000118,Individual,False,False,2023-05-31
+BENE-0000119,Lola Oduya,Polaris,BEN0000000119,Individual,False,True,2023-08-01
+BENE-0000120,Blessing Nwosu,Zenith Bank,BEN0000000120,Government,False,False,2023-10-20
+BENE-0000121,Folake Adesanya,Access Bank,BEN0000000121,Government,False,False,2024-01-11
+BENE-0000122,Zainab Ugwu,Access Bank,BEN0000000122,Individual,False,False,2024-07-19
+BENE-0000123,Yetunde Nwosu,Keystone,BEN0000000123,Individual,False,False,2023-11-05
+BENE-0000124,Chibuike Tijani,Keystone,BEN0000000124,Individual,False,False,2023-09-16
+BENE-0000125,Emeka Nwosu,Sterling,BEN0000000125,Individual,False,False,2024-01-16
+BENE-0000126,Emeka Eze,Polaris,BEN0000000126,Individual,False,False,2024-07-15
+BENE-0000127,Ibrahim Ezeji,Zenith Bank,BEN0000000127,Individual,False,False,2024-10-10
+BENE-0000128,Adebayo Oduya,Fidelity,BEN0000000128,Individual,False,False,2023-01-05
+BENE-0000129,Zainab Nwachukwu,Heritage,BEN0000000129,Individual,False,False,2024-01-24
+BENE-0000130,Maryam Ogundele,UBA,BEN0000000130,Individual,False,False,2024-03-06
+BENE-0000131,Taiwo Uzoma,Fidelity,BEN0000000131,Individual,False,False,2023-01-11
+BENE-0000132,Kehinde Aliyu,Access Bank,BEN0000000132,Individual,False,False,2023-01-31
+BENE-0000133,Sade Aliyu,Eco Bank,BEN0000000133,Business,False,False,2024-08-04
+BENE-0000134,Toyin Okonkwo,Zenith Bank,BEN0000000134,Individual,False,False,2024-07-13
+BENE-0000135,Nneka Oduya,Stanbic,BEN0000000135,Business,False,False,2023-05-09
+BENE-0000136,Gbenga Dike,Eco Bank,BEN0000000136,Individual,False,False,2024-07-08
+BENE-0000137,Nneka Fashola,Keystone,BEN0000000137,Individual,False,False,2024-12-21
+BENE-0000138,Kelechi Dike,Fidelity,BEN0000000138,Business,False,True,2023-11-20
+BENE-0000139,Rotimi Nduka,First Bank,BEN0000000139,Government,False,True,2024-06-28
+BENE-0000140,Chisom Nwosu,Sterling,BEN0000000140,Individual,False,False,2024-04-30
+BENE-0000141,Aisha Aliyu,First Bank,BEN0000000141,Individual,False,False,2023-06-25
+BENE-0000142,Maryam Okonkwo,Access Bank,BEN0000000142,Individual,False,False,2024-11-05
+BENE-0000143,Chinwe Bamidele,UBA,BEN0000000143,Individual,False,False,2023-07-17
+BENE-0000144,Musa Eze,First Bank,BEN0000000144,Individual,False,False,2023-07-24
+BENE-0000145,Babatunde Dike,Stanbic,BEN0000000145,Individual,False,False,2024-03-23
+BENE-0000146,Lola Nduka,Access Bank,BEN0000000146,Individual,False,False,2023-06-18
+BENE-0000147,Rotimi Eze,GTBank,BEN0000000147,Individual,False,True,2023-03-02
+BENE-0000148,Babatunde Ugwu,Heritage,BEN0000000148,Individual,False,False,2023-09-12
+BENE-0000149,Nneka Bello,Access Bank,BEN0000000149,Individual,False,False,2023-10-27
+BENE-0000150,Yetunde Bamidele,Sterling,BEN0000000150,Individual,False,False,2024-04-15
+BENE-0000151,Kelechi Dangote,Fidelity,BEN0000000151,Individual,False,False,2023-12-10
+BENE-0000152,Zainab Fashola,Eco Bank,BEN0000000152,Individual,False,False,2024-05-21
+BENE-0000153,Fatima Adeyemi,UBA,BEN0000000153,Business,False,False,2023-09-26
+BENE-0000154,Blessing Chukwu,Polaris,BEN0000000154,Individual,False,False,2023-01-09
+BENE-0000155,Chibuike Tijani,Sterling,BEN0000000155,Individual,False,False,2023-09-13
+BENE-0000156,Yusuf Fashola,Sterling,BEN0000000156,Business,False,False,2023-01-27
+BENE-0000157,Maryam Nduka,Polaris,BEN0000000157,Individual,False,False,2023-07-16
+BENE-0000158,Maryam Musa,Stanbic,BEN0000000158,Business,False,False,2024-12-21
+BENE-0000159,Aisha Obiora,Keystone,BEN0000000159,Individual,False,False,2024-05-17
+BENE-0000160,Adebayo Tijani,NCB,BEN0000000160,Individual,False,False,2024-07-02

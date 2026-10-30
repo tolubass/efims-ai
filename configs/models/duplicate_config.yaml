@@ -1,0 +1,128 @@
+# =============================================================================
+# EFIMS-AI — Duplicate Incident Detection Model
+# =============================================================================
+# Detects when the same real-world incident has been reported more than once
+# (e.g. by the customer and by a branch). Works on PAIRS of incidents:
+# TF-IDF cosine similarity of narratives + structured comparisons feed a
+# LightGBM classifier that predicts "same incident or not".
+#
+# A suggested merge is ALWAYS confirmed by an officer; see
+# configs/base/thresholds.yaml -> duplicate.
+#
+# Read by: src/utils/config_loader.py -> load_model_config("duplicate")
+# =============================================================================
+
+model:
+  name: duplicate
+  algorithm: tfidf_cosine_similarity with lightgbm pair classifier
+  task: binary_classification on incident pairs
+  version: "1.0"
+
+
+# -----------------------------------------------------------------------------
+# Training data
+# -----------------------------------------------------------------------------
+training:
+  data_file: data/synthetic/10_incidents.csv
+  id_column: incident_id
+  text_column: narrative
+
+  # Per-incident label: 0 = not a duplicate, 1 = duplicate, 2 = related.
+  target_column: duplicate_label
+  # Incidents sharing a duplicate_group_id are reports of the same incident.
+  group_column: duplicate_group_id
+
+  # How the per-incident label becomes a PAIR label (the model's real target):
+  #   1 -> both incidents have the same non-empty duplicate_group_id
+  #   0 -> every other pair (including "related" incidents, label 2, which are
+  #        kept as useful hard negatives: similar, but NOT the same incident)
+  pair_target: same_duplicate_group
+
+  # Per-incident columns, compared within each pair to build pair features.
+  structured_feature_columns:
+    - incident_type
+    - channel
+    - financial_exposure_ngn
+    - customer_impact_count
+    - state
+
+  # Features computed for each pair (A, B).
+  pair_features:
+    - narrative_cosine_similarity      # TF-IDF cosine of the two narratives
+    - same_incident_type               # bool
+    - same_channel                     # bool
+    - same_state                       # bool
+    - abs_log_exposure_diff            # |log1p(exposure_A) - log1p(exposure_B)|
+    - abs_customer_impact_diff         # |impact_A - impact_B|
+
+  # ---------------------------------------------------------------------------
+  # Group-aware split. The provided `split` column is NOT used for this model:
+  # it currently puts 3 of the 9 duplicate groups across more than one split.
+  # Instead, whole groups are assigned to train / validation / test together.
+  # ---------------------------------------------------------------------------
+  split_strategy: group_shuffle
+  split_group_column: duplicate_group_id   # ungrouped incidents act as groups of one
+  validation_size: 0.15
+  test_size: 0.20
+  random_state: 42
+
+  critical_note: >
+    duplicate_group_id must be used to keep all incidents
+    from the same group in the same split.
+    Never split a duplicate group across train and test.
+    This prevents target leakage.
+
+
+# -----------------------------------------------------------------------------
+# Text processing
+# -----------------------------------------------------------------------------
+text_processing:
+  tfidf_max_features: 500
+  tfidf_ngram_range: [1, 2]          # unigrams + bigrams
+  lowercase: true
+  # Cosine similarity at which the text-only baseline calls a pair a likely
+  # duplicate. The pair classifier itself receives the raw cosine value as a
+  # feature, so this is not a hard filter on the model's input.
+  similarity_threshold: 0.85
+
+
+# -----------------------------------------------------------------------------
+# LightGBM hyperparameters (pair classifier)
+# -----------------------------------------------------------------------------
+# Pairs are extremely imbalanced: 120 incidents -> ~7,100 pairs, of which only
+# a handful are true duplicates. is_unbalance reweights the positive class.
+hyperparameters:
+  objective: binary
+  n_estimators: 200
+  learning_rate: 0.05
+  max_depth: 4
+  num_leaves: 15
+  min_child_samples: 5
+  subsample: 0.8
+  subsample_freq: 1
+  colsample_bytree: 0.8
+  reg_lambda: 1.0
+  is_unbalance: true
+  random_state: 42
+  verbosity: -1
+
+
+# -----------------------------------------------------------------------------
+# Evaluation
+# -----------------------------------------------------------------------------
+evaluation:
+  primary_metric: f1
+  secondary_metrics: [precision, recall, roc_auc, false_positive_rate]
+  note: >
+    False positive rate is critical. A false duplicate merge permanently
+    loses case history, so precision and FPR are tracked alongside F1 and
+    the decision threshold should favour precision over recall.
+
+
+# -----------------------------------------------------------------------------
+# Output artefacts
+# -----------------------------------------------------------------------------
+output:
+  model_path: model_registry/duplicate/v1.0/model.pkl
+  metrics_path: model_registry/duplicate/v1.0/metrics.json
+  vectorizer_path: model_registry/duplicate/v1.0/tfidf_vectorizer.pkl   # needed at inference

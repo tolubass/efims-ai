@@ -1,0 +1,58 @@
+recovery_id,case_id,recovery_amount_ngn,recovery_date,recovery_source,recovery_method,matched_to_ledger,recovery_probability_ground_truth,recovery_success
+REC-0000001,CASE-0000005,18078.26,2025-05-29,Beneficiary Bank,Cash,False,0.683,False
+REC-0000002,CASE-0000010,89167.88,2024-06-22,Court Order,Cash,True,0.548,False
+REC-0000003,CASE-0000011,58809.12,2024-08-06,Court Order,Wire Return,False,0.893,True
+REC-0000004,CASE-0000011,32001.06,2024-10-03,Beneficiary Bank,Judgment Debt,True,0.396,True
+REC-0000005,CASE-0000011,26230.64,2024-10-09,Voluntary Repayment,Lien,False,0.544,True
+REC-0000006,CASE-0000012,46066.32,2025-02-05,Beneficiary Bank,Lien,True,0.586,False
+REC-0000007,CASE-0000020,39060.6,2024-09-16,Beneficiary Bank,Judgment Debt,False,0.557,False
+REC-0000008,CASE-0000021,2028.13,2025-12-30,Beneficiary Bank,Cash,True,0.449,False
+REC-0000009,CASE-0000021,1242.01,2025-11-18,Court Order,Cash,False,0.393,False
+REC-0000010,CASE-0000021,1712.97,2026-02-05,Staff Deduction,Wire Return,True,0.66,False
+REC-0000011,CASE-0000023,26303.07,2025-04-10,Insurance,Wire Return,True,0.651,True
+REC-0000012,CASE-0000023,35510.16,2025-02-01,Voluntary Repayment,Judgment Debt,True,0.409,True
+REC-0000013,CASE-0000028,15923.6,2025-07-06,Insurance,Direct Debit,False,0.889,False
+REC-0000014,CASE-0000028,8060.83,2025-10-17,Court Order,Lien,False,0.468,False
+REC-0000015,CASE-0000028,27471.23,2025-09-27,Court Order,Judgment Debt,True,0.306,False
+REC-0000016,CASE-0000029,7615.03,2025-04-01,Voluntary Repayment,Cash,True,0.5,True
+REC-0000017,CASE-0000029,9024.38,2025-05-05,Beneficiary Bank,Direct Debit,False,0.746,True
+REC-0000018,CASE-0000030,79274.5,2024-03-26,Court Order,Wire Return,True,0.459,False
+REC-0000019,CASE-0000031,73810.84,2025-04-10,Staff Deduction,Wire Return,True,0.481,True
+REC-0000020,CASE-0000031,61677.53,2025-01-05,Beneficiary Bank,Direct Debit,True,0.324,True
+REC-0000021,CASE-0000031,78679.04,2025-04-13,Staff Deduction,Direct Debit,True,0.466,True
+REC-0000022,CASE-0000032,27356.83,2024-04-15,Beneficiary Bank,Lien,True,0.562,False
+REC-0000023,CASE-0000037,64576.61,2024-04-22,Voluntary Repayment,Judgment Debt,False,0.848,False
+REC-0000024,CASE-0000038,103219.57,2024-06-11,Court Order,Judgment Debt,False,0.488,False
+REC-0000025,CASE-0000040,14998.55,2026-07-02,Staff Deduction,Direct Debit,True,0.609,True
+REC-0000026,CASE-0000040,9982.36,2026-08-28,Insurance,Direct Debit,True,0.549,True
+REC-0000027,CASE-0000040,19348.36,2026-08-11,Staff Deduction,Direct Debit,True,0.695,True
+REC-0000028,CASE-0000042,53312.1,2025-09-21,Insurance,Cash,True,0.808,False
+REC-0000029,CASE-0000044,293.34,2024-04-13,Beneficiary Bank,Direct Debit,True,0.493,False
+REC-0000030,CASE-0000044,176.24,2024-04-29,Beneficiary Bank,Cash,True,0.758,False
+REC-0000031,CASE-0000044,526.95,2024-05-18,Insurance,Judgment Debt,True,0.633,False
+REC-0000032,CASE-0000045,61519.58,2024-08-29,Insurance,Cash,False,0.616,True
+REC-0000033,CASE-0000046,1706.04,2026-06-07,Insurance,Lien,True,0.848,False
+REC-0000034,CASE-0000046,1019.87,2026-07-29,Insurance,Cash,False,0.58,False
+REC-0000035,CASE-0000046,2342.82,2026-05-24,Beneficiary Bank,Lien,True,0.706,False
+REC-0000036,CASE-0000047,375982.4,2026-02-15,Beneficiary Bank,Judgment Debt,True,0.31,True
+REC-0000037,CASE-0000049,971.92,2024-11-04,Beneficiary Bank,Judgment Debt,False,0.521,False
+REC-0000038,CASE-0000049,3224.23,2024-11-04,Voluntary Repayment,Direct Debit,True,0.405,False
+REC-0000039,CASE-0000050,1935.92,2025-09-30,Beneficiary Bank,Judgment Debt,False,0.777,False
+REC-0000040,CASE-0000050,6367.04,2025-09-16,Court Order,Wire Return,True,0.719,False
+REC-0000041,CASE-0000052,63387.02,2025-04-09,Insurance,Lien,True,0.391,True
+REC-0000042,CASE-0000052,52209.34,2025-06-20,Beneficiary Bank,Wire Return,True,0.687,True
+REC-0000043,CASE-0000052,48636.55,2025-06-23,Insurance,Judgment Debt,True,0.722,True
+REC-0000044,CASE-0000053,4661.98,2025-04-14,Voluntary Repayment,Wire Return,True,0.339,True
+REC-0000045,CASE-0000053,10242.55,2025-05-10,Voluntary Repayment,Direct Debit,True,0.819,True
+REC-0000046,CASE-0000055,38566.5,2026-11-15,Beneficiary Bank,Lien,True,0.324,False
+REC-0000047,CASE-0000055,129405.47,2026-11-25,Beneficiary Bank,Direct Debit,True,0.878,False
+REC-0000048,CASE-0000059,392988.46,2025-11-12,Beneficiary Bank,Wire Return,True,0.619,True
+REC-0000049,CASE-0000063,370530.74,2026-05-28,Voluntary Repayment,Judgment Debt,True,0.738,False
+REC-0000050,CASE-0000063,141950.26,2026-05-31,Beneficiary Bank,Cash,True,0.306,False
+REC-0000051,CASE-0000063,220241.73,2026-03-16,Staff Deduction,Direct Debit,True,0.823,False
+REC-0000052,CASE-0000064,26369.57,2025-10-05,Voluntary Repayment,Judgment Debt,True,0.878,True
+REC-0000053,CASE-0000064,7544.67,2025-09-22,Staff Deduction,Lien,True,0.762,True
+REC-0000054,CASE-0000064,16916.0,2025-09-19,Beneficiary Bank,Cash,False,0.312,True
+REC-0000055,CASE-0000065,107718.45,2025-01-04,Court Order,Direct Debit,True,0.563,False
+REC-0000056,CASE-0000066,697319.23,2024-11-03,Insurance,Wire Return,True,0.33,True
+REC-0000057,CASE-0000069,47415.5,2026-06-06,Court Order,Judgment Debt,True,0.318,False

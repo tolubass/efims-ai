@@ -1,0 +1,32 @@
+control_gap_id,case_id,control_name,gap_type,root_cause,contributing_factor,enabling_factor,risk_rating,identified_date,status
+CGAP-0000005,CASE-0000005,Beneficiary Velocity Limit,Poorly Designed Control,Insufficient monitoring,Third-party failure,Staff error,Low,2025-05-17 00:51:37,In Remediation
+CGAP-0000010,CASE-0000010,Beneficiary Velocity Limit,Bypassed Control,Weak access control,Third-party failure,Staff error,Low,2024-05-06 20:05:32,Open
+CGAP-0000011,CASE-0000011,Transaction Monitoring Rule,Poorly Designed Control,Staff process failure,Governance failure,System gap,Critical,2024-06-21 21:29:03,Closed
+CGAP-0000012,CASE-0000012,Customer Verification Step,Inadequately Monitored,Weak access control,Inadequate customer verification,Staff error,High,2024-11-02 15:49:22,In Remediation
+CGAP-0000020,CASE-0000020,Beneficiary Velocity Limit,Poorly Designed Control,Training gap,Staff process failure,System gap,Critical,2024-06-30 11:26:14,In Remediation
+CGAP-0000021,CASE-0000021,Beneficiary Velocity Limit,Bypassed Control,Governance failure,Third-party failure,System gap,Critical,2025-11-05 07:19:42,Closed
+CGAP-0000023,CASE-0000023,Staff Dual Authorisation,Inadequately Monitored,Staff process failure,Insufficient monitoring,System gap,Medium,2025-01-23 13:43:56,Open
+CGAP-0000028,CASE-0000028,AML Threshold Configuration,Bypassed Control,Insufficient monitoring,Social engineering,Weak monitoring,Medium,2025-06-29 22:19:21,Closed
+CGAP-0000029,CASE-0000029,Staff Dual Authorisation,Bypassed Control,System configuration error,Social engineering,Staff error,Medium,2025-02-23 01:52:29,In Remediation
+CGAP-0000030,CASE-0000030,Beneficiary Velocity Limit,Inadequately Monitored,Social engineering,Governance failure,Policy gap,High,2024-01-16 10:21:55,Open
+CGAP-0000031,CASE-0000031,Access Log Monitoring,Weak Control,Training gap,Policy gap,Weak monitoring,Medium,2024-12-18 21:09:02,Open
+CGAP-0000032,CASE-0000032,Card Limit Enforcement,Bypassed Control,Employee misconduct,Insufficient monitoring,Policy gap,High,2024-02-29 02:00:22,Open
+CGAP-0000037,CASE-0000037,Customer Verification Step,Inadequately Monitored,Social engineering,Social engineering,Weak monitoring,Medium,2024-03-29 08:22:48,In Remediation
+CGAP-0000038,CASE-0000038,AML Threshold Configuration,Inadequately Monitored,Social engineering,Staff process failure,Weak monitoring,Medium,2024-02-21 02:17:04,Open
+CGAP-0000040,CASE-0000040,Access Log Monitoring,Weak Control,Policy gap,Third-party failure,Staff error,High,2026-06-03 07:05:37,Open
+CGAP-0000042,CASE-0000042,Beneficiary Velocity Limit,Inadequately Monitored,Technology failure,Weak access control,System gap,Medium,2025-08-26 08:58:47,In Remediation
+CGAP-0000044,CASE-0000044,Device Binding,Weak Control,Weak access control,Training gap,System gap,High,2024-02-27 21:56:38,In Remediation
+CGAP-0000045,CASE-0000045,Device Binding,Poorly Designed Control,Staff process failure,Insufficient monitoring,System gap,Medium,2024-05-12 15:30:37,In Remediation
+CGAP-0000046,CASE-0000046,Device Binding,Inadequately Monitored,Inadequate customer verification,Training gap,Policy gap,High,2026-05-04 19:37:52,Closed
+CGAP-0000047,CASE-0000047,Customer Verification Step,Inadequately Monitored,Technology failure,Governance failure,Staff error,Medium,2025-11-18 06:02:26,In Remediation
+CGAP-0000049,CASE-0000049,Customer Verification Step,Weak Control,Technology failure,Insufficient monitoring,Policy gap,High,2024-10-07 08:54:43,Open
+CGAP-0000050,CASE-0000050,AML Threshold Configuration,Weak Control,Insufficient monitoring,Weak access control,Weak monitoring,Low,2025-08-22 15:00:42,In Remediation
+CGAP-0000052,CASE-0000052,Customer Verification Step,Missing Control,Weak access control,Weak access control,Weak monitoring,Medium,2025-02-28 18:50:10,Open
+CGAP-0000053,CASE-0000053,Card Limit Enforcement,Bypassed Control,Third-party failure,Technology failure,Policy gap,Medium,2025-03-09 02:39:35,Open
+CGAP-0000055,CASE-0000055,Customer Verification Step,Poorly Designed Control,Governance failure,Employee misconduct,Weak monitoring,High,2026-08-07 22:10:51,In Remediation
+CGAP-0000059,CASE-0000059,Session Timeout,Weak Control,Staff process failure,Policy gap,Policy gap,High,2025-08-21 03:28:59,In Remediation
+CGAP-0000063,CASE-0000063,AML Threshold Configuration,Weak Control,Weak access control,Policy gap,System gap,High,2026-02-21 19:46:43,Open
+CGAP-0000064,CASE-0000064,AML Threshold Configuration,Poorly Designed Control,Technology failure,Inadequate customer verification,Staff error,High,2025-08-05 07:22:59,Open
+CGAP-0000065,CASE-0000065,Card Limit Enforcement,Weak Control,Weak access control,Insufficient monitoring,Weak monitoring,High,2024-11-19 03:09:51,In Remediation
+CGAP-0000066,CASE-0000066,Transaction Monitoring Rule,Inadequately Monitored,Staff process failure,Social engineering,System gap,Low,2024-10-15 02:43:11,Closed
+CGAP-0000069,CASE-0000069,Staff Dual Authorisation,Missing Control,Employee misconduct,Third-party failure,Staff error,High,2026-03-23 10:19:29,Closed

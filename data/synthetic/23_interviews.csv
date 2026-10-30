@@ -1,0 +1,109 @@
+interview_id,case_id,interviewee_type,interviewer_employee_id,interview_date,method,representation_present,consent_recorded,key_findings_summary,recorded
+INT-0000001,CASE-0000003,Witness,EMP0000024,2026-07-25,Phone,True,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000002,CASE-0000003,Employee,EMP0000024,2026-07-28,Phone,False,False,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000003,CASE-0000003,Witness,EMP0000024,2026-07-23,In-person,False,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000004,CASE-0000004,Employee,EMP0000016,2024-04-03,Phone,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000005,CASE-0000004,Witness,EMP0000016,2024-04-02,Video call,False,False,Customer stated card was in possession throughout the period.,True
+INT-0000006,CASE-0000006,Employee,EMP0000012,2025-12-28,Phone,True,True,Subject denied knowledge of the transactions.,True
+INT-0000007,CASE-0000006,Customer,EMP0000012,2025-12-26,Video call,True,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000008,CASE-0000006,Customer,EMP0000012,2025-12-29,Written Statement,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000009,CASE-0000009,Customer,EMP0000008,2024-07-01,Phone,False,False,Subject denied knowledge of the transactions.,False
+INT-0000010,CASE-0000009,Employee,EMP0000008,2024-07-02,Video call,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000011,CASE-0000009,Employee,EMP0000008,2024-06-27,In-person,False,True,Customer stated card was in possession throughout the period.,False
+INT-0000012,CASE-0000010,Customer,EMP0000022,2024-05-10,Phone,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000013,CASE-0000010,Employee,EMP0000022,2024-05-14,In-person,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000014,CASE-0000010,Customer,EMP0000022,2024-05-20,In-person,False,True,Witness observed customer handing phone to unknown individual outside branch.,False
+INT-0000015,CASE-0000011,Customer,EMP0000009,2024-06-29,In-person,True,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000016,CASE-0000011,Customer,EMP0000009,2024-07-01,In-person,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000017,CASE-0000013,Customer,EMP0000033,2024-03-31,Written Statement,True,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000018,CASE-0000014,Employee,EMP0000023,2024-12-01,Video call,False,False,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,False
+INT-0000019,CASE-0000014,Employee,EMP0000023,2024-12-02,Phone,False,True,Subject denied knowledge of the transactions.,False
+INT-0000020,CASE-0000016,Customer,EMP0000033,2026-10-23,Video call,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000021,CASE-0000016,Customer,EMP0000033,2026-10-28,In-person,True,False,Employee stated he processed the transaction on instruction from a manager.,False
+INT-0000022,CASE-0000016,Employee,EMP0000033,2026-10-23,Written Statement,True,True,Customer stated card was in possession throughout the period.,False
+INT-0000023,CASE-0000017,Witness,EMP0000006,2026-07-12,In-person,False,False,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000024,CASE-0000017,Customer,EMP0000006,2026-07-21,In-person,False,False,Subject denied knowledge of the transactions.,True
+INT-0000025,CASE-0000017,Customer,EMP0000006,2026-07-12,Phone,False,True,Subject denied knowledge of the transactions.,False
+INT-0000026,CASE-0000018,Witness,EMP0000027,2025-10-23,Phone,False,True,Subject denied knowledge of the transactions.,True
+INT-0000027,CASE-0000020,Customer,EMP0000005,2024-07-14,Written Statement,True,False,Subject denied knowledge of the transactions.,False
+INT-0000028,CASE-0000020,Customer,EMP0000005,2024-07-01,Video call,False,True,Customer stated card was in possession throughout the period.,False
+INT-0000029,CASE-0000022,Customer,EMP0000004,2025-06-15,In-person,False,False,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000030,CASE-0000022,Customer,EMP0000004,2025-06-21,In-person,True,True,Employee stated he processed the transaction on instruction from a manager.,False
+INT-0000031,CASE-0000022,Witness,EMP0000004,2025-06-23,Written Statement,False,True,Customer stated card was in possession throughout the period.,False
+INT-0000032,CASE-0000023,Customer,EMP0000039,2025-01-31,Video call,False,True,Subject denied knowledge of the transactions.,True
+INT-0000033,CASE-0000024,Customer,EMP0000005,2026-09-12,Video call,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000034,CASE-0000024,Witness,EMP0000005,2026-09-14,Written Statement,True,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000035,CASE-0000024,Employee,EMP0000005,2026-09-22,Phone,False,True,Subject denied knowledge of the transactions.,True
+INT-0000036,CASE-0000025,Customer,EMP0000005,2026-09-15,Phone,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000037,CASE-0000026,Employee,EMP0000038,2025-12-21,In-person,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000038,CASE-0000026,Customer,EMP0000038,2025-12-16,Phone,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000039,CASE-0000026,Employee,EMP0000038,2025-12-24,Video call,False,True,Witness observed customer handing phone to unknown individual outside branch.,False
+INT-0000040,CASE-0000027,Witness,EMP0000022,2025-02-27,Written Statement,False,False,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000041,CASE-0000027,Customer,EMP0000022,2025-02-24,Phone,False,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000042,CASE-0000027,Customer,EMP0000022,2025-02-22,In-person,True,True,Customer stated card was in possession throughout the period.,True
+INT-0000043,CASE-0000028,Employee,EMP0000037,2025-07-07,Written Statement,False,True,Subject denied knowledge of the transactions.,False
+INT-0000044,CASE-0000031,Customer,EMP0000023,2024-12-31,Written Statement,True,True,Subject denied knowledge of the transactions.,True
+INT-0000045,CASE-0000031,Customer,EMP0000023,2024-12-30,Written Statement,True,False,Customer stated card was in possession throughout the period.,True
+INT-0000046,CASE-0000031,Customer,EMP0000023,2024-12-25,Phone,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000047,CASE-0000032,Employee,EMP0000029,2024-03-13,Video call,False,True,Witness observed customer handing phone to unknown individual outside branch.,False
+INT-0000048,CASE-0000033,Witness,EMP0000028,2024-08-30,Written Statement,False,True,Subject denied knowledge of the transactions.,True
+INT-0000049,CASE-0000034,Employee,EMP0000031,2025-12-29,Written Statement,True,True,Customer stated card was in possession throughout the period.,True
+INT-0000050,CASE-0000034,Customer,EMP0000031,2026-01-07,Video call,False,True,Witness observed customer handing phone to unknown individual outside branch.,False
+INT-0000051,CASE-0000035,Customer,EMP0000024,2025-09-09,Video call,False,False,Subject denied knowledge of the transactions.,False
+INT-0000052,CASE-0000035,Employee,EMP0000024,2025-09-20,In-person,True,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000053,CASE-0000036,Customer,EMP0000007,2026-07-25,In-person,True,True,Customer stated card was in possession throughout the period.,True
+INT-0000054,CASE-0000037,Customer,EMP0000014,2024-04-12,In-person,True,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000055,CASE-0000037,Employee,EMP0000014,2024-04-02,Written Statement,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000056,CASE-0000038,Customer,EMP0000011,2024-03-04,Phone,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,False
+INT-0000057,CASE-0000038,Employee,EMP0000011,2024-02-27,In-person,False,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000058,CASE-0000039,Witness,EMP0000028,2025-01-24,Phone,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000059,CASE-0000039,Customer,EMP0000028,2025-01-23,In-person,False,False,Customer stated card was in possession throughout the period.,True
+INT-0000060,CASE-0000040,Employee,EMP0000026,2026-06-05,Video call,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000061,CASE-0000040,Employee,EMP0000026,2026-06-17,Phone,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000062,CASE-0000042,Employee,EMP0000036,2025-09-09,Phone,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000063,CASE-0000042,Customer,EMP0000036,2025-09-05,Written Statement,False,False,Subject denied knowledge of the transactions.,False
+INT-0000064,CASE-0000043,Employee,EMP0000023,2026-09-13,Video call,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000065,CASE-0000043,Witness,EMP0000023,2026-09-25,In-person,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000066,CASE-0000044,Customer,EMP0000023,2024-03-03,Phone,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000067,CASE-0000044,Witness,EMP0000023,2024-03-11,Phone,False,True,Employee stated he processed the transaction on instruction from a manager.,False
+INT-0000068,CASE-0000044,Customer,EMP0000023,2024-03-07,Video call,True,True,Subject denied knowledge of the transactions.,True
+INT-0000069,CASE-0000047,Customer,EMP0000019,2025-11-23,Video call,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000070,CASE-0000047,Employee,EMP0000019,2025-11-22,Written Statement,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000071,CASE-0000048,Employee,EMP0000004,2025-06-17,Written Statement,True,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000072,CASE-0000049,Employee,EMP0000033,2024-10-19,Written Statement,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000073,CASE-0000050,Employee,EMP0000022,2025-09-03,Phone,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000074,CASE-0000050,Customer,EMP0000022,2025-08-29,Phone,False,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000075,CASE-0000050,Customer,EMP0000022,2025-08-23,Written Statement,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000076,CASE-0000051,Witness,EMP0000006,2026-06-04,Written Statement,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000077,CASE-0000051,Employee,EMP0000006,2026-06-04,Video call,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000078,CASE-0000051,Customer,EMP0000006,2026-06-05,In-person,False,True,Customer stated card was in possession throughout the period.,False
+INT-0000079,CASE-0000052,Customer,EMP0000027,2025-03-10,In-person,True,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000080,CASE-0000052,Employee,EMP0000027,2025-03-05,Phone,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000081,CASE-0000053,Customer,EMP0000024,2025-03-16,Written Statement,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000082,CASE-0000053,Employee,EMP0000024,2025-03-18,Video call,True,True,Subject denied knowledge of the transactions.,True
+INT-0000083,CASE-0000055,Witness,EMP0000016,2026-08-15,Phone,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000084,CASE-0000055,Employee,EMP0000016,2026-08-21,Written Statement,False,False,Witness observed customer handing phone to unknown individual outside branch.,False
+INT-0000085,CASE-0000056,Customer,EMP0000014,2024-01-10,In-person,False,True,Subject denied knowledge of the transactions.,True
+INT-0000086,CASE-0000056,Customer,EMP0000014,2024-01-10,Written Statement,False,True,Customer stated card was in possession throughout the period.,False
+INT-0000087,CASE-0000056,Customer,EMP0000014,2024-01-10,Phone,True,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000088,CASE-0000057,Employee,EMP0000010,2026-05-13,Video call,False,True,Employee stated he processed the transaction on instruction from a manager.,False
+INT-0000089,CASE-0000057,Customer,EMP0000010,2026-05-23,Video call,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000090,CASE-0000057,Customer,EMP0000010,2026-05-14,In-person,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000091,CASE-0000058,Customer,EMP0000003,2024-08-01,Video call,True,True,Customer stated card was in possession throughout the period.,True
+INT-0000092,CASE-0000058,Employee,EMP0000003,2024-07-24,Video call,False,True,Subject denied knowledge of the transactions.,True
+INT-0000093,CASE-0000061,Customer,EMP0000015,2026-03-08,In-person,False,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000094,CASE-0000061,Employee,EMP0000015,2026-03-10,Video call,False,True,Subject denied knowledge of the transactions.,True
+INT-0000095,CASE-0000062,Employee,EMP0000014,2024-02-01,Video call,False,False,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000096,CASE-0000062,Witness,EMP0000014,2024-01-30,Video call,False,True,Employee stated he processed the transaction on instruction from a manager.,True
+INT-0000097,CASE-0000062,Employee,EMP0000014,2024-02-04,Written Statement,True,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,True
+INT-0000098,CASE-0000063,Customer,EMP0000037,2026-02-24,Written Statement,False,True,Customer stated card was in possession throughout the period.,False
+INT-0000099,CASE-0000063,Witness,EMP0000037,2026-02-27,Video call,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000100,CASE-0000065,Employee,EMP0000034,2024-11-22,In-person,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000101,CASE-0000066,Witness,EMP0000040,2024-10-29,Phone,False,True,Customer stated card was in possession throughout the period.,True
+INT-0000102,CASE-0000068,Customer,EMP0000025,2026-06-11,Phone,False,True,Employee stated he processed the transaction on instruction from a manager.,False
+INT-0000103,CASE-0000068,Employee,EMP0000025,2026-06-12,Video call,False,True,Witness observed customer handing phone to unknown individual outside branch.,True
+INT-0000104,CASE-0000069,Customer,EMP0000010,2026-03-29,Video call,False,True,Subject denied knowledge of the transactions.,False
+INT-0000105,CASE-0000069,Employee,EMP0000010,2026-04-05,Video call,True,True,Customer stated card was in possession throughout the period.,True
+INT-0000106,CASE-0000069,Customer,EMP0000010,2026-03-31,Video call,False,True,Subject denied knowledge of the transactions.,True
+INT-0000107,CASE-0000070,Customer,EMP0000008,2024-03-14,Written Statement,False,True,Employee stated he processed the transaction on instruction from a manager.,False
+INT-0000108,CASE-0000070,Customer,EMP0000008,2024-03-11,Video call,False,True,Customer confirmed receipt of phishing message and inadvertently disclosed OTP.,False

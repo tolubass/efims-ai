@@ -1,0 +1,17 @@
+{
+  "customer_id_unique": true,
+  "account_customer_fk_valid": true,
+  "transaction_account_fk_valid": true,
+  "case_incident_fk_valid": true,
+  "no_negative_gross_loss": true,
+  "net_loss_arithmetic_valid": true,
+  "no_null_incident_ids": true,
+  "severity_labels_valid": true,
+  "duplicate_labels_valid": true,
+  "fraud_rate_transactions": 0.0386,
+  "split_distribution": {
+    "train": 3338,
+    "test": 869,
+    "validation": 793
+  }
+}

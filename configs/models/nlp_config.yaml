@@ -1,0 +1,79 @@
+# =============================================================================
+# EFIMS-AI — Narrative Entity Extraction (NER) Model
+# =============================================================================
+# Extracts investigation-relevant entities (amounts, account numbers,
+# locations, ...) from free-text incident narratives. Low-confidence entities
+# are shown to the user for confirmation; see configs/base/thresholds.yaml -> nlp.
+#
+# Read by: src/utils/config_loader.py -> load_model_config("nlp")
+# =============================================================================
+
+model:
+  name: nlp
+  algorithm: spacy_ner
+  # Must be installed separately: python -m spacy download en_core_web_sm
+  base_model: en_core_web_sm
+  task: named_entity_recognition
+  version: "1.0"
+
+
+# -----------------------------------------------------------------------------
+# Training data
+# -----------------------------------------------------------------------------
+training:
+  annotations_file: data/synthetic/nlp_annotations.csv
+  narratives_file: data/synthetic/10_incidents.csv
+  text_column: narrative
+  join_key: incident_id
+
+  # start_char / end_char in the annotations file index into
+  # 10_incidents.narrative. The annotations file's own `text` column holds
+  # only the entity span, not the full narrative.
+  annotation_columns:
+    entity_type: entity_type
+    start_char: start_char
+    end_char: end_char
+
+  # Entity types with training examples in the current annotations
+  # (AMOUNT 120, ACCOUNT 22, LOCATION 10).
+  entity_types:
+    - AMOUNT
+    - ACCOUNT
+    - LOCATION
+
+  # Requested, but with ZERO annotated examples today, so the model cannot
+  # learn them. Move them into entity_types once annotations exist.
+  planned_entity_types:
+    - DATE
+    - CUSTOMER
+    - FRAUD_TYPE
+
+  # Split by incident, using 10_incidents.split, so one narrative's entities
+  # never appear in both train and test.
+  split_column: split
+
+  training_iterations: 30          # passes over the training data
+  dropout: 0.35                    # regularisation for a small dataset
+  batch_size: 8
+  random_state: 42
+
+
+# -----------------------------------------------------------------------------
+# Evaluation
+# -----------------------------------------------------------------------------
+evaluation:
+  primary_metric: f1_per_entity
+  secondary_metrics: [precision_per_entity, recall_per_entity]
+  note: >
+    Evaluate per entity type because AMOUNT and ACCOUNT extraction is most
+    critical for fraud investigation. An overall F1 would be dominated by
+    AMOUNT (120 of 152 annotations) and hide weak ACCOUNT performance.
+
+
+# -----------------------------------------------------------------------------
+# Output artefacts
+# -----------------------------------------------------------------------------
+output:
+  model_path: model_registry/nlp/v1.0/model/        # spaCy saves a directory
+  metrics_path: model_registry/nlp/v1.0/metrics.json
+  labels_path: model_registry/nlp/v1.0/labels.json

@@ -1,0 +1,140 @@
+# =============================================================================
+# EFIMS-AI — Recovery Propensity Model
+# =============================================================================
+# Predicts the probability that a fraud loss will be successfully recovered
+# (recovery_success = recovered more than 50% of the gross loss). Used to
+# prioritise recovery actions; see configs/base/thresholds.yaml -> recovery.
+#
+# Read by: src/utils/config_loader.py -> load_model_config("recovery")
+# =============================================================================
+
+model:
+  name: recovery
+  algorithm: lightgbm
+  task: binary_classification
+  version: "1.0"
+
+
+# -----------------------------------------------------------------------------
+# Training data
+# -----------------------------------------------------------------------------
+training:
+  data_files:
+    primary: data/synthetic/17_recoveries.csv
+    join_cases: data/synthetic/11_cases.csv
+    join_losses: data/synthetic/16_losses.csv
+    # Needed for channel and the timestamps behind days_to_detection.
+    join_incidents: data/synthetic/10_incidents.csv
+
+  join_key: case_id                # recoveries <-> cases <-> losses
+  incidents_join_key: incident_id  # cases <-> incidents
+
+  # One row per CASE. 17_recoveries has several rows per case (57 rows,
+  # 31 cases) with the same recovery_success, so rows are collapsed to one
+  # per case_id before training; otherwise one case could land in both
+  # train and test.
+  prediction_grain: case_id
+
+  target_column: recovery_success  # bool; identical in 17_recoveries and 11_cases
+  split_column: split              # taken from 11_cases.csv
+
+  feature_columns:
+    - gross_actual_loss_ngn        # 16_losses (via log_gross_loss below)
+    - severity                     # 11_cases, S1-S4
+    - classification               # 11_cases, fraud typology
+    - channel                      # 10_incidents
+    - days_to_detection            # engineered, see below
+
+  categorical_columns: [severity, classification, channel]
+
+  engineered_features:
+    - name: log_gross_loss
+      formula: log1p(gross_actual_loss_ngn)
+    - name: days_to_detection
+      # Days from when the fraud happened to when the bank discovered it.
+      formula: (discovery_timestamp - event_timestamp) in days
+      source: data/synthetic/10_incidents.csv
+
+  # ---------------------------------------------------------------------------
+  # Requested, but NOT in the current synthetic data. Add them to
+  # feature_columns once they exist.
+  #   containment_confirmed -> not present in any synthetic file
+  #   beneficiary_type      -> only in 07_beneficiaries.csv, which has no
+  #                            direct link to cases (needs a join path via
+  #                            transactions or case parties)
+  # ---------------------------------------------------------------------------
+  unavailable_features:
+    - containment_confirmed
+    - beneficiary_type
+
+  leakage_warning: >
+    Never include recovery_amount_ngn or recovery_ngn as features.
+    These are only known after recovery happens, not before.
+    They are targets, not inputs. The same applies to every column
+    listed in exclude_columns.
+
+  # NEVER USE AS FEATURES — all are known only after the recovery outcome.
+  exclude_columns:
+    - recovery_amount_ngn               # 17_recoveries
+    - recovery_ngn                      # 11_cases, 16_losses
+    - net_loss_ngn                      # computed from recovery_ngn
+    - recovery_probability_ground_truth # generator's answer key
+    - recovery_date
+    - recovery_source
+    - recovery_method
+    - matched_to_ledger
+    - customer_reimbursement_ngn
+    - finding_outcome
+    - closure_reason
+    - case_status
+    - investigation_end
+
+
+# -----------------------------------------------------------------------------
+# LightGBM hyperparameters
+# -----------------------------------------------------------------------------
+# Very small dataset (31 labelled cases), so the model is kept deliberately
+# simple to avoid memorising the training data.
+hyperparameters:
+  objective: binary
+  n_estimators: 100
+  learning_rate: 0.05
+  max_depth: 3
+  num_leaves: 7
+  min_child_samples: 3
+  subsample: 0.8
+  subsample_freq: 1
+  colsample_bytree: 0.8
+  reg_lambda: 1.0
+  # negatives / positives. Current labelled cases: 19 / 12 = ~1.6.
+  # Recompute from the training rows whenever the data changes.
+  scale_pos_weight: 1.6
+  random_state: 42
+  verbosity: -1
+
+
+# -----------------------------------------------------------------------------
+# Evaluation
+# -----------------------------------------------------------------------------
+evaluation:
+  primary_metric: roc_auc
+  secondary_metrics: [pr_auc, brier_score, f1]
+
+  # The provided test split has only 1 labelled case, so a fixed test split
+  # cannot produce meaningful metrics. Use stratified cross-validation over
+  # all labelled cases until more data is available.
+  validation_strategy: stratified_kfold
+  cv_folds: 5
+
+  note: >
+    brier_score checks probability calibration. This matters because the
+    model outputs a probability that is used to prioritise recovery actions,
+    so the probability itself must be trustworthy, not just the ranking.
+
+
+# -----------------------------------------------------------------------------
+# Output artefacts
+# -----------------------------------------------------------------------------
+output:
+  model_path: model_registry/recovery/v1.0/model.pkl
+  metrics_path: model_registry/recovery/v1.0/metrics.json

@@ -1,0 +1,8 @@
+{
+  "model_name": "anomaly",
+  "roc_auc": 0.9921893848009651,
+  "precision_at_k": 0.7,
+  "k_value": 50,
+  "false_positive_rate": 0.0,
+  "threshold_used": 0.75
+}

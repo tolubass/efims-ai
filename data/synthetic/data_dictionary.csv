@@ -1,0 +1,10 @@
+table,column,description,data_type,allowed_values,nullable,synthetic_generation_method,relationship,sensitive_category,ml_relevance
+customers,customer_id,Unique customer identifier,string,CUST-XXXXXXX,No,Sequential synthetic ID,—,No,Low
+customers,financial_exposure_ngn,Total financial exposure in Nigerian Naira,float,> 0,Yes,Lognormal distribution,incident_id,No,High
+incidents,severity_label,Ground-truth severity classification,string,"S1,S2,S3,S4",No,Computed from multi-factor scoring,—,No,High
+incidents,duplicate_label,Ground-truth duplicate status,int,"0=not dup,1=dup,2=related",No,Rule-based group assignment,duplicate_group_id,No,High
+incidents,narrative,Free-text incident description,text,Natural language,No,Template + noise generation,—,Yes,High
+cases,recovery_success,Whether recovery exceeded 50 percent of gross loss,bool,True/False/None,Yes,Derived from recovery_ngn,—,No,High
+transactions,fraud_label,Binary fraud indicator,int,"0=legitimate,1=fraud",No,Assigned at generation,—,No,High
+model_labels,label_severity,Target variable for severity classification model,string,"S1,S2,S3,S4",No,Multi-factor score,—,No,High
+model_labels,post_investigation_gross_loss_ngn,POST-INVESTIGATION ONLY — do not use as triage feature,float,≥ 0,Yes,Case outcome,—,No,Leakage Risk

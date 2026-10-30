@@ -1,0 +1,128 @@
+# =============================================================================
+# EFIMS-AI — Base Model Configuration
+# =============================================================================
+# Shared settings used by every model and pipeline: project context, data
+# paths, random seed, time-based splits, registry/MLflow locations, and fraud
+# domain constants.
+#
+# Model-specific settings live in configs/models/<model>_config.yaml.
+# Environment overrides live in configs/environments/<env>.yaml.
+#
+# All paths are relative to the project root.
+#
+# Read by: src/utils/config_loader.py -> load_base_config()
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Project and institution context
+# -----------------------------------------------------------------------------
+project:
+  name: efims-ai
+  version: "1.0.0"                 # quoted so YAML keeps it as a string
+  # All data is synthetic. No real customer or bank data is used.
+  institution: Nigeria Commercial Bank (NCB) — Synthetic Only
+  currency: NGN                    # Nigerian Naira; all amounts are in NGN
+  timezone: Africa/Lagos           # IANA name for WAT (UTC+1, no DST)
+  environment: development         # development | staging | production
+
+
+# -----------------------------------------------------------------------------
+# Reproducibility
+# -----------------------------------------------------------------------------
+# Used for numpy, scikit-learn, data generation, and train/test sampling.
+random_seed: 42
+
+
+# -----------------------------------------------------------------------------
+# Data locations
+# -----------------------------------------------------------------------------
+data:
+  raw_path: data/raw               # untouched source data
+  synthetic_path: data/synthetic   # generated synthetic incidents/transactions
+  processed_path: data/processed   # cleaned, validated data
+  features_path: data/features     # engineered feature tables
+  splits_path: data/splits         # train / validation / test outputs
+  benchmarks_path: data/benchmarks # fixed evaluation sets for model comparison
+
+
+# -----------------------------------------------------------------------------
+# Time-based splits
+# -----------------------------------------------------------------------------
+# Splits are by date, not random: models train on the past and are evaluated
+# on the future, matching how they are used in production.
+# Dates are inclusive, in WAT, formatted YYYY-MM-DD (quoted to stay strings).
+splits:
+  train:
+    start: "2024-01-01"
+    end: "2025-12-31"
+  validation:
+    start: "2026-01-01"
+    end: "2026-06-30"
+  test:
+    start: "2026-07-01"
+    end: "2026-12-31"
+
+  # Column that records which split each row belongs to.
+  split_column: split
+
+  # Column that links incidents reported more than once.
+  duplicate_group_column: duplicate_group_id
+
+  note: >
+    Duplicate groups must never be split across train and test.
+    Keep all incidents with the same duplicate_group_id in the
+    same split to prevent target leakage.
+
+
+# -----------------------------------------------------------------------------
+# Model registry
+# -----------------------------------------------------------------------------
+model_registry:
+  path: model_registry             # one subfolder per model
+  champion_file: champion.txt      # holds the version currently in production
+  version_format: "v{major}.{minor}"  # e.g. v1.0, v1.1, v2.0
+
+
+# -----------------------------------------------------------------------------
+# Experiment tracking
+# -----------------------------------------------------------------------------
+mlflow:
+  tracking_uri: experiments/mlflow/mlruns  # local file-based tracking store
+  experiment_name: efims-production
+
+
+# -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
+logging:
+  level: INFO                      # DEBUG | INFO | WARNING | ERROR | CRITICAL
+  log_dir: logs
+
+
+# -----------------------------------------------------------------------------
+# Fraud domain context
+# -----------------------------------------------------------------------------
+fraud_context:
+  # Share of transactions that are fraudulent (3.9%). Used to calibrate
+  # synthetic data and to sanity-check model outputs.
+  fraud_rate_transactions: 0.039
+
+  # Incident severity levels: S1 = most critical, S4 = least critical.
+  severity_classes:
+    - S1
+    - S2
+    - S3
+    - S4
+
+  # Class weights for training (higher = errors on that class cost more).
+  severity_weights:
+    S1: 4.0
+    S2: 2.0
+    S3: 1.0
+    S4: 0.5
+
+  note: >
+    S1 gets the highest class weight because it is the rarest
+    and most critical. Class weights are used during model training
+    to compensate for class imbalance.

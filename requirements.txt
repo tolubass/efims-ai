@@ -1,0 +1,45 @@
+# EFIMS AI — Production Dependencies
+# Install all at once with: pip install -r requirements.txt
+#
+# Every version below was checked against Python 3.14 on Windows (pip install
+# --dry-run, then a combined dry-run of the full list together): each one
+# resolves to a prebuilt wheel (cp314-win_amd64 or pure-Python py3-none-any),
+# and the full dependency tree resolves with no conflicts. Nothing here needs
+# a C++/Rust build toolchain to install.
+
+# API
+fastapi==0.141.1
+uvicorn==0.54.0
+python-multipart==0.0.32
+httpx==0.28.1
+
+# Data
+pandas==3.0.6
+numpy==2.5.3
+pyarrow==25.0.1
+pyyaml==6.0.3
+
+# Machine Learning
+scikit-learn==1.9.1
+lightgbm==4.7.0
+xgboost==3.4.1
+joblib==1.6.0
+
+# Explainability
+shap==0.52.0
+
+# NLP
+spacy==3.8.16
+
+# Experiment Tracking
+mlflow==3.16.1
+
+# Environment
+python-dotenv==1.2.3
+
+# Pydantic
+pydantic==2.13.5
+pydantic-settings==2.14.2
+
+# Utilities
+scipy==1.18.1

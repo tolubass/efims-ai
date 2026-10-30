@@ -1,0 +1,9 @@
+artifact_location: file:C:/Users/USER/Desktop/efims-ai/experiments/mlflow/mlruns/791698144339935073
+creation_time: 1791288675918
+effective_trace_archival_retention: null
+experiment_id: '791698144339935073'
+last_update_time: 1791288675918
+lifecycle_stage: active
+name: efims-anomaly
+trace_location: null
+workspace: default

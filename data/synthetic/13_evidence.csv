@@ -1,0 +1,247 @@
+evidence_id,case_id,evidence_type,source,acquisition_method,custodian_employee_id,created_timestamp,hash_algorithm,synthetic_hash,legal_hold,classification,integrity_status,chain_of_custody_count
+EV-0000001,CASE-0000001,Screenshot Metadata,SIEM,System Export,EMP0000040,2026-11-11 14:02:33,SHA-256,sha256:54466a4d40a872de...0709...73cb,False,Highly Restricted,Verified,3
+EV-0000002,CASE-0000001,Email,Branch,API Extract,EMP0000040,2026-11-11 14:02:33,SHA-256,sha256:59177dae795fd2b1...c504...d7e5,False,Restricted,Verified,3
+EV-0000003,CASE-0000001,Interview Note,Customer,System Export,EMP0000040,2026-11-11 14:02:33,SHA-256,sha256:238e9fb48ad26303...de18...1999,False,Standard,Verified,5
+EV-0000004,CASE-0000001,Call Record Metadata,IAM,Email Forward,EMP0000040,2026-11-11 14:02:33,SHA-256,sha256:e4b470aabd752c60...54fe...3a64,False,Restricted,Verified,5
+EV-0000005,CASE-0000002,Email,Customer,System Export,EMP0000021,2024-06-26 06:05:09,SHA-256,sha256:322757be723272df...669a...8c80,False,Standard,Verified,3
+EV-0000006,CASE-0000002,Email,Customer,API Extract,EMP0000021,2024-06-26 06:05:09,SHA-256,sha256:4b844d960146d84e...397e...d5c0,False,Restricted,Pending,4
+EV-0000007,CASE-0000002,CCTV Metadata,AML System,Manual Upload,EMP0000021,2024-06-26 06:05:09,SHA-256,sha256:6cb4ad1ada5c03e1...ca56...728e,False,Standard,Verified,1
+EV-0000008,CASE-0000002,Interview Note,Core Banking,Email Forward,EMP0000021,2024-06-26 06:05:09,SHA-256,sha256:6a1f6e606b4a844a...db50...4615,False,Standard,Verified,2
+EV-0000009,CASE-0000003,Login Log,Branch,Email Forward,EMP0000024,2026-07-15 12:23:59,SHA-256,sha256:417020a30c02672c...64e8...a447,False,Highly Restricted,Pending,5
+EV-0000010,CASE-0000003,Interview Note,SIEM,System Export,EMP0000024,2026-07-15 12:23:59,SHA-256,sha256:759ad88c92104861...d7bf...6e91,False,Highly Restricted,Verified,5
+EV-0000011,CASE-0000003,Device Record,IAM,API Extract,EMP0000024,2026-07-15 12:23:59,SHA-256,sha256:a0151763d2795676...52e6...dae4,False,Standard,Verified,3
+EV-0000012,CASE-0000004,System Log,Third Party,Email Forward,EMP0000016,2024-03-20 23:48:58,SHA-256,sha256:91ef823ddff1c258...1b27...c01e,False,Restricted,Verified,5
+EV-0000013,CASE-0000004,Login Log,SIEM,Email Forward,EMP0000016,2024-03-20 23:48:58,SHA-256,sha256:cb12b0bd70831df0...3b14...0616,False,Standard,Verified,5
+EV-0000014,CASE-0000005,Screenshot Metadata,SIEM,Physical,EMP0000024,2025-05-17 00:51:37,SHA-256,sha256:86cad14701cf6ef0...e5b0...aea7,False,Restricted,Verified,5
+EV-0000015,CASE-0000005,Customer Complaint,IAM,Manual Upload,EMP0000024,2025-05-17 00:51:37,SHA-256,sha256:e4dfac705cade4da...9961...e39f,True,Standard,Pending,3
+EV-0000016,CASE-0000005,Screenshot Metadata,IAM,API Extract,EMP0000024,2025-05-17 00:51:37,SHA-256,sha256:947643da4795ca70...9206...c3d6,False,Restricted,Verified,5
+EV-0000017,CASE-0000005,System Log,Core Banking,System Export,EMP0000024,2025-05-17 00:51:37,SHA-256,sha256:4a438c8b01b4ed37...7832...eb6a,False,Standard,Verified,5
+EV-0000018,CASE-0000005,Audit Record,Customer,System Export,EMP0000024,2025-05-17 00:51:37,SHA-256,sha256:da2ef46c64936d53...a0db...cef9,False,Highly Restricted,Verified,5
+EV-0000019,CASE-0000005,Call Record Metadata,IAM,Email Forward,EMP0000024,2025-05-17 00:51:37,SHA-256,sha256:6020af004ea5af75...8e56...34d3,False,Restricted,Pending,3
+EV-0000020,CASE-0000006,System Log,SIEM,Manual Upload,EMP0000012,2025-12-24 23:22:13,SHA-256,sha256:e9379be2c049b9de...50d3...6153,False,Highly Restricted,Verified,4
+EV-0000021,CASE-0000006,Email,AML System,Manual Upload,EMP0000012,2025-12-24 23:22:13,SHA-256,sha256:fa5324e66f3b5059...66df...0ee2,True,Standard,Verified,4
+EV-0000022,CASE-0000006,Transaction Statement,SIEM,System Export,EMP0000012,2025-12-24 23:22:13,SHA-256,sha256:c274712ae825133a...66fb...3943,False,Standard,Verified,3
+EV-0000023,CASE-0000006,Screenshot Metadata,Branch,API Extract,EMP0000012,2025-12-24 23:22:13,SHA-256,sha256:63a9b26a1aa26772...4b94...ee35,True,Standard,Verified,4
+EV-0000024,CASE-0000006,CCTV Metadata,AML System,Manual Upload,EMP0000012,2025-12-24 23:22:13,SHA-256,sha256:8120939778dc2702...4f2d...cad5,True,Restricted,Verified,2
+EV-0000025,CASE-0000007,Transaction Statement,Third Party,Physical,EMP0000006,2024-01-04 05:17:31,SHA-256,sha256:16da819fee5a6546...1df2...882a,False,Standard,Verified,4
+EV-0000026,CASE-0000008,Call Record Metadata,SIEM,System Export,EMP0000014,2026-01-07 05:50:47,SHA-256,sha256:e0a4b992179134c4...dca5...4bd6,False,Highly Restricted,Verified,5
+EV-0000027,CASE-0000008,Login Log,Branch,API Extract,EMP0000014,2026-01-07 05:50:47,SHA-256,sha256:999b728135609b9d...a67f...8b44,False,Restricted,Verified,2
+EV-0000028,CASE-0000008,Email,Third Party,Physical,EMP0000014,2026-01-07 05:50:47,SHA-256,sha256:a6343b60c9709c1a...2071...dce4,False,Highly Restricted,Verified,1
+EV-0000029,CASE-0000008,Interview Note,Branch,Email Forward,EMP0000014,2026-01-07 05:50:47,SHA-256,sha256:8733b3e297842e42...075d...6b39,True,Highly Restricted,Verified,3
+EV-0000030,CASE-0000008,Transaction Statement,Third Party,Email Forward,EMP0000014,2026-01-07 05:50:47,SHA-256,sha256:2fdd20ca7050ab09...e8e7...2db6,False,Restricted,Pending,2
+EV-0000031,CASE-0000008,Transaction Statement,SIEM,Manual Upload,EMP0000014,2026-01-07 05:50:47,SHA-256,sha256:0fbb3e5ad8cc1011...fe3a...1415,False,Standard,Verified,4
+EV-0000032,CASE-0000009,Screenshot Metadata,Core Banking,Email Forward,EMP0000008,2024-06-18 10:15:24,SHA-256,sha256:c4db851e673e5d63...1c88...fd57,False,Highly Restricted,Verified,3
+EV-0000033,CASE-0000009,Email,Customer,Manual Upload,EMP0000008,2024-06-18 10:15:24,SHA-256,sha256:492a8088d984936f...759e...25d0,False,Standard,Verified,1
+EV-0000034,CASE-0000009,System Log,AML System,API Extract,EMP0000008,2024-06-18 10:15:24,SHA-256,sha256:c23ce9f78a1df175...5112...8b6f,False,Standard,Verified,4
+EV-0000035,CASE-0000009,Screenshot Metadata,SIEM,Manual Upload,EMP0000008,2024-06-18 10:15:24,SHA-256,sha256:24ef3c0205461479...5543...c0ab,False,Standard,Verified,4
+EV-0000036,CASE-0000010,Call Record Metadata,Branch,System Export,EMP0000022,2024-05-06 20:05:32,SHA-256,sha256:84485809eef82da6...c342...4430,False,Standard,Verified,1
+EV-0000037,CASE-0000010,System Log,IAM,Manual Upload,EMP0000022,2024-05-06 20:05:32,SHA-256,sha256:77595013192e665d...090c...31aa,False,Standard,Verified,4
+EV-0000038,CASE-0000010,Transaction Statement,Branch,Physical,EMP0000022,2024-05-06 20:05:32,SHA-256,sha256:22257cd86c7bfd7d...aad7...d0d1,False,Standard,Verified,5
+EV-0000039,CASE-0000010,Transaction Statement,SIEM,API Extract,EMP0000022,2024-05-06 20:05:32,SHA-256,sha256:9d965c9ad1a7f7e4...560a...cf29,False,Restricted,Verified,1
+EV-0000040,CASE-0000011,Login Log,Third Party,System Export,EMP0000009,2024-06-21 21:29:03,SHA-256,sha256:75f26344d788b15d...31a1...9dfd,False,Standard,Verified,2
+EV-0000041,CASE-0000011,Email,Customer,Manual Upload,EMP0000009,2024-06-21 21:29:03,SHA-256,sha256:289c8287f90c6e33...d371...94b6,False,Highly Restricted,Verified,1
+EV-0000042,CASE-0000011,Call Record Metadata,Branch,Physical,EMP0000009,2024-06-21 21:29:03,SHA-256,sha256:13ab27aa173f21a9...6442...c7eb,False,Standard,Verified,4
+EV-0000043,CASE-0000011,Call Record Metadata,Branch,Manual Upload,EMP0000009,2024-06-21 21:29:03,SHA-256,sha256:4c10dab34f915273...47c5...d05c,False,Standard,Verified,4
+EV-0000044,CASE-0000012,Email,Core Banking,Manual Upload,EMP0000037,2024-11-02 15:49:22,SHA-256,sha256:b862393f444971ee...f753...88aa,False,Restricted,Verified,3
+EV-0000045,CASE-0000012,Device Record,Third Party,Manual Upload,EMP0000037,2024-11-02 15:49:22,SHA-256,sha256:23bf2c38380ee29a...c9fb...0b20,False,Standard,Verified,1
+EV-0000046,CASE-0000012,Screenshot Metadata,AML System,Physical,EMP0000037,2024-11-02 15:49:22,SHA-256,sha256:ac495fbef5968106...b4c2...71a8,False,Standard,Failed,2
+EV-0000047,CASE-0000012,CCTV Metadata,AML System,Physical,EMP0000037,2024-11-02 15:49:22,SHA-256,sha256:928978d1848874c8...5a6e...72fc,False,Standard,Verified,4
+EV-0000048,CASE-0000012,Email,Core Banking,Email Forward,EMP0000037,2024-11-02 15:49:22,SHA-256,sha256:b1563874a08fb348...fb80...cf32,False,Restricted,Verified,4
+EV-0000049,CASE-0000012,Email,AML System,System Export,EMP0000037,2024-11-02 15:49:22,SHA-256,sha256:dc15dd32393db64e...aa4e...dc53,False,Restricted,Verified,5
+EV-0000050,CASE-0000013,Device Record,Branch,System Export,EMP0000033,2024-03-28 16:27:00,SHA-256,sha256:6225512b2db9a1ea...ed00...1e00,False,Standard,Verified,3
+EV-0000051,CASE-0000013,Screenshot Metadata,Branch,System Export,EMP0000033,2024-03-28 16:27:00,SHA-256,sha256:32c2781a9d4f633a...67af...df3a,False,Standard,Verified,2
+EV-0000052,CASE-0000013,Interview Note,Third Party,API Extract,EMP0000033,2024-03-28 16:27:00,SHA-256,sha256:d9e8921a2d5d148d...e2b4...3019,False,Standard,Verified,2
+EV-0000053,CASE-0000013,Customer Complaint,AML System,API Extract,EMP0000033,2024-03-28 16:27:00,SHA-256,sha256:0783dde54190c3aa...37f6...53fd,False,Restricted,Verified,2
+EV-0000054,CASE-0000013,Screenshot Metadata,Branch,Physical,EMP0000033,2024-03-28 16:27:00,SHA-256,sha256:4c11a39ff7659814...35bc...e243,True,Standard,Verified,5
+EV-0000055,CASE-0000014,System Log,SIEM,Email Forward,EMP0000023,2024-11-23 18:29:47,SHA-256,sha256:0e78076c3117cf7a...fb40...df06,False,Restricted,Verified,1
+EV-0000056,CASE-0000014,System Log,Third Party,API Extract,EMP0000023,2024-11-23 18:29:47,SHA-256,sha256:b24309c3bd2d40b1...1f4a...436f,False,Restricted,Verified,1
+EV-0000057,CASE-0000014,Device Record,Core Banking,Physical,EMP0000023,2024-11-23 18:29:47,SHA-256,sha256:0482d1209d6e6bd5...732a...8fd6,False,Standard,Verified,1
+EV-0000058,CASE-0000015,System Log,Customer,Manual Upload,EMP0000005,2024-05-21 05:21:15,SHA-256,sha256:82cb6fcd596d8087...517e...c8b6,False,Highly Restricted,Verified,3
+EV-0000059,CASE-0000015,System Log,IAM,Email Forward,EMP0000005,2024-05-21 05:21:15,SHA-256,sha256:16dfbaf5a302727d...406c...f249,False,Standard,Verified,2
+EV-0000060,CASE-0000015,Screenshot Metadata,Branch,Physical,EMP0000005,2024-05-21 05:21:15,SHA-256,sha256:28939bd16cb2d6e3...70ed...a804,True,Restricted,Verified,2
+EV-0000061,CASE-0000015,Device Record,SIEM,Physical,EMP0000005,2024-05-21 05:21:15,SHA-256,sha256:3369b285e78e9441...3c63...b812,False,Standard,Verified,4
+EV-0000062,CASE-0000015,Transaction Statement,Customer,System Export,EMP0000005,2024-05-21 05:21:15,SHA-256,sha256:885911938002a4f9...da5e...9aa9,False,Standard,Failed,5
+EV-0000063,CASE-0000016,Device Record,SIEM,Email Forward,EMP0000033,2026-10-19 23:59:20,SHA-256,sha256:8be3983d5a1f3ea3...7393...1b46,False,Highly Restricted,Verified,2
+EV-0000064,CASE-0000017,Audit Record,IAM,Email Forward,EMP0000006,2026-07-07 10:10:45,SHA-256,sha256:9ddb23561b204490...4b1c...6c3b,False,Standard,Verified,5
+EV-0000065,CASE-0000017,Interview Note,Customer,System Export,EMP0000006,2026-07-07 10:10:45,SHA-256,sha256:a9c16847a6f6ec35...d677...e6bc,False,Restricted,Verified,4
+EV-0000066,CASE-0000017,Call Record Metadata,Core Banking,Email Forward,EMP0000006,2026-07-07 10:10:45,SHA-256,sha256:5418260269cebf1c...62ea...c400,False,Standard,Verified,1
+EV-0000067,CASE-0000018,Interview Note,Core Banking,Physical,EMP0000027,2025-10-20 18:38:06,SHA-256,sha256:142968e735de3abe...73a8...f8dc,False,Standard,Verified,1
+EV-0000068,CASE-0000019,Login Log,Third Party,System Export,EMP0000035,2026-07-29 05:29:03,SHA-256,sha256:1a6f522555fb9ff3...a260...42d3,False,Highly Restricted,Verified,3
+EV-0000069,CASE-0000019,Login Log,Core Banking,API Extract,EMP0000035,2026-07-29 05:29:03,SHA-256,sha256:bcbf9b8996b30303...76e2...201d,False,Standard,Verified,1
+EV-0000070,CASE-0000019,Customer Complaint,Third Party,API Extract,EMP0000035,2026-07-29 05:29:03,SHA-256,sha256:b373699120b112c1...b651...3771,False,Restricted,Verified,5
+EV-0000071,CASE-0000020,Login Log,Customer,System Export,EMP0000005,2024-06-30 11:26:14,SHA-256,sha256:f8844a969cf21cab...53e2...d810,False,Highly Restricted,Verified,1
+EV-0000072,CASE-0000020,Interview Note,Core Banking,Email Forward,EMP0000005,2024-06-30 11:26:14,SHA-256,sha256:09eb590498b7d804...2d87...1b86,False,Restricted,Verified,1
+EV-0000073,CASE-0000020,Audit Record,AML System,Physical,EMP0000005,2024-06-30 11:26:14,SHA-256,sha256:e9fa453c3910f409...22a3...8b71,False,Restricted,Verified,5
+EV-0000074,CASE-0000020,Screenshot Metadata,Third Party,Physical,EMP0000005,2024-06-30 11:26:14,SHA-256,sha256:ce19cb83f0de1f74...8022...fbf6,False,Restricted,Verified,1
+EV-0000075,CASE-0000020,CCTV Metadata,Customer,System Export,EMP0000005,2024-06-30 11:26:14,SHA-256,sha256:9d08eb1c0f1c915a...9023...75b4,False,Standard,Verified,5
+EV-0000076,CASE-0000020,Audit Record,Core Banking,Email Forward,EMP0000005,2024-06-30 11:26:14,SHA-256,sha256:ffdc7ddce3271311...cb99...c2ff,False,Highly Restricted,Verified,1
+EV-0000077,CASE-0000021,Call Record Metadata,Core Banking,Email Forward,EMP0000022,2025-11-05 07:19:42,SHA-256,sha256:150694616afda512...20a4...e145,False,Highly Restricted,Verified,3
+EV-0000078,CASE-0000021,Screenshot Metadata,IAM,Physical,EMP0000022,2025-11-05 07:19:42,SHA-256,sha256:95d5b80a56f4aadb...ac8b...0aba,False,Standard,Verified,2
+EV-0000079,CASE-0000021,Call Record Metadata,Branch,Email Forward,EMP0000022,2025-11-05 07:19:42,SHA-256,sha256:22c59217114b8744...16a9...981a,False,Standard,Verified,1
+EV-0000080,CASE-0000021,Transaction Statement,Core Banking,API Extract,EMP0000022,2025-11-05 07:19:42,SHA-256,sha256:f2b1d3719e72218b...903f...6833,False,Restricted,Verified,2
+EV-0000081,CASE-0000021,Audit Record,Customer,Physical,EMP0000022,2025-11-05 07:19:42,SHA-256,sha256:00d7ec7f7123b715...3649...c5c4,False,Standard,Verified,1
+EV-0000082,CASE-0000022,Transaction Statement,Customer,System Export,EMP0000004,2025-06-10 02:20:27,SHA-256,sha256:be2e0c1e951edfc2...2fe5...4aa1,False,Standard,Verified,5
+EV-0000083,CASE-0000023,Audit Record,SIEM,Manual Upload,EMP0000039,2025-01-23 13:43:56,SHA-256,sha256:696c81ceeb1d47e3...e9d1...a7a0,False,Restricted,Verified,5
+EV-0000084,CASE-0000023,Login Log,Customer,Manual Upload,EMP0000039,2025-01-23 13:43:56,SHA-256,sha256:1df84577670532bf...f601...bbb2,False,Standard,Verified,4
+EV-0000085,CASE-0000023,Email,Core Banking,API Extract,EMP0000039,2025-01-23 13:43:56,SHA-256,sha256:f7299d2bbde0deed...11ef...ed0d,False,Standard,Verified,4
+EV-0000086,CASE-0000023,Call Record Metadata,AML System,Email Forward,EMP0000039,2025-01-23 13:43:56,SHA-256,sha256:c135459ee2c1814b...2a1e...bdf3,False,Standard,Verified,4
+EV-0000087,CASE-0000024,Call Record Metadata,Third Party,API Extract,EMP0000005,2026-09-10 23:17:25,SHA-256,sha256:63538163c95aed73...e23a...4d9a,False,Standard,Verified,3
+EV-0000088,CASE-0000025,Customer Complaint,SIEM,Email Forward,EMP0000005,2026-09-06 15:27:39,SHA-256,sha256:8d428326b47ee6bf...c984...4983,False,Standard,Verified,2
+EV-0000089,CASE-0000026,Device Record,SIEM,API Extract,EMP0000038,2025-12-14 12:07:51,SHA-256,sha256:4bf28e08d581878e...8720...3f21,False,Restricted,Pending,2
+EV-0000090,CASE-0000027,Call Record Metadata,IAM,Physical,EMP0000022,2025-02-21 05:43:32,SHA-256,sha256:440c68be8f4337f0...87f2...6840,False,Standard,Verified,2
+EV-0000091,CASE-0000028,System Log,Core Banking,System Export,EMP0000037,2025-06-29 22:19:21,SHA-256,sha256:fee6854ce1838f0a...c8de...833d,False,Standard,Verified,4
+EV-0000092,CASE-0000028,System Log,IAM,API Extract,EMP0000037,2025-06-29 22:19:21,SHA-256,sha256:bd3cba8bed0d6f48...de7e...0ed8,False,Standard,Verified,3
+EV-0000093,CASE-0000029,Audit Record,AML System,System Export,EMP0000012,2025-02-23 01:52:29,SHA-256,sha256:82e19c874f53f55a...32ff...bdc5,False,Restricted,Verified,4
+EV-0000094,CASE-0000029,Audit Record,Customer,System Export,EMP0000012,2025-02-23 01:52:29,SHA-256,sha256:512de9465435b479...405f...5cc1,False,Standard,Verified,2
+EV-0000095,CASE-0000030,CCTV Metadata,Third Party,System Export,EMP0000010,2024-01-16 10:21:55,SHA-256,sha256:640df25a405a3981...ed78...ee82,False,Standard,Verified,1
+EV-0000096,CASE-0000030,System Log,IAM,Manual Upload,EMP0000010,2024-01-16 10:21:55,SHA-256,sha256:2f49c29ab5232543...987a...50c9,False,Restricted,Verified,3
+EV-0000097,CASE-0000030,Transaction Statement,Customer,Physical,EMP0000010,2024-01-16 10:21:55,SHA-256,sha256:218671122dea5310...28dc...e4e4,True,Restricted,Verified,1
+EV-0000098,CASE-0000031,Audit Record,SIEM,API Extract,EMP0000023,2024-12-18 21:09:02,SHA-256,sha256:2d6975dff681d0e4...1e5a...3406,False,Standard,Pending,4
+EV-0000099,CASE-0000031,Email,IAM,Email Forward,EMP0000023,2024-12-18 21:09:02,SHA-256,sha256:fe815711c52c8555...95c2...a522,False,Standard,Pending,5
+EV-0000100,CASE-0000032,Screenshot Metadata,SIEM,System Export,EMP0000029,2024-02-29 02:00:22,SHA-256,sha256:a3525222056bf4cc...47a8...afae,False,Standard,Verified,3
+EV-0000101,CASE-0000032,Screenshot Metadata,IAM,Email Forward,EMP0000029,2024-02-29 02:00:22,SHA-256,sha256:17d598934d9bc8bb...aaf1...2837,False,Restricted,Verified,3
+EV-0000102,CASE-0000032,Screenshot Metadata,AML System,API Extract,EMP0000029,2024-02-29 02:00:22,SHA-256,sha256:8371b68d94b46c3b...1492...451a,True,Restricted,Verified,5
+EV-0000103,CASE-0000032,Call Record Metadata,AML System,Manual Upload,EMP0000029,2024-02-29 02:00:22,SHA-256,sha256:5544162310de4910...09d4...fddf,False,Restricted,Verified,1
+EV-0000104,CASE-0000033,Transaction Statement,IAM,Physical,EMP0000028,2024-08-26 01:17:11,SHA-256,sha256:b9b6ec2fd84e0e04...089f...90f4,False,Restricted,Verified,1
+EV-0000105,CASE-0000033,Login Log,SIEM,System Export,EMP0000028,2024-08-26 01:17:11,SHA-256,sha256:4a22dbe398ff2ddd...7674...8238,False,Restricted,Failed,4
+EV-0000106,CASE-0000033,Audit Record,Customer,Physical,EMP0000028,2024-08-26 01:17:11,SHA-256,sha256:52fa6b1966c3d55f...9f37...2866,True,Restricted,Pending,1
+EV-0000107,CASE-0000033,Device Record,Third Party,Manual Upload,EMP0000028,2024-08-26 01:17:11,SHA-256,sha256:2009e2bff7e3ff62...3c8d...7873,False,Restricted,Verified,1
+EV-0000108,CASE-0000033,Audit Record,Third Party,Physical,EMP0000028,2024-08-26 01:17:11,SHA-256,sha256:eff7b73463e4b17b...ff12...f6e9,False,Standard,Verified,2
+EV-0000109,CASE-0000034,Device Record,SIEM,Manual Upload,EMP0000031,2025-12-24 17:53:54,SHA-256,sha256:68bba36784d8c7cc...c744...1f92,False,Standard,Verified,3
+EV-0000110,CASE-0000035,CCTV Metadata,Customer,Manual Upload,EMP0000024,2025-09-07 15:18:58,SHA-256,sha256:3b79a684081b6dd0...dcba...83db,False,Standard,Verified,1
+EV-0000111,CASE-0000035,Device Record,Third Party,API Extract,EMP0000024,2025-09-07 15:18:58,SHA-256,sha256:370dab377f52eaf0...b188...e1be,False,Highly Restricted,Verified,4
+EV-0000112,CASE-0000035,Customer Complaint,Customer,System Export,EMP0000024,2025-09-07 15:18:58,SHA-256,sha256:3e22bee9f54dfded...bee4...911e,False,Restricted,Verified,1
+EV-0000113,CASE-0000035,Call Record Metadata,SIEM,API Extract,EMP0000024,2025-09-07 15:18:58,SHA-256,sha256:a2a7181d4898791b...1e65...3a64,False,Standard,Pending,2
+EV-0000114,CASE-0000035,Device Record,IAM,Email Forward,EMP0000024,2025-09-07 15:18:58,SHA-256,sha256:df2f2ebb3e707aeb...6262...392b,False,Standard,Verified,2
+EV-0000115,CASE-0000036,System Log,AML System,Physical,EMP0000007,2026-07-21 15:04:52,SHA-256,sha256:ed0ee1933e4453b8...3924...c0d0,False,Highly Restricted,Verified,3
+EV-0000116,CASE-0000036,Email,AML System,Email Forward,EMP0000007,2026-07-21 15:04:52,SHA-256,sha256:aa26e384480c69ee...af48...11e0,False,Standard,Verified,5
+EV-0000117,CASE-0000036,Transaction Statement,Third Party,Physical,EMP0000007,2026-07-21 15:04:52,SHA-256,sha256:857c2b49dc919fd6...a6b1...cb55,False,Standard,Verified,1
+EV-0000118,CASE-0000036,Call Record Metadata,IAM,API Extract,EMP0000007,2026-07-21 15:04:52,SHA-256,sha256:a0076cba369dbb1d...3d60...6c64,False,Standard,Verified,5
+EV-0000119,CASE-0000037,Customer Complaint,Branch,Manual Upload,EMP0000014,2024-03-29 08:22:48,SHA-256,sha256:6d8c98753cdd7252...30f3...8ff4,False,Standard,Verified,5
+EV-0000120,CASE-0000037,Login Log,Branch,System Export,EMP0000014,2024-03-29 08:22:48,SHA-256,sha256:d44a995899fb3359...7d9a...2022,False,Highly Restricted,Verified,3
+EV-0000121,CASE-0000037,Call Record Metadata,IAM,Physical,EMP0000014,2024-03-29 08:22:48,SHA-256,sha256:816ec1f607ecc8c6...56f0...1dd0,False,Restricted,Verified,1
+EV-0000122,CASE-0000037,Email,Core Banking,Email Forward,EMP0000014,2024-03-29 08:22:48,SHA-256,sha256:53e073cffac29351...548a...7997,False,Highly Restricted,Verified,2
+EV-0000123,CASE-0000037,Login Log,IAM,System Export,EMP0000014,2024-03-29 08:22:48,SHA-256,sha256:ed51b866681f0271...37a1...0e7b,False,Standard,Verified,3
+EV-0000124,CASE-0000038,CCTV Metadata,IAM,System Export,EMP0000011,2024-02-21 02:17:04,SHA-256,sha256:f570464c84db2b4f...d39a...2216,False,Restricted,Verified,2
+EV-0000125,CASE-0000038,Interview Note,SIEM,Manual Upload,EMP0000011,2024-02-21 02:17:04,SHA-256,sha256:5fd73f163665dea9...5bc6...5876,False,Standard,Verified,4
+EV-0000126,CASE-0000038,System Log,Branch,Email Forward,EMP0000011,2024-02-21 02:17:04,SHA-256,sha256:8623b99804857fd8...d45a...6cec,False,Standard,Failed,4
+EV-0000127,CASE-0000038,Interview Note,Core Banking,API Extract,EMP0000011,2024-02-21 02:17:04,SHA-256,sha256:b0de0447665548a3...66a0...5b27,False,Restricted,Verified,1
+EV-0000128,CASE-0000038,System Log,AML System,Manual Upload,EMP0000011,2024-02-21 02:17:04,SHA-256,sha256:f5ca1423dffecb38...5cb4...745e,False,Restricted,Verified,3
+EV-0000129,CASE-0000038,Audit Record,AML System,Email Forward,EMP0000011,2024-02-21 02:17:04,SHA-256,sha256:98498071be8a2caf...7140...d883,False,Restricted,Verified,5
+EV-0000130,CASE-0000039,CCTV Metadata,Core Banking,Email Forward,EMP0000028,2025-01-16 05:44:08,SHA-256,sha256:daa9072a178c41c8...264c...98a9,False,Highly Restricted,Verified,1
+EV-0000131,CASE-0000039,CCTV Metadata,AML System,Email Forward,EMP0000028,2025-01-16 05:44:08,SHA-256,sha256:39a0ba4e8bb35bcc...3e20...75ce,False,Standard,Verified,2
+EV-0000132,CASE-0000039,Call Record Metadata,IAM,Physical,EMP0000028,2025-01-16 05:44:08,SHA-256,sha256:d65114a70c0a2bda...5246...2ff3,False,Highly Restricted,Verified,5
+EV-0000133,CASE-0000040,Transaction Statement,Branch,API Extract,EMP0000026,2026-06-03 07:05:37,SHA-256,sha256:5103ddb6896521b3...d0af...d5db,True,Highly Restricted,Verified,2
+EV-0000134,CASE-0000041,Device Record,Customer,Email Forward,EMP0000019,2024-12-02 06:23:08,SHA-256,sha256:e93ebb59c3916efb...f5f0...41a5,True,Standard,Verified,1
+EV-0000135,CASE-0000041,Screenshot Metadata,Branch,Manual Upload,EMP0000019,2024-12-02 06:23:08,SHA-256,sha256:2a65427fbc815498...29ec...79f4,False,Standard,Verified,3
+EV-0000136,CASE-0000041,CCTV Metadata,IAM,Manual Upload,EMP0000019,2024-12-02 06:23:08,SHA-256,sha256:6f8a0eef6b07bfa1...8d6a...2689,False,Standard,Verified,2
+EV-0000137,CASE-0000041,Transaction Statement,AML System,API Extract,EMP0000019,2024-12-02 06:23:08,SHA-256,sha256:13834bd480985c42...c376...2153,False,Standard,Verified,4
+EV-0000138,CASE-0000041,Interview Note,IAM,Manual Upload,EMP0000019,2024-12-02 06:23:08,SHA-256,sha256:7c230a365773550a...c39f...e958,False,Standard,Verified,4
+EV-0000139,CASE-0000041,Device Record,Customer,System Export,EMP0000019,2024-12-02 06:23:08,SHA-256,sha256:61e9d589bf01ff91...2888...2b54,False,Standard,Verified,2
+EV-0000140,CASE-0000042,Call Record Metadata,Third Party,System Export,EMP0000036,2025-08-26 08:58:47,SHA-256,sha256:2ee5a0d9333371eb...7afc...0953,False,Standard,Verified,5
+EV-0000141,CASE-0000042,Device Record,Customer,Physical,EMP0000036,2025-08-26 08:58:47,SHA-256,sha256:635a45ada2686a92...40f8...ceba,False,Standard,Verified,5
+EV-0000142,CASE-0000042,System Log,Branch,Manual Upload,EMP0000036,2025-08-26 08:58:47,SHA-256,sha256:7d2f2c099b4a6546...9ee3...c385,False,Restricted,Failed,1
+EV-0000143,CASE-0000042,Login Log,Customer,Email Forward,EMP0000036,2025-08-26 08:58:47,SHA-256,sha256:021aa37b22b9d620...9807...ff4d,True,Highly Restricted,Verified,1
+EV-0000144,CASE-0000043,System Log,Third Party,API Extract,EMP0000023,2026-09-12 07:13:56,SHA-256,sha256:4533dd89ea694e79...36eb...2d5d,False,Standard,Verified,2
+EV-0000145,CASE-0000043,Transaction Statement,AML System,Physical,EMP0000023,2026-09-12 07:13:56,SHA-256,sha256:47357612ff3a26d4...3271...51f5,False,Restricted,Verified,5
+EV-0000146,CASE-0000043,Transaction Statement,Branch,Physical,EMP0000023,2026-09-12 07:13:56,SHA-256,sha256:2c5b97793ca8b205...d742...9718,True,Standard,Pending,2
+EV-0000147,CASE-0000043,Interview Note,Branch,Manual Upload,EMP0000023,2026-09-12 07:13:56,SHA-256,sha256:541827428d8d6003...b7e5...ccb0,True,Standard,Verified,3
+EV-0000148,CASE-0000043,Call Record Metadata,Branch,API Extract,EMP0000023,2026-09-12 07:13:56,SHA-256,sha256:b1714da5eb386cee...bd67...b5c6,False,Restricted,Verified,4
+EV-0000149,CASE-0000043,Call Record Metadata,Branch,Email Forward,EMP0000023,2026-09-12 07:13:56,SHA-256,sha256:79fc87898b85cb8c...ae64...8a0e,False,Standard,Verified,1
+EV-0000150,CASE-0000044,Customer Complaint,Third Party,System Export,EMP0000023,2024-02-27 21:56:38,SHA-256,sha256:4b5ef59da65c4257...4dc3...36d1,False,Standard,Verified,1
+EV-0000151,CASE-0000044,Device Record,SIEM,Physical,EMP0000023,2024-02-27 21:56:38,SHA-256,sha256:7014f2e1aa4f76b3...2cdf...fde6,False,Standard,Verified,1
+EV-0000152,CASE-0000044,Transaction Statement,IAM,Physical,EMP0000023,2024-02-27 21:56:38,SHA-256,sha256:fdda4cede719a2c6...a604...cfc8,False,Highly Restricted,Verified,2
+EV-0000153,CASE-0000044,Audit Record,AML System,API Extract,EMP0000023,2024-02-27 21:56:38,SHA-256,sha256:58ea4ca1b5cd7bc6...02bb...6f04,False,Restricted,Verified,3
+EV-0000154,CASE-0000045,Screenshot Metadata,Core Banking,Manual Upload,EMP0000018,2024-05-12 15:30:37,SHA-256,sha256:e815156a99d2ffdc...3377...f40c,False,Standard,Verified,2
+EV-0000155,CASE-0000046,Audit Record,AML System,Physical,EMP0000026,2026-05-04 19:37:52,SHA-256,sha256:8415a70b94900685...b45b...10d7,False,Highly Restricted,Verified,1
+EV-0000156,CASE-0000046,System Log,Third Party,Physical,EMP0000026,2026-05-04 19:37:52,SHA-256,sha256:f2c09a48538b0237...4bb4...2f86,False,Standard,Verified,4
+EV-0000157,CASE-0000047,Interview Note,Core Banking,System Export,EMP0000019,2025-11-18 06:02:26,SHA-256,sha256:7cadbe4fd8906ca0...35c4...b970,False,Restricted,Verified,2
+EV-0000158,CASE-0000047,Call Record Metadata,Third Party,Physical,EMP0000019,2025-11-18 06:02:26,SHA-256,sha256:c841fb56e29792ea...f092...9b1b,False,Highly Restricted,Verified,4
+EV-0000159,CASE-0000047,System Log,Branch,System Export,EMP0000019,2025-11-18 06:02:26,SHA-256,sha256:6a6058f7b0f85b08...9962...7a1d,False,Highly Restricted,Verified,5
+EV-0000160,CASE-0000048,Transaction Statement,IAM,Manual Upload,EMP0000004,2025-06-07 11:09:11,SHA-256,sha256:7ae08cd59e36f1ef...f20b...2c86,False,Restricted,Verified,4
+EV-0000161,CASE-0000048,Interview Note,SIEM,API Extract,EMP0000004,2025-06-07 11:09:11,SHA-256,sha256:4841db628abdb0c1...c0f8...33e3,False,Standard,Verified,3
+EV-0000162,CASE-0000049,Call Record Metadata,AML System,API Extract,EMP0000033,2024-10-07 08:54:43,SHA-256,sha256:9a5c272fb87707c1...3c3f...bd44,False,Standard,Verified,2
+EV-0000163,CASE-0000049,Call Record Metadata,Third Party,Manual Upload,EMP0000033,2024-10-07 08:54:43,SHA-256,sha256:30c98bcba7579599...77b2...e40f,False,Highly Restricted,Failed,2
+EV-0000164,CASE-0000049,System Log,AML System,API Extract,EMP0000033,2024-10-07 08:54:43,SHA-256,sha256:b488d0a4b32633f5...8827...f1f4,False,Restricted,Failed,1
+EV-0000165,CASE-0000049,Call Record Metadata,Core Banking,Manual Upload,EMP0000033,2024-10-07 08:54:43,SHA-256,sha256:d2f58f2c9ed4a81b...9ce6...3782,False,Standard,Verified,4
+EV-0000166,CASE-0000049,Interview Note,Core Banking,System Export,EMP0000033,2024-10-07 08:54:43,SHA-256,sha256:d8d53d319c5148d5...13c1...cc8b,False,Standard,Verified,4
+EV-0000167,CASE-0000049,Login Log,Core Banking,API Extract,EMP0000033,2024-10-07 08:54:43,SHA-256,sha256:1110d61fb388a243...2e1d...a04e,False,Restricted,Verified,2
+EV-0000168,CASE-0000050,Device Record,Customer,Manual Upload,EMP0000022,2025-08-22 15:00:42,SHA-256,sha256:b3e84da39b0fcc1c...5f94...4d0f,False,Highly Restricted,Verified,4
+EV-0000169,CASE-0000050,Customer Complaint,SIEM,Email Forward,EMP0000022,2025-08-22 15:00:42,SHA-256,sha256:cf98e809ed46dc9d...3f53...82b8,True,Standard,Verified,1
+EV-0000170,CASE-0000050,Audit Record,Core Banking,Email Forward,EMP0000022,2025-08-22 15:00:42,SHA-256,sha256:e9407343f75e5a27...7589...8463,True,Standard,Verified,4
+EV-0000171,CASE-0000050,Screenshot Metadata,SIEM,Manual Upload,EMP0000022,2025-08-22 15:00:42,SHA-256,sha256:f7942c0c7006b2ee...b7a6...9a83,False,Standard,Verified,1
+EV-0000172,CASE-0000050,Device Record,Customer,Manual Upload,EMP0000022,2025-08-22 15:00:42,SHA-256,sha256:3fa54c3841672ead...62fa...7d1b,False,Highly Restricted,Verified,5
+EV-0000173,CASE-0000051,Interview Note,Core Banking,System Export,EMP0000006,2026-05-23 18:35:49,SHA-256,sha256:4101a5bd3407233a...d2db...8cad,True,Restricted,Verified,3
+EV-0000174,CASE-0000051,System Log,SIEM,Physical,EMP0000006,2026-05-23 18:35:49,SHA-256,sha256:0d2227702b4ce21f...a223...3d04,True,Restricted,Verified,2
+EV-0000175,CASE-0000051,Email,Third Party,Email Forward,EMP0000006,2026-05-23 18:35:49,SHA-256,sha256:61d0e62e93632e33...4072...ad20,True,Standard,Verified,3
+EV-0000176,CASE-0000051,Audit Record,IAM,Manual Upload,EMP0000006,2026-05-23 18:35:49,SHA-256,sha256:36274e6a62cf296c...4e68...a5e0,False,Standard,Verified,5
+EV-0000177,CASE-0000052,System Log,Branch,Manual Upload,EMP0000027,2025-02-28 18:50:10,SHA-256,sha256:54f45ab592446321...2a4e...1187,False,Highly Restricted,Verified,2
+EV-0000178,CASE-0000052,Device Record,AML System,Physical,EMP0000027,2025-02-28 18:50:10,SHA-256,sha256:a517cb7c558739b5...d47d...852b,False,Restricted,Verified,5
+EV-0000179,CASE-0000052,Login Log,Third Party,Manual Upload,EMP0000027,2025-02-28 18:50:10,SHA-256,sha256:478473abaa382d32...1fac...81dc,False,Standard,Verified,3
+EV-0000180,CASE-0000052,Audit Record,SIEM,Manual Upload,EMP0000027,2025-02-28 18:50:10,SHA-256,sha256:fac275a8dd25bbe3...62d0...51f0,False,Restricted,Failed,5
+EV-0000181,CASE-0000053,CCTV Metadata,Third Party,Email Forward,EMP0000024,2025-03-09 02:39:35,SHA-256,sha256:b1fe51d16dc45008...693f...fdbc,True,Restricted,Verified,1
+EV-0000182,CASE-0000054,Customer Complaint,Third Party,Manual Upload,EMP0000037,2026-12-29 13:32:20,SHA-256,sha256:d01b2792f546c5e4...361b...f298,False,Standard,Verified,4
+EV-0000183,CASE-0000054,Customer Complaint,Third Party,System Export,EMP0000037,2026-12-29 13:32:20,SHA-256,sha256:24af9f4e804869ca...d45c...3fd0,False,Highly Restricted,Verified,5
+EV-0000184,CASE-0000054,Call Record Metadata,Customer,Email Forward,EMP0000037,2026-12-29 13:32:20,SHA-256,sha256:e6b0d8009e9fe90f...ee7b...9427,False,Standard,Verified,5
+EV-0000185,CASE-0000055,Transaction Statement,Customer,System Export,EMP0000016,2026-08-07 22:10:51,SHA-256,sha256:8c8fa236c81c2ff5...07c5...3ea9,False,Standard,Verified,3
+EV-0000186,CASE-0000055,Login Log,Branch,System Export,EMP0000016,2026-08-07 22:10:51,SHA-256,sha256:5717fb60b07fcc87...61c2...2beb,False,Standard,Verified,5
+EV-0000187,CASE-0000055,Screenshot Metadata,Third Party,Email Forward,EMP0000016,2026-08-07 22:10:51,SHA-256,sha256:ad013280a0ac36cc...165f...92b7,False,Standard,Verified,3
+EV-0000188,CASE-0000056,Device Record,IAM,Manual Upload,EMP0000014,2024-01-07 09:24:55,SHA-256,sha256:2b92fd4d1e163dea...ed3e...e5a2,False,Standard,Verified,3
+EV-0000189,CASE-0000056,Screenshot Metadata,IAM,API Extract,EMP0000014,2024-01-07 09:24:55,SHA-256,sha256:12c32ae59786c859...45dc...106d,False,Standard,Verified,4
+EV-0000190,CASE-0000056,System Log,IAM,Physical,EMP0000014,2024-01-07 09:24:55,SHA-256,sha256:3a64217d54b0d586...23e8...d6f6,True,Restricted,Verified,3
+EV-0000191,CASE-0000056,Interview Note,Core Banking,API Extract,EMP0000014,2024-01-07 09:24:55,SHA-256,sha256:f875eb4a4a316fec...f96f...b106,False,Standard,Verified,1
+EV-0000192,CASE-0000056,CCTV Metadata,Third Party,Manual Upload,EMP0000014,2024-01-07 09:24:55,SHA-256,sha256:c03cc5c4c2c1d0fc...c2d6...c555,False,Standard,Verified,2
+EV-0000193,CASE-0000056,Screenshot Metadata,Branch,System Export,EMP0000014,2024-01-07 09:24:55,SHA-256,sha256:70a15085790166f8...d04b...d5a6,False,Restricted,Verified,4
+EV-0000194,CASE-0000057,Customer Complaint,Third Party,Physical,EMP0000010,2026-05-09 21:11:23,SHA-256,sha256:999ac077efd52bb6...54ac...b1fb,False,Standard,Verified,5
+EV-0000195,CASE-0000058,Screenshot Metadata,Third Party,API Extract,EMP0000003,2024-07-20 03:58:36,SHA-256,sha256:b082c46997454c1b...8636...2b0d,False,Standard,Verified,3
+EV-0000196,CASE-0000058,Login Log,SIEM,System Export,EMP0000003,2024-07-20 03:58:36,SHA-256,sha256:c1ad45b475026354...4acb...d7a7,False,Restricted,Verified,1
+EV-0000197,CASE-0000058,Login Log,IAM,Physical,EMP0000003,2024-07-20 03:58:36,SHA-256,sha256:c933b12eafa1f793...aa9b...2d1b,True,Highly Restricted,Verified,2
+EV-0000198,CASE-0000058,Screenshot Metadata,Customer,Physical,EMP0000003,2024-07-20 03:58:36,SHA-256,sha256:6c92b9ab021f3647...3821...580d,False,Standard,Verified,2
+EV-0000199,CASE-0000058,Call Record Metadata,Customer,API Extract,EMP0000003,2024-07-20 03:58:36,SHA-256,sha256:ab4f35d28a3a9b14...7412...2860,False,Standard,Verified,5
+EV-0000200,CASE-0000058,Transaction Statement,Third Party,API Extract,EMP0000003,2024-07-20 03:58:36,SHA-256,sha256:0cd73aeff5801163...5cb5...d3cc,False,Standard,Verified,5
+EV-0000201,CASE-0000059,Audit Record,Third Party,API Extract,EMP0000013,2025-08-21 03:28:59,SHA-256,sha256:c05e26f51bba6786...ffe0...4930,False,Standard,Verified,1
+EV-0000202,CASE-0000059,Customer Complaint,Customer,Physical,EMP0000013,2025-08-21 03:28:59,SHA-256,sha256:dd8acb019466f72a...5c8e...b139,False,Standard,Verified,3
+EV-0000203,CASE-0000059,Interview Note,IAM,System Export,EMP0000013,2025-08-21 03:28:59,SHA-256,sha256:456275feace8cca3...3be3...0f87,False,Standard,Verified,3
+EV-0000204,CASE-0000060,Login Log,Third Party,API Extract,EMP0000020,2026-07-11 03:45:54,SHA-256,sha256:fc661ed8cd8ae429...1ed3...75de,True,Restricted,Verified,5
+EV-0000205,CASE-0000060,Audit Record,Customer,API Extract,EMP0000020,2026-07-11 03:45:54,SHA-256,sha256:009c59847805b5fb...9a13...0ee1,False,Restricted,Verified,4
+EV-0000206,CASE-0000060,Device Record,Core Banking,Physical,EMP0000020,2026-07-11 03:45:54,SHA-256,sha256:f6245e477620133b...3f42...f55f,False,Standard,Verified,3
+EV-0000207,CASE-0000060,Interview Note,Customer,Manual Upload,EMP0000020,2026-07-11 03:45:54,SHA-256,sha256:ddd7e28d3cc65f59...d1d8...cde1,False,Restricted,Verified,3
+EV-0000208,CASE-0000061,CCTV Metadata,Customer,API Extract,EMP0000015,2026-02-25 05:46:08,SHA-256,sha256:cbe74ef99f64639d...de9a...122d,False,Restricted,Verified,3
+EV-0000209,CASE-0000062,Screenshot Metadata,SIEM,Physical,EMP0000014,2024-01-24 06:46:54,SHA-256,sha256:c96de1a70c00673a...1db9...a7b5,False,Highly Restricted,Verified,4
+EV-0000210,CASE-0000062,Email,Customer,System Export,EMP0000014,2024-01-24 06:46:54,SHA-256,sha256:1d6991205203aafe...5f14...6b18,False,Standard,Verified,4
+EV-0000211,CASE-0000062,Email,SIEM,System Export,EMP0000014,2024-01-24 06:46:54,SHA-256,sha256:d7de79a19c63c31d...c3b3...1aeb,False,Standard,Pending,4
+EV-0000212,CASE-0000062,CCTV Metadata,Third Party,Physical,EMP0000014,2024-01-24 06:46:54,SHA-256,sha256:3dcc78f4950d6dc0...4fb2...e52e,False,Highly Restricted,Verified,2
+EV-0000213,CASE-0000062,Screenshot Metadata,Core Banking,Physical,EMP0000014,2024-01-24 06:46:54,SHA-256,sha256:f0d885125976f8ef...1c63...59ee,False,Restricted,Verified,3
+EV-0000214,CASE-0000063,Interview Note,IAM,Manual Upload,EMP0000037,2026-02-21 19:46:43,SHA-256,sha256:9578afbc37672787...a21f...1635,False,Standard,Verified,3
+EV-0000215,CASE-0000063,CCTV Metadata,Core Banking,Manual Upload,EMP0000037,2026-02-21 19:46:43,SHA-256,sha256:1f9e6de3531b0204...074f...3531,False,Standard,Pending,2
+EV-0000216,CASE-0000063,Email,Customer,Manual Upload,EMP0000037,2026-02-21 19:46:43,SHA-256,sha256:092197068a202758...4502...417b,False,Restricted,Verified,2
+EV-0000217,CASE-0000063,CCTV Metadata,AML System,API Extract,EMP0000037,2026-02-21 19:46:43,SHA-256,sha256:b3721eeb4d1c51b0...c08a...0bf3,False,Standard,Pending,4
+EV-0000218,CASE-0000063,Audit Record,Customer,Manual Upload,EMP0000037,2026-02-21 19:46:43,SHA-256,sha256:c178a63a6bedcf96...dc77...fd08,False,Restricted,Verified,1
+EV-0000219,CASE-0000064,Audit Record,SIEM,API Extract,EMP0000007,2025-08-05 07:22:59,SHA-256,sha256:379641bab22c6841...edfc...8327,False,Restricted,Pending,5
+EV-0000220,CASE-0000064,Login Log,Customer,Manual Upload,EMP0000007,2025-08-05 07:22:59,SHA-256,sha256:5bfeafb19783e8ea...d34a...d030,True,Standard,Verified,3
+EV-0000221,CASE-0000064,Call Record Metadata,Core Banking,Email Forward,EMP0000007,2025-08-05 07:22:59,SHA-256,sha256:aea622ed2380ad08...6519...52b4,False,Standard,Verified,1
+EV-0000222,CASE-0000065,Screenshot Metadata,Customer,Physical,EMP0000034,2024-11-19 03:09:51,SHA-256,sha256:b29dda12142da5a8...1f87...79e8,False,Restricted,Verified,2
+EV-0000223,CASE-0000065,Login Log,IAM,System Export,EMP0000034,2024-11-19 03:09:51,SHA-256,sha256:dc658d2234087918...88d5...4396,False,Standard,Verified,3
+EV-0000224,CASE-0000065,Interview Note,SIEM,Physical,EMP0000034,2024-11-19 03:09:51,SHA-256,sha256:a98d57c0dc41fc3b...03e8...b0eb,False,Standard,Verified,4
+EV-0000225,CASE-0000065,CCTV Metadata,Branch,Email Forward,EMP0000034,2024-11-19 03:09:51,SHA-256,sha256:1b39cf584dec13e8...c94e...4088,False,Standard,Failed,2
+EV-0000226,CASE-0000065,Device Record,Branch,Manual Upload,EMP0000034,2024-11-19 03:09:51,SHA-256,sha256:de7d4b9c7c9a0db0...e42b...a4b1,False,Highly Restricted,Verified,2
+EV-0000227,CASE-0000065,Login Log,IAM,Manual Upload,EMP0000034,2024-11-19 03:09:51,SHA-256,sha256:5e6ee661479d56c2...df7e...25c5,False,Standard,Verified,3
+EV-0000228,CASE-0000066,Call Record Metadata,AML System,API Extract,EMP0000040,2024-10-15 02:43:11,SHA-256,sha256:6b90fdf1a65ff1c7...bef3...f6b9,False,Standard,Pending,5
+EV-0000229,CASE-0000066,Interview Note,IAM,Physical,EMP0000040,2024-10-15 02:43:11,SHA-256,sha256:cabacd4b6170644d...4be6...9f65,False,Highly Restricted,Verified,2
+EV-0000230,CASE-0000066,Transaction Statement,AML System,System Export,EMP0000040,2024-10-15 02:43:11,SHA-256,sha256:3ed4a9f74f88c028...c828...9476,False,Standard,Verified,4
+EV-0000231,CASE-0000066,Interview Note,Branch,Physical,EMP0000040,2024-10-15 02:43:11,SHA-256,sha256:1fec2fb32fec3578...94b2...ee3e,False,Standard,Verified,4
+EV-0000232,CASE-0000067,Audit Record,SIEM,Manual Upload,EMP0000016,2026-10-27 01:58:09,SHA-256,sha256:60114cb5a651207f...2cf8...6503,False,Restricted,Verified,1
+EV-0000233,CASE-0000067,Device Record,Third Party,System Export,EMP0000016,2026-10-27 01:58:09,SHA-256,sha256:44c1feb338d1aece...21ea...af68,False,Restricted,Verified,1
+EV-0000234,CASE-0000067,Screenshot Metadata,Customer,Manual Upload,EMP0000016,2026-10-27 01:58:09,SHA-256,sha256:77cf430548e81a9a...87f1...6bf6,False,Restricted,Verified,4
+EV-0000235,CASE-0000067,Login Log,Branch,Email Forward,EMP0000016,2026-10-27 01:58:09,SHA-256,sha256:a35bb01867b20163...2e7e...7d9a,False,Standard,Verified,4
+EV-0000236,CASE-0000067,Device Record,Customer,Physical,EMP0000016,2026-10-27 01:58:09,SHA-256,sha256:1af2d11b263ab7f4...03a2...b87c,False,Standard,Pending,4
+EV-0000237,CASE-0000067,Call Record Metadata,Branch,System Export,EMP0000016,2026-10-27 01:58:09,SHA-256,sha256:639c1870cab54ea9...f2ff...6e5d,False,Standard,Pending,5
+EV-0000238,CASE-0000068,Customer Complaint,Core Banking,Email Forward,EMP0000025,2026-06-01 01:03:20,SHA-256,sha256:63c95712571e6299...a66f...becc,False,Highly Restricted,Verified,1
+EV-0000239,CASE-0000068,System Log,Branch,System Export,EMP0000025,2026-06-01 01:03:20,SHA-256,sha256:125fc24648661996...d8cc...b99a,False,Standard,Verified,3
+EV-0000240,CASE-0000068,CCTV Metadata,Branch,Physical,EMP0000025,2026-06-01 01:03:20,SHA-256,sha256:e8226c563398758a...6028...25d9,False,Restricted,Verified,2
+EV-0000241,CASE-0000069,System Log,Third Party,System Export,EMP0000010,2026-03-23 10:19:29,SHA-256,sha256:2d5708c88a3a6a03...9169...8a67,False,Standard,Verified,2
+EV-0000242,CASE-0000069,Email,Third Party,Manual Upload,EMP0000010,2026-03-23 10:19:29,SHA-256,sha256:e8a31c457b6641a0...83ed...9a95,False,Restricted,Verified,3
+EV-0000243,CASE-0000070,Customer Complaint,Branch,API Extract,EMP0000008,2024-03-09 12:26:38,SHA-256,sha256:1684904be14f9952...d0da...7cd0,False,Standard,Verified,3
+EV-0000244,CASE-0000070,Screenshot Metadata,Core Banking,Manual Upload,EMP0000008,2024-03-09 12:26:38,SHA-256,sha256:4c55292785ec6a53...b0df...59d3,False,Highly Restricted,Verified,1
+EV-0000245,CASE-0000070,Customer Complaint,Core Banking,System Export,EMP0000008,2024-03-09 12:26:38,SHA-256,sha256:7835925b3a982882...010b...f8c3,False,Highly Restricted,Verified,5
+EV-0000246,CASE-0000070,Device Record,Core Banking,System Export,EMP0000008,2024-03-09 12:26:38,SHA-256,sha256:06bb575ca254e870...9ad4...03c2,True,Standard,Verified,5

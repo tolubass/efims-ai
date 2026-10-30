@@ -1,0 +1,190 @@
+note_id,case_id,author_employee_id,timestamp,note_type,content
+NOTE-0000001,CASE-0000001,EMP0000040,2026-11-13 19:02:33,Escalation,Evidence received from SIEM. Logs cover period 2026-11-09 to 2026-11-11. Reviewing.
+NOTE-0000002,CASE-0000001,EMP0000040,2026-11-15 11:02:33,External Contact,Evidence received from SIEM. Logs cover period 2026-11-09 to 2026-11-11. Reviewing.
+NOTE-0000003,CASE-0000001,EMP0000040,2026-11-19 17:02:33,General Update,Evidence received from SIEM. Logs cover period 2026-11-09 to 2026-11-11. Reviewing.
+NOTE-0000004,CASE-0000001,EMP0000040,2026-11-13 19:02:33,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000005,CASE-0000002,EMP0000021,2024-06-27 02:05:09,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000006,CASE-0000002,EMP0000021,2024-06-29 16:05:09,General Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000007,CASE-0000002,EMP0000021,2024-07-03 23:05:09,External Contact,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000008,CASE-0000003,EMP0000024,2026-07-20 16:23:59,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000009,CASE-0000003,EMP0000024,2026-07-17 05:23:59,Decision,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000010,CASE-0000003,EMP0000024,2026-07-17 20:23:59,Decision,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000011,CASE-0000003,EMP0000024,2026-07-21 01:23:59,Escalation,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000012,CASE-0000004,EMP0000016,2024-03-26 01:48:58,Decision,Root cause identified as Inadequate customer verification. CAPA being drafted.
+NOTE-0000013,CASE-0000004,EMP0000016,2024-03-22 22:48:58,Escalation,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000014,CASE-0000004,EMP0000016,2024-03-27 00:48:58,External Contact,Evidence received from SIEM. Logs cover period 2024-03-18 to 2024-03-20. Reviewing.
+NOTE-0000015,CASE-0000005,EMP0000024,2025-05-21 00:51:37,Evidence Update,"Escalated to senior investigator due to exposure exceeding NGN 1,626,646."
+NOTE-0000016,CASE-0000005,EMP0000024,2025-05-23 21:51:37,General Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000017,CASE-0000005,EMP0000024,2025-05-18 02:51:37,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000018,CASE-0000006,EMP0000012,2025-12-30 08:22:13,Evidence Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000019,CASE-0000007,EMP0000006,2024-01-11 05:17:31,Escalation,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000020,CASE-0000007,EMP0000006,2024-01-12 02:17:31,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000021,CASE-0000007,EMP0000006,2024-01-09 02:17:31,Decision,"Escalated to senior investigator due to exposure exceeding NGN 3,375,864."
+NOTE-0000022,CASE-0000008,EMP0000014,2026-01-13 21:50:47,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000023,CASE-0000009,EMP0000008,2024-06-23 15:15:24,Escalation,"Escalated to senior investigator due to exposure exceeding NGN 218,765."
+NOTE-0000024,CASE-0000009,EMP0000008,2024-06-21 22:15:24,External Contact,Root cause identified as Employee misconduct. CAPA being drafted.
+NOTE-0000025,CASE-0000010,EMP0000022,2024-05-14 17:05:32,Decision,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000026,CASE-0000010,EMP0000022,2024-05-09 23:05:32,External Contact,"Escalated to senior investigator due to exposure exceeding NGN 832,663."
+NOTE-0000027,CASE-0000010,EMP0000022,2024-05-13 17:05:32,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000028,CASE-0000011,EMP0000009,2024-06-24 09:29:03,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000029,CASE-0000011,EMP0000009,2024-06-25 11:29:03,General Update,Evidence received from SIEM. Logs cover period 2024-06-20 to 2024-06-21. Reviewing.
+NOTE-0000030,CASE-0000011,EMP0000009,2024-06-21 23:29:03,General Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000031,CASE-0000012,EMP0000037,2024-11-10 09:49:22,General Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000032,CASE-0000013,EMP0000033,2024-04-02 04:27:00,Evidence Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000033,CASE-0000014,EMP0000023,2024-12-01 17:29:47,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000034,CASE-0000014,EMP0000023,2024-11-23 19:29:47,Evidence Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000035,CASE-0000015,EMP0000005,2024-05-24 12:21:15,Escalation,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000036,CASE-0000015,EMP0000005,2024-05-23 04:21:15,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000037,CASE-0000015,EMP0000005,2024-05-26 01:21:15,Evidence Update,"Escalated to senior investigator due to exposure exceeding NGN 204,876."
+NOTE-0000038,CASE-0000015,EMP0000005,2024-05-22 18:21:15,External Contact,Evidence received from SIEM. Logs cover period 2024-05-20 to 2024-05-20. Reviewing.
+NOTE-0000039,CASE-0000016,EMP0000033,2026-10-24 15:59:20,Evidence Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000040,CASE-0000016,EMP0000033,2026-10-23 13:59:20,Decision,Evidence received from SIEM. Logs cover period 2026-10-17 to 2026-10-19. Reviewing.
+NOTE-0000041,CASE-0000017,EMP0000006,2026-07-07 20:10:45,Evidence Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000042,CASE-0000017,EMP0000006,2026-07-11 14:10:45,Evidence Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000043,CASE-0000017,EMP0000006,2026-07-08 20:10:45,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000044,CASE-0000018,EMP0000027,2025-10-25 04:38:06,External Contact,Root cause identified as System configuration error. CAPA being drafted.
+NOTE-0000045,CASE-0000018,EMP0000027,2025-10-22 02:38:06,Evidence Update,"Escalated to senior investigator due to exposure exceeding NGN 127,542."
+NOTE-0000046,CASE-0000019,EMP0000035,2026-08-06 07:29:03,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000047,CASE-0000019,EMP0000035,2026-08-01 02:29:03,External Contact,Account restrictions applied. Core banking confirmation received.
+NOTE-0000048,CASE-0000020,EMP0000005,2024-06-30 23:26:14,Escalation,Root cause identified as Training gap. CAPA being drafted.
+NOTE-0000049,CASE-0000021,EMP0000022,2025-11-07 06:19:42,General Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000050,CASE-0000021,EMP0000022,2025-11-09 21:19:42,Evidence Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000051,CASE-0000021,EMP0000022,2025-11-11 14:19:42,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000052,CASE-0000022,EMP0000004,2025-06-17 17:20:27,External Contact,"Escalated to senior investigator due to exposure exceeding NGN 653,025."
+NOTE-0000053,CASE-0000022,EMP0000004,2025-06-18 08:20:27,Evidence Update,Evidence received from SIEM. Logs cover period 2025-06-08 to 2025-06-09. Reviewing.
+NOTE-0000054,CASE-0000022,EMP0000004,2025-06-17 09:20:27,Escalation,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000055,CASE-0000022,EMP0000004,2025-06-15 10:20:27,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000056,CASE-0000023,EMP0000039,2025-01-27 15:43:56,General Update,Root cause identified as Staff process failure. CAPA being drafted.
+NOTE-0000057,CASE-0000024,EMP0000005,2026-09-19 06:17:25,Decision,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000058,CASE-0000024,EMP0000005,2026-09-14 06:17:25,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000059,CASE-0000024,EMP0000005,2026-09-11 05:17:25,Escalation,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000060,CASE-0000025,EMP0000005,2026-09-11 17:27:39,General Update,Root cause identified as Technology failure. CAPA being drafted.
+NOTE-0000061,CASE-0000025,EMP0000005,2026-09-09 12:27:39,General Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000062,CASE-0000025,EMP0000005,2026-09-06 16:27:39,External Contact,Account restrictions applied. Core banking confirmation received.
+NOTE-0000063,CASE-0000025,EMP0000005,2026-09-09 06:27:39,External Contact,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000064,CASE-0000026,EMP0000038,2025-12-20 11:07:51,Decision,Root cause identified as Training gap. CAPA being drafted.
+NOTE-0000065,CASE-0000026,EMP0000038,2025-12-18 09:07:51,Escalation,Root cause identified as Training gap. CAPA being drafted.
+NOTE-0000066,CASE-0000026,EMP0000038,2025-12-15 05:07:51,Escalation,Evidence received from SIEM. Logs cover period 2025-12-12 to 2025-12-13. Reviewing.
+NOTE-0000067,CASE-0000026,EMP0000038,2025-12-17 16:07:51,Evidence Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000068,CASE-0000027,EMP0000022,2025-02-23 21:43:32,External Contact,Evidence received from SIEM. Logs cover period 2025-02-19 to 2025-02-20. Reviewing.
+NOTE-0000069,CASE-0000027,EMP0000022,2025-02-25 18:43:32,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000070,CASE-0000027,EMP0000022,2025-03-01 00:43:32,Evidence Update,"Escalated to senior investigator due to exposure exceeding NGN 884,621."
+NOTE-0000071,CASE-0000027,EMP0000022,2025-02-25 06:43:32,General Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000072,CASE-0000028,EMP0000037,2025-07-06 11:19:21,Decision,"Escalated to senior investigator due to exposure exceeding NGN 345,297."
+NOTE-0000073,CASE-0000028,EMP0000037,2025-07-03 19:19:21,External Contact,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000074,CASE-0000029,EMP0000012,2025-02-26 18:52:29,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000075,CASE-0000029,EMP0000012,2025-02-26 08:52:29,External Contact,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000076,CASE-0000029,EMP0000012,2025-02-25 06:52:29,General Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000077,CASE-0000029,EMP0000012,2025-02-25 19:52:29,General Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000078,CASE-0000030,EMP0000010,2024-01-20 00:21:55,General Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000079,CASE-0000030,EMP0000010,2024-01-22 01:21:55,External Contact,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000080,CASE-0000031,EMP0000023,2024-12-18 23:09:02,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000081,CASE-0000032,EMP0000029,2024-03-01 16:00:22,Decision,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000082,CASE-0000032,EMP0000029,2024-03-06 03:00:22,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000083,CASE-0000032,EMP0000029,2024-03-03 01:00:22,Escalation,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000084,CASE-0000033,EMP0000028,2024-09-02 19:17:11,General Update,"Escalated to senior investigator due to exposure exceeding NGN 381,488."
+NOTE-0000085,CASE-0000033,EMP0000028,2024-08-31 02:17:11,Evidence Update,Evidence received from SIEM. Logs cover period 2024-08-24 to 2024-08-25. Reviewing.
+NOTE-0000086,CASE-0000034,EMP0000031,2025-12-31 22:53:54,External Contact,Evidence received from SIEM. Logs cover period 2025-12-22 to 2025-12-24. Reviewing.
+NOTE-0000087,CASE-0000034,EMP0000031,2025-12-29 02:53:54,External Contact,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000088,CASE-0000034,EMP0000031,2025-12-25 10:53:54,Escalation,Evidence received from SIEM. Logs cover period 2025-12-22 to 2025-12-24. Reviewing.
+NOTE-0000089,CASE-0000035,EMP0000024,2025-09-09 07:18:58,External Contact,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000090,CASE-0000036,EMP0000007,2026-07-28 23:04:52,General Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000091,CASE-0000037,EMP0000014,2024-04-01 00:22:48,External Contact,"Escalated to senior investigator due to exposure exceeding NGN 411,717."
+NOTE-0000092,CASE-0000037,EMP0000014,2024-04-03 08:22:48,External Contact,"Escalated to senior investigator due to exposure exceeding NGN 411,717."
+NOTE-0000093,CASE-0000037,EMP0000014,2024-03-29 15:22:48,Decision,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000094,CASE-0000038,EMP0000011,2024-02-25 22:17:04,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000095,CASE-0000038,EMP0000011,2024-02-26 22:17:04,Escalation,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000096,CASE-0000038,EMP0000011,2024-02-24 23:17:04,External Contact,Root cause identified as Social engineering. CAPA being drafted.
+NOTE-0000097,CASE-0000038,EMP0000011,2024-02-27 16:17:04,Decision,"Escalated to senior investigator due to exposure exceeding NGN 770,800."
+NOTE-0000098,CASE-0000039,EMP0000028,2025-01-20 19:44:08,External Contact,Account restrictions applied. Core banking confirmation received.
+NOTE-0000099,CASE-0000039,EMP0000028,2025-01-21 19:44:08,External Contact,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000100,CASE-0000040,EMP0000026,2026-06-06 15:05:37,Decision,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000101,CASE-0000040,EMP0000026,2026-06-10 19:05:37,Decision,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000102,CASE-0000040,EMP0000026,2026-06-09 09:05:37,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000103,CASE-0000040,EMP0000026,2026-06-06 06:05:37,Decision,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000104,CASE-0000041,EMP0000019,2024-12-07 15:23:08,Decision,Evidence received from SIEM. Logs cover period 2024-12-01 to 2024-12-02. Reviewing.
+NOTE-0000105,CASE-0000041,EMP0000019,2024-12-04 21:23:08,General Update,Evidence received from SIEM. Logs cover period 2024-12-01 to 2024-12-02. Reviewing.
+NOTE-0000106,CASE-0000042,EMP0000036,2025-09-02 19:58:47,Decision,Root cause identified as Technology failure. CAPA being drafted.
+NOTE-0000107,CASE-0000043,EMP0000023,2026-09-17 21:13:56,General Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000108,CASE-0000043,EMP0000023,2026-09-19 21:13:56,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000109,CASE-0000043,EMP0000023,2026-09-12 15:13:56,Escalation,Evidence received from SIEM. Logs cover period 2026-09-10 to 2026-09-11. Reviewing.
+NOTE-0000110,CASE-0000044,EMP0000023,2024-03-02 03:56:38,Evidence Update,Evidence received from SIEM. Logs cover period 2024-02-27 to 2024-02-27. Reviewing.
+NOTE-0000111,CASE-0000044,EMP0000023,2024-03-02 02:56:38,External Contact,Account restrictions applied. Core banking confirmation received.
+NOTE-0000112,CASE-0000044,EMP0000023,2024-03-05 15:56:38,External Contact,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000113,CASE-0000045,EMP0000018,2024-05-17 15:30:37,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000114,CASE-0000045,EMP0000018,2024-05-15 19:30:37,Decision,"Escalated to senior investigator due to exposure exceeding NGN 123,960."
+NOTE-0000115,CASE-0000045,EMP0000018,2024-05-14 14:30:37,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000116,CASE-0000045,EMP0000018,2024-05-14 20:30:37,External Contact,Evidence received from SIEM. Logs cover period 2024-05-12 to 2024-05-12. Reviewing.
+NOTE-0000117,CASE-0000046,EMP0000026,2026-05-08 20:37:52,Decision,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000118,CASE-0000047,EMP0000019,2025-11-23 03:02:26,Evidence Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000119,CASE-0000047,EMP0000019,2025-11-22 02:02:26,Decision,Root cause identified as Technology failure. CAPA being drafted.
+NOTE-0000120,CASE-0000047,EMP0000019,2025-11-22 22:02:26,General Update,Evidence received from SIEM. Logs cover period 2025-11-16 to 2025-11-18. Reviewing.
+NOTE-0000121,CASE-0000047,EMP0000019,2025-11-26 00:02:26,Escalation,"Escalated to senior investigator due to exposure exceeding NGN 854,989."
+NOTE-0000122,CASE-0000048,EMP0000004,2025-06-10 13:09:11,General Update,"Escalated to senior investigator due to exposure exceeding NGN 1,294,762."
+NOTE-0000123,CASE-0000048,EMP0000004,2025-06-15 15:09:11,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000124,CASE-0000049,EMP0000033,2024-10-07 18:54:43,External Contact,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000125,CASE-0000049,EMP0000033,2024-10-11 16:54:43,Evidence Update,Evidence received from SIEM. Logs cover period 2024-10-05 to 2024-10-06. Reviewing.
+NOTE-0000126,CASE-0000049,EMP0000033,2024-10-14 02:54:43,General Update,Evidence received from SIEM. Logs cover period 2024-10-05 to 2024-10-06. Reviewing.
+NOTE-0000127,CASE-0000049,EMP0000033,2024-10-12 13:54:43,External Contact,Root cause identified as Technology failure. CAPA being drafted.
+NOTE-0000128,CASE-0000050,EMP0000022,2025-08-24 01:00:42,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000129,CASE-0000050,EMP0000022,2025-08-30 13:00:42,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000130,CASE-0000051,EMP0000006,2026-05-28 19:35:49,Decision,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000131,CASE-0000051,EMP0000006,2026-05-28 09:35:49,Escalation,Root cause identified as Policy gap. CAPA being drafted.
+NOTE-0000132,CASE-0000051,EMP0000006,2026-05-26 16:35:49,General Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000133,CASE-0000052,EMP0000027,2025-03-08 17:50:10,Escalation,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000134,CASE-0000052,EMP0000027,2025-03-07 22:50:10,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000135,CASE-0000052,EMP0000027,2025-03-02 01:50:10,Decision,"Escalated to senior investigator due to exposure exceeding NGN 1,008,315."
+NOTE-0000136,CASE-0000053,EMP0000024,2025-03-16 14:39:35,Escalation,"Escalated to senior investigator due to exposure exceeding NGN 66,754."
+NOTE-0000137,CASE-0000053,EMP0000024,2025-03-09 07:39:35,Escalation,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000138,CASE-0000053,EMP0000024,2025-03-16 22:39:35,Escalation,Root cause identified as Third-party failure. CAPA being drafted.
+NOTE-0000139,CASE-0000053,EMP0000024,2025-03-11 18:39:35,Evidence Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000140,CASE-0000054,EMP0000037,2027-01-06 19:32:20,Escalation,Root cause identified as Governance failure. CAPA being drafted.
+NOTE-0000141,CASE-0000054,EMP0000037,2026-12-31 06:32:20,Escalation,Evidence received from SIEM. Logs cover period 2026-12-27 to 2026-12-29. Reviewing.
+NOTE-0000142,CASE-0000054,EMP0000037,2027-01-04 13:32:20,General Update,Evidence received from SIEM. Logs cover period 2026-12-27 to 2026-12-29. Reviewing.
+NOTE-0000143,CASE-0000054,EMP0000037,2027-01-01 12:32:20,Escalation,Evidence received from SIEM. Logs cover period 2026-12-27 to 2026-12-29. Reviewing.
+NOTE-0000144,CASE-0000055,EMP0000016,2026-08-12 05:10:51,Decision,Root cause identified as Governance failure. CAPA being drafted.
+NOTE-0000145,CASE-0000055,EMP0000016,2026-08-14 14:10:51,Decision,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000146,CASE-0000056,EMP0000014,2024-01-12 07:24:55,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000147,CASE-0000056,EMP0000014,2024-01-11 04:24:55,Decision,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000148,CASE-0000056,EMP0000014,2024-01-12 07:24:55,External Contact,Evidence received from SIEM. Logs cover period 2024-01-05 to 2024-01-07. Reviewing.
+NOTE-0000149,CASE-0000057,EMP0000010,2026-05-11 22:11:23,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000150,CASE-0000057,EMP0000010,2026-05-17 17:11:23,Escalation,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000151,CASE-0000057,EMP0000010,2026-05-10 16:11:23,External Contact,Root cause identified as Policy gap. CAPA being drafted.
+NOTE-0000152,CASE-0000057,EMP0000010,2026-05-12 13:11:23,External Contact,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000153,CASE-0000058,EMP0000003,2024-07-22 01:58:36,General Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000154,CASE-0000058,EMP0000003,2024-07-23 03:58:36,External Contact,Evidence received from SIEM. Logs cover period 2024-07-18 to 2024-07-19. Reviewing.
+NOTE-0000155,CASE-0000058,EMP0000003,2024-07-20 18:58:36,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000156,CASE-0000058,EMP0000003,2024-07-25 07:58:36,Evidence Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000157,CASE-0000059,EMP0000013,2025-08-24 22:28:59,Evidence Update,Root cause identified as Staff process failure. CAPA being drafted.
+NOTE-0000158,CASE-0000059,EMP0000013,2025-08-24 15:28:59,Decision,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000159,CASE-0000059,EMP0000013,2025-08-26 09:28:59,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000160,CASE-0000059,EMP0000013,2025-08-24 13:28:59,Decision,Root cause identified as Staff process failure. CAPA being drafted.
+NOTE-0000161,CASE-0000060,EMP0000020,2026-07-17 17:45:54,Decision,Evidence received from SIEM. Logs cover period 2026-07-09 to 2026-07-10. Reviewing.
+NOTE-0000162,CASE-0000060,EMP0000020,2026-07-17 06:45:54,Escalation,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000163,CASE-0000060,EMP0000020,2026-07-13 01:45:54,Evidence Update,Root cause identified as Governance failure. CAPA being drafted.
+NOTE-0000164,CASE-0000061,EMP0000015,2026-03-03 08:46:08,External Contact,Evidence received from SIEM. Logs cover period 2026-02-24 to 2026-02-25. Reviewing.
+NOTE-0000165,CASE-0000061,EMP0000015,2026-03-02 14:46:08,Escalation,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000166,CASE-0000061,EMP0000015,2026-02-28 13:46:08,Escalation,"Escalated to senior investigator due to exposure exceeding NGN 580,835."
+NOTE-0000167,CASE-0000061,EMP0000015,2026-02-28 18:46:08,Evidence Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000168,CASE-0000062,EMP0000014,2024-01-25 08:46:54,General Update,Root cause identified as Governance failure. CAPA being drafted.
+NOTE-0000169,CASE-0000062,EMP0000014,2024-01-28 05:46:54,General Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000170,CASE-0000062,EMP0000014,2024-01-31 22:46:54,General Update,Account restrictions applied. Core banking confirmation received.
+NOTE-0000171,CASE-0000062,EMP0000014,2024-01-28 20:46:54,General Update,Evidence received from SIEM. Logs cover period 2024-01-22 to 2024-01-24. Reviewing.
+NOTE-0000172,CASE-0000063,EMP0000037,2026-02-26 05:46:43,Escalation,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000173,CASE-0000063,EMP0000037,2026-03-01 09:46:43,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000174,CASE-0000063,EMP0000037,2026-02-22 17:46:43,Decision,"Escalated to senior investigator due to exposure exceeding NGN 3,145,937."
+NOTE-0000175,CASE-0000064,EMP0000007,2025-08-10 08:22:59,Decision,Root cause identified as Technology failure. CAPA being drafted.
+NOTE-0000176,CASE-0000064,EMP0000007,2025-08-09 18:22:59,External Contact,Root cause identified as Technology failure. CAPA being drafted.
+NOTE-0000177,CASE-0000064,EMP0000007,2025-08-13 10:22:59,General Update,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000178,CASE-0000064,EMP0000007,2025-08-10 18:22:59,Escalation,Root cause identified as Technology failure. CAPA being drafted.
+NOTE-0000179,CASE-0000065,EMP0000034,2024-11-19 12:09:51,Escalation,Investigation ongoing. Awaiting response from beneficiary bank.
+NOTE-0000180,CASE-0000065,EMP0000034,2024-11-23 03:09:51,General Update,"Escalated to senior investigator due to exposure exceeding NGN 487,527."
+NOTE-0000181,CASE-0000066,EMP0000040,2024-10-22 23:43:11,General Update,Root cause identified as Staff process failure. CAPA being drafted.
+NOTE-0000182,CASE-0000067,EMP0000016,2026-10-28 06:58:09,Decision,Evidence received from SIEM. Logs cover period 2026-10-25 to 2026-10-26. Reviewing.
+NOTE-0000183,CASE-0000067,EMP0000016,2026-10-31 11:58:09,Decision,Account restrictions applied. Core banking confirmation received.
+NOTE-0000184,CASE-0000068,EMP0000025,2026-06-02 15:03:20,Escalation,Evidence received from SIEM. Logs cover period 2026-05-30 to 2026-05-31. Reviewing.
+NOTE-0000185,CASE-0000068,EMP0000025,2026-06-07 11:03:20,Evidence Update,Root cause identified as Governance failure. CAPA being drafted.
+NOTE-0000186,CASE-0000069,EMP0000010,2026-03-24 20:19:29,General Update,Customer re-contacted. Confirmed no authorisation was given for the transfers.
+NOTE-0000187,CASE-0000069,EMP0000010,2026-03-23 13:19:29,Evidence Update,Recovery action initiated. Beneficiary bank contacted.
+NOTE-0000188,CASE-0000069,EMP0000010,2026-03-31 17:19:29,Escalation,Evidence received from SIEM. Logs cover period 2026-03-22 to 2026-03-22. Reviewing.
+NOTE-0000189,CASE-0000070,EMP0000008,2024-03-14 12:26:38,External Contact,"Escalated to senior investigator due to exposure exceeding NGN 894,513."

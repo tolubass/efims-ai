@@ -1,0 +1,34 @@
+obligation_id,case_id,authority,report_type,trigger_condition,deadline,filed_date,filing_status,acknowledgement_ref,mlro_approved,compartmentalised
+OBL-0000001,CASE-0000004,CBN,NEFF Fraud Report,"S2 case — exposure NGN 137,046",2024-03-23,2024-03-25,Pending,CBN-ACK-433847,,False
+OBL-0000002,CASE-0000006,NDPC,Data Breach Notification,"S2 case — exposure NGN 10,262",2025-12-27,,Pending,,,False
+OBL-0000003,CASE-0000009,NDPC,Data Breach Notification,"S2 case — exposure NGN 218,765",2024-06-21,2024-06-19,Pending,,,False
+OBL-0000004,CASE-0000011,NFIU,STR/SAR Filing,"S2 case — exposure NGN 311,792",2024-06-26,,Filed,NFIU-ACK-651546,True,True
+OBL-0000005,CASE-0000011,NDPC,Data Breach Notification,"S2 case — exposure NGN 311,792",2024-06-24,,Filed,,,False
+OBL-0000006,CASE-0000011,EFCC,Referral,"S2 case — exposure NGN 311,792",2024-07-05,2024-07-07,Filed,EFCC-ACK-784805,,False
+OBL-0000007,CASE-0000015,NDIC,Monthly Fraud Return,"S2 case — exposure NGN 204,876",2024-06-20,2024-06-18,Drafted,,,False
+OBL-0000008,CASE-0000015,NDPC,Data Breach Notification,"S2 case — exposure NGN 204,876",2024-05-24,2024-05-26,Pending,NDPC-ACK-387855,,False
+OBL-0000009,CASE-0000016,NDPC,Data Breach Notification,"S2 case — exposure NGN 6,427,136",2026-10-22,2026-10-22,Pending,NDPC-ACK-798691,,False
+OBL-0000010,CASE-0000016,NDIC,Monthly Fraud Return,"S2 case — exposure NGN 6,427,136",2026-11-18,,Overdue,NDIC-ACK-970649,,False
+OBL-0000011,CASE-0000016,CBN,NEFF Fraud Report,"S2 case — exposure NGN 6,427,136",2026-10-22,,Pending,,,False
+OBL-0000012,CASE-0000023,EFCC,Referral,"S2 case — exposure NGN 246,402",2025-02-06,2025-02-05,Filed,EFCC-ACK-454808,,False
+OBL-0000013,CASE-0000023,NDPC,Data Breach Notification,"S2 case — exposure NGN 246,402",2025-01-26,2025-01-26,Filed,NDPC-ACK-137574,,False
+OBL-0000014,CASE-0000023,NFIU,STR/SAR Filing,"S2 case — exposure NGN 246,402",2025-01-28,2025-01-28,Pending,NFIU-ACK-200044,True,True
+OBL-0000015,CASE-0000028,NDIC,Monthly Fraud Return,"S2 case — exposure NGN 345,297",2025-07-29,2025-07-27,Filed,NDIC-ACK-297245,,False
+OBL-0000016,CASE-0000028,EFCC,Referral,"S2 case — exposure NGN 345,297",2025-07-13,2025-07-08,Pending,EFCC-ACK-565537,,False
+OBL-0000017,CASE-0000028,CBN,NEFF Fraud Report,"S2 case — exposure NGN 345,297",2025-07-02,2025-06-29,Filed,CBN-ACK-438334,,False
+OBL-0000018,CASE-0000039,NDPC,Data Breach Notification,"S2 case — exposure NGN 845,062",2025-01-19,2025-01-19,Filed,NDPC-ACK-935434,,False
+OBL-0000019,CASE-0000041,CBN,NEFF Fraud Report,"S3 case — exposure NGN 7,979,229",2024-12-05,2024-11-30,Filed,CBN-ACK-862177,,False
+OBL-0000020,CASE-0000043,NDPC,Data Breach Notification,"S2 case — exposure NGN 35,452",2026-09-15,2026-09-16,Pending,,,False
+OBL-0000021,CASE-0000043,NDIC,Monthly Fraud Return,"S2 case — exposure NGN 35,452",2026-10-12,2026-10-11,Drafted,NDIC-ACK-864748,,False
+OBL-0000022,CASE-0000054,NFIU,STR/SAR Filing,"S2 case — exposure NGN 197,254",2027-01-03,,Filed,NFIU-ACK-430250,True,True
+OBL-0000023,CASE-0000055,NDPC,Data Breach Notification,"S2 case — exposure NGN 1,617,586",2026-08-10,2026-08-10,Filed,NDPC-ACK-953874,,False
+OBL-0000024,CASE-0000061,CBN,NEFF Fraud Report,"S2 case — exposure NGN 580,835",2026-02-28,2026-03-02,Pending,CBN-ACK-308990,,False
+OBL-0000025,CASE-0000061,NFIU,STR/SAR Filing,"S2 case — exposure NGN 580,835",2026-03-02,2026-02-27,Overdue,,True,True
+OBL-0000026,CASE-0000061,EFCC,Referral,"S2 case — exposure NGN 580,835",2026-03-11,2026-03-13,Pending,EFCC-ACK-218448,,False
+OBL-0000027,CASE-0000063,NDPC,Data Breach Notification,"S2 case — exposure NGN 3,145,937",2026-02-24,2026-02-20,Pending,NDPC-ACK-427543,,False
+OBL-0000028,CASE-0000064,EFCC,Referral,"S1 case — exposure NGN 265,901",2025-08-19,,Drafted,EFCC-ACK-174793,,False
+OBL-0000029,CASE-0000064,NDPC,Data Breach Notification,"S1 case — exposure NGN 265,901",2025-08-08,2025-08-10,Pending,NDPC-ACK-327541,,False
+OBL-0000030,CASE-0000064,NFIU,STR/SAR Filing,"S1 case — exposure NGN 265,901",2025-08-10,2025-08-09,Drafted,NFIU-ACK-571327,True,True
+OBL-0000031,CASE-0000065,CBN,NEFF Fraud Report,"S2 case — exposure NGN 487,527",2024-11-22,2024-11-20,Pending,CBN-ACK-745944,,False
+OBL-0000032,CASE-0000070,EFCC,Referral,"S2 case — exposure NGN 894,513",2024-03-23,2024-03-23,Filed,EFCC-ACK-506706,,False
+OBL-0000033,CASE-0000070,NDPC,Data Breach Notification,"S2 case — exposure NGN 894,513",2024-03-12,2024-03-14,Filed,NDPC-ACK-707838,,False

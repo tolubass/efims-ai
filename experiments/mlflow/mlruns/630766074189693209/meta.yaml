@@ -1,0 +1,9 @@
+artifact_location: file:C:/Users/USER/Desktop/efims-ai/experiments/mlflow/mlruns/630766074189693209
+creation_time: 1791288677465
+effective_trace_archival_retention: null
+experiment_id: '630766074189693209'
+last_update_time: 1791288677465
+lifecycle_stage: active
+name: efims-recovery
+trace_location: null
+workspace: default

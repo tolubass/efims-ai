@@ -1,0 +1,18 @@
+{
+  "feature_columns": [
+    "financial_exposure_ngn",
+    "log_financial_exposure",
+    "customer_impact_count",
+    "ongoing_threat",
+    "insider_involvement",
+    "data_compromise",
+    "regulatory_relevance",
+    "source_encoded",
+    "channel_encoded",
+    "incident_type_encoded",
+    "reported_by_type_encoded",
+    "narrative_length",
+    "hour_of_day",
+    "is_business_hours_flag"
+  ]
+}
