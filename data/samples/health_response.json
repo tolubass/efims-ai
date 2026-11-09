@@ -1,0 +1,20 @@
+{
+  "status": "healthy",
+  "timestamp_wat": "2026-11-09 14:40:49 WAT",
+  "models": {
+    "severity": {
+      "status": "healthy",
+      "version": "v1.0"
+    },
+    "anomaly": {
+      "status": "healthy",
+      "version": "v1.0"
+    },
+    "recovery": {
+      "status": "healthy",
+      "version": "v1.0"
+    }
+  },
+  "service": "EFIMS AI Service",
+  "version": "1.0.0"
+}

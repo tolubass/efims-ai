@@ -1,0 +1,28 @@
+# Not build/run-tested here: Docker is installed on this machine, but its
+# daemon isn't reachable, so this file is syntax/structure-checked only
+# (`docker compose config`). Verify with a real `docker compose up --build`
+# on a machine with the daemon running before relying on it.
+services:
+  api:
+    build:
+      # The compose file lives in docker/, but the Dockerfile's COPY
+      # instructions (src/, configs/, model_registry/) are written relative
+      # to the project root, so the build context has to be the project
+      # root too, not this directory.
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Audit logs (logs/audit_YYYYMMDD.jsonl) persist on the host across
+      # container restarts/rebuilds instead of living only in the container.
+      - ../logs:/app/logs
+    healthcheck:
+      # Uses the stdlib (urllib) instead of curl, so the image doesn't need
+      # an extra system package just for this check.
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://localhost:8000/api/v1/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped

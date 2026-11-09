@@ -1,0 +1,58 @@
+{
+  "prediction_id": "PRED-SEV-20261109-F5ACC6",
+  "model_name": "severity",
+  "model_version": "v1.0",
+  "confidence_score": 0.9559868117782092,
+  "requires_human_review": false,
+  "explanation": [
+    {
+      "feature": "ongoing_threat",
+      "impact": "high",
+      "direction": "increases_risk",
+      "value": 1.0
+    },
+    {
+      "feature": "incident_type_encoded",
+      "impact": "medium",
+      "direction": "increases_risk",
+      "value": 0.0
+    },
+    {
+      "feature": "financial_exposure_ngn",
+      "impact": "low",
+      "direction": "increases_risk",
+      "value": 4800000.0
+    }
+  ],
+  "timestamp_wat": "2026-11-09 14:40:50 WAT",
+  "disclaimer": "This is an AI-generated suggestion. Human review and approval is required before any action is taken on a case.",
+  "severity_prediction": "S2",
+  "severity_score": 0.9559868117782092,
+  "all_class_probabilities": {
+    "S1": 0.025689688236553147,
+    "S2": 0.9559868117782092,
+    "S3": 0.01638617961801534,
+    "S4": 0.0019373203672222797
+  },
+  "available_at_prediction_time": true,
+  "top_factors": [
+    {
+      "feature": "ongoing_threat",
+      "impact": "high",
+      "direction": "increases_risk",
+      "value": 1.0
+    },
+    {
+      "feature": "incident_type_encoded",
+      "impact": "medium",
+      "direction": "increases_risk",
+      "value": 0.0
+    },
+    {
+      "feature": "financial_exposure_ngn",
+      "impact": "low",
+      "direction": "increases_risk",
+      "value": 4800000.0
+    }
+  ]
+}

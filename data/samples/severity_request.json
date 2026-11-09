@@ -1,0 +1,14 @@
+{
+  "incident_id": "INC-0000099",
+  "financial_exposure_ngn": 4800000.0,
+  "customer_impact_count": 3,
+  "ongoing_threat": true,
+  "insider_involvement": false,
+  "data_compromise": false,
+  "regulatory_relevance": true,
+  "source": "Customer Complaint",
+  "channel": "Mobile Banking",
+  "incident_type": "Account Takeover",
+  "reported_by_type": "Customer",
+  "narrative": "Customer called to report unauthorised transfers from their account."
+}

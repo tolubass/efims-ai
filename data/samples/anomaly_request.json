@@ -1,0 +1,12 @@
+{
+  "transaction_id": "TXN-0004821",
+  "amount_ngn": 2500000.0,
+  "channel": "ATM",
+  "transaction_type": "ATM Withdrawal",
+  "velocity_indicator": "High",
+  "ip_risk_score": 0.85,
+  "device_risk_score": 0.72,
+  "is_reversal": false,
+  "is_chargeback": false,
+  "account_risk_rating": "High"
+}

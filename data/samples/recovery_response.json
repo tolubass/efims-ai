@@ -1,0 +1,57 @@
+{
+  "prediction_id": "PRED-REC-20261109-0A5A6B",
+  "model_name": "recovery",
+  "model_version": "v1.0",
+  "confidence_score": 0.1761429709942806,
+  "requires_human_review": true,
+  "explanation": [
+    {
+      "feature": "channel_encoded",
+      "impact": "high",
+      "direction": "decreases_risk",
+      "value": 7.0
+    },
+    {
+      "feature": "gross_actual_loss_ngn",
+      "impact": "medium",
+      "direction": "decreases_risk",
+      "value": 9200000.0
+    },
+    {
+      "feature": "classification_encoded",
+      "impact": "low",
+      "direction": "increases_risk",
+      "value": 1.0
+    }
+  ],
+  "timestamp_wat": "2026-11-09 14:40:51 WAT",
+  "disclaimer": "This is an AI-generated suggestion. Human review and approval is required before any action is taken on a case.",
+  "recovery_probability": 0.1761429709942806,
+  "recovery_success_prediction": false,
+  "key_recovery_factors": [
+    {
+      "feature": "channel_encoded",
+      "impact": "high",
+      "direction": "decreases_risk",
+      "value": 7.0
+    },
+    {
+      "feature": "gross_actual_loss_ngn",
+      "impact": "medium",
+      "direction": "decreases_risk",
+      "value": 9200000.0
+    },
+    {
+      "feature": "classification_encoded",
+      "impact": "low",
+      "direction": "increases_risk",
+      "value": 1.0
+    }
+  ],
+  "recommended_recovery_actions": [
+    "Contact beneficiary bank immediately to flag the receiving account",
+    "Escalate to Senior Recovery Officer \u2014 exposure exceeds NGN 5,000,000",
+    "Low recovery likelihood \u2014 consider insurance claim and legal referral",
+    "Containment confirmed \u2014 proceed to beneficiary bank recall request via NIBSS"
+  ]
+}

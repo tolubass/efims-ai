@@ -1,0 +1,19 @@
+{
+  "prediction_id": "PRED-ANO-20261109-2052F0",
+  "model_name": "anomaly",
+  "model_version": "v1.0",
+  "confidence_score": 0.9647251582857379,
+  "requires_human_review": true,
+  "explanation": [],
+  "timestamp_wat": "2026-11-09 14:40:50 WAT",
+  "disclaimer": "This is an AI-generated suggestion. Human review and approval is required before any action is taken on a case.",
+  "anomaly_score": 0.9647251582857379,
+  "is_suspicious": true,
+  "anomaly_type": null,
+  "behavioural_signals": [
+    "Transaction velocity above normal threshold",
+    "High-risk IP address detected",
+    "High-risk device detected",
+    "High-value transaction above NGN 1,000,000"
+  ]
+}

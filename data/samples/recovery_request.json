@@ -1,0 +1,9 @@
+{
+  "case_id": "CASE-2026-000031",
+  "gross_actual_loss_ngn": 9200000.0,
+  "severity": "S1",
+  "fraud_type": "Account Takeover",
+  "channel": "Mobile Banking",
+  "days_to_detection": 0.5,
+  "containment_confirmed": true
+}
