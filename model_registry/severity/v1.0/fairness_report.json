@@ -1,0 +1,115 @@
+{
+  "model_name": "severity",
+  "generated_at": "2026-10-30 22:02:56 WAT",
+  "disparity_threshold": 0.1,
+  "min_group_size": 10,
+  "columns": {
+    "gender": {
+      "groups": {
+        "F": {
+          "n": 9,
+          "insufficient_data": true
+        },
+        "M": {
+          "n": 7,
+          "insufficient_data": true
+        }
+      },
+      "best_group": null,
+      "worst_group": null,
+      "disparity": null,
+      "flagged": false
+    },
+    "age_group": {
+      "groups": {
+        "18-24": {
+          "n": 6,
+          "insufficient_data": true
+        },
+        "25-34": {
+          "n": 3,
+          "insufficient_data": true
+        },
+        "35-44": {
+          "n": 4,
+          "insufficient_data": true
+        },
+        "45-54": {
+          "n": 3,
+          "insufficient_data": true
+        }
+      },
+      "best_group": null,
+      "worst_group": null,
+      "disparity": null,
+      "flagged": false
+    },
+    "customer_segment": {
+      "groups": {
+        "Affluent": {
+          "n": 2,
+          "insufficient_data": true
+        },
+        "Mass Market": {
+          "n": 4,
+          "insufficient_data": true
+        },
+        "Retail": {
+          "n": 6,
+          "insufficient_data": true
+        },
+        "SME": {
+          "n": 4,
+          "insufficient_data": true
+        }
+      },
+      "best_group": null,
+      "worst_group": null,
+      "disparity": null,
+      "flagged": false
+    },
+    "state": {
+      "groups": {
+        "Akwa Ibom": {
+          "n": 4,
+          "insufficient_data": true
+        },
+        "Benue": {
+          "n": 1,
+          "insufficient_data": true
+        },
+        "Cross River": {
+          "n": 1,
+          "insufficient_data": true
+        },
+        "Delta": {
+          "n": 2,
+          "insufficient_data": true
+        },
+        "Imo": {
+          "n": 2,
+          "insufficient_data": true
+        },
+        "Kaduna": {
+          "n": 1,
+          "insufficient_data": true
+        },
+        "Lagos": {
+          "n": 3,
+          "insufficient_data": true
+        },
+        "Rivers": {
+          "n": 2,
+          "insufficient_data": true
+        }
+      },
+      "best_group": null,
+      "worst_group": null,
+      "disparity": null,
+      "flagged": false
+    }
+  },
+  "flagged_columns": [],
+  "overall_flagged": false,
+  "note": "Small groups can produce unreliable gaps. Treat flags as prompts for human review, not proof of bias."
+}

@@ -1,0 +1,226 @@
+{
+  "model_name": "anomaly",
+  "generated_at": "2026-10-30 22:02:58 WAT",
+  "disparity_threshold": 0.1,
+  "min_group_size": 10,
+  "columns": {
+    "gender": {
+      "groups": {
+        "F": {
+          "n": 567,
+          "accuracy": 0.9647266313932981,
+          "f1": 0.6338155515370705,
+          "insufficient_data": false
+        },
+        "M": {
+          "n": 302,
+          "accuracy": 0.9668874172185431,
+          "f1": 0.7641362074351765,
+          "insufficient_data": false
+        }
+      },
+      "best_group": "M",
+      "worst_group": "F",
+      "disparity": 0.13032065589810604,
+      "flagged": true
+    },
+    "age_group": {
+      "groups": {
+        "18-24": {
+          "n": 116,
+          "accuracy": 0.9741379310344828,
+          "f1": 0.779047619047619,
+          "insufficient_data": false
+        },
+        "25-34": {
+          "n": 263,
+          "accuracy": 0.973384030418251,
+          "f1": 0.7598173515981734,
+          "insufficient_data": false
+        },
+        "35-44": {
+          "n": 311,
+          "accuracy": 0.9614147909967846,
+          "f1": 0.6900332225913621,
+          "insufficient_data": false
+        },
+        "45-54": {
+          "n": 122,
+          "accuracy": 0.9590163934426229,
+          "f1": 0.4895397489539749,
+          "insufficient_data": false
+        },
+        "55-64": {
+          "n": 52,
+          "accuracy": 0.9423076923076923,
+          "f1": 0.48514851485148514,
+          "insufficient_data": false
+        },
+        "65+": {
+          "n": 5,
+          "insufficient_data": true
+        }
+      },
+      "best_group": "18-24",
+      "worst_group": "55-64",
+      "disparity": 0.29389910419613385,
+      "flagged": true
+    },
+    "customer_segment": {
+      "groups": {
+        "Affluent": {
+          "n": 93,
+          "accuracy": 0.9354838709677419,
+          "f1": 0.6829545454545455,
+          "insufficient_data": false
+        },
+        "Corporate": {
+          "n": 42,
+          "accuracy": 0.9523809523809523,
+          "f1": 0.4878048780487805,
+          "insufficient_data": false
+        },
+        "Government": {
+          "n": 27,
+          "accuracy": 1.0,
+          "f1": 1.0,
+          "insufficient_data": false
+        },
+        "Mass Market": {
+          "n": 320,
+          "accuracy": 0.971875,
+          "f1": 0.6466691203533309,
+          "insufficient_data": false
+        },
+        "NGO": {
+          "n": 15,
+          "accuracy": 0.9333333333333333,
+          "f1": 0.8148148148148148,
+          "insufficient_data": false
+        },
+        "Retail": {
+          "n": 297,
+          "accuracy": 0.9730639730639731,
+          "f1": 0.7073891625615764,
+          "insufficient_data": false
+        },
+        "SME": {
+          "n": 75,
+          "accuracy": 0.9466666666666667,
+          "f1": 0.6527777777777778,
+          "insufficient_data": false
+        }
+      },
+      "best_group": "Government",
+      "worst_group": "Corporate",
+      "disparity": 0.5121951219512195,
+      "flagged": true
+    },
+    "state": {
+      "groups": {
+        "Abuja FCT": {
+          "n": 71,
+          "accuracy": 0.9859154929577465,
+          "f1": 0.829736211031175,
+          "insufficient_data": false
+        },
+        "Akwa Ibom": {
+          "n": 65,
+          "accuracy": 0.9538461538461539,
+          "f1": 0.7735191637630662,
+          "insufficient_data": false
+        },
+        "Anambra": {
+          "n": 70,
+          "accuracy": 0.9857142857142858,
+          "f1": 0.49640287769784175,
+          "insufficient_data": false
+        },
+        "Benue": {
+          "n": 49,
+          "accuracy": 0.9591836734693877,
+          "f1": 0.4895833333333333,
+          "insufficient_data": false
+        },
+        "Cross River": {
+          "n": 52,
+          "accuracy": 0.9615384615384616,
+          "f1": 0.49019607843137253,
+          "insufficient_data": false
+        },
+        "Delta": {
+          "n": 65,
+          "accuracy": 0.9692307692307692,
+          "f1": 0.4921875,
+          "insufficient_data": false
+        },
+        "Enugu": {
+          "n": 43,
+          "accuracy": 0.9534883720930233,
+          "f1": 0.4880952380952381,
+          "insufficient_data": false
+        },
+        "Imo": {
+          "n": 55,
+          "accuracy": 1.0,
+          "f1": 1.0,
+          "insufficient_data": false
+        },
+        "Kaduna": {
+          "n": 52,
+          "accuracy": 0.9807692307692307,
+          "f1": 0.8283828382838283,
+          "insufficient_data": false
+        },
+        "Kano": {
+          "n": 61,
+          "accuracy": 0.9836065573770492,
+          "f1": 0.8957264957264958,
+          "insufficient_data": false
+        },
+        "Lagos": {
+          "n": 49,
+          "accuracy": 0.9387755102040817,
+          "f1": 0.4842105263157895,
+          "insufficient_data": false
+        },
+        "Ogun": {
+          "n": 69,
+          "accuracy": 0.9420289855072463,
+          "f1": 0.784375,
+          "insufficient_data": false
+        },
+        "Oyo": {
+          "n": 59,
+          "accuracy": 0.9661016949152542,
+          "f1": 0.49137931034482757,
+          "insufficient_data": false
+        },
+        "Plateau": {
+          "n": 53,
+          "accuracy": 0.9433962264150944,
+          "f1": 0.4854368932038835,
+          "insufficient_data": false
+        },
+        "Rivers": {
+          "n": 56,
+          "accuracy": 0.9464285714285714,
+          "f1": 0.685981308411215,
+          "insufficient_data": false
+        }
+      },
+      "best_group": "Imo",
+      "worst_group": "Lagos",
+      "disparity": 0.5157894736842106,
+      "flagged": true
+    }
+  },
+  "flagged_columns": [
+    "gender",
+    "age_group",
+    "customer_segment",
+    "state"
+  ],
+  "overall_flagged": true,
+  "note": "Small groups can produce unreliable gaps. Treat flags as prompts for human review, not proof of bias."
+}
