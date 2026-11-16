@@ -2,15 +2,28 @@
 # daemon isn't reachable, so this file is syntax/structure-checked only
 # (`docker compose config`). Verify with a real `docker compose up --build`
 # on a machine with the daemon running before relying on it.
+#
+# Builds the repo-root Dockerfile (not docker/Dockerfile) -- the same image
+# used for hosting (see ../Dockerfile), built here with PORT=8000 instead
+# of that image's own 7860 default. The three spots below that mention the
+# port (environment PORT, the ports mapping, and the healthcheck URL) are
+# intentionally kept in sync at 8000 -- change all three together.
 services:
   api:
     build:
       # The compose file lives in docker/, but the Dockerfile's COPY
-      # instructions (src/, configs/, model_registry/) are written relative
-      # to the project root, so the build context has to be the project
-      # root too, not this directory.
+      # instructions (src/, configs/, model_registry/, data/synthetic/) are
+      # written relative to the project root, so the build context has to
+      # be the project root too, not this directory.
       context: ..
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile
+    environment:
+      # No values written here -- both are read from whatever is already
+      # set in the host's own environment when `docker compose up` runs.
+      # EFIMS_API_KEY in particular must never be hardcoded in this file.
+      - PORT=8000
+      - EFIMS_API_KEY=${EFIMS_API_KEY}
+      - EFIMS_CORS_ORIGINS=${EFIMS_CORS_ORIGINS}
     ports:
       - "8000:8000"
     volumes:
@@ -19,7 +32,8 @@ services:
       - ../logs:/app/logs
     healthcheck:
       # Uses the stdlib (urllib) instead of curl, so the image doesn't need
-      # an extra system package just for this check.
+      # an extra system package just for this check. URL's port matches
+      # the PORT=8000 set above.
       test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://localhost:8000/api/v1/health', timeout=5)"]
       interval: 30s
       timeout: 10s

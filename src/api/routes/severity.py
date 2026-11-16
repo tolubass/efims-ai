@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from src.api.dependencies import get_severity_service
 from src.api.schemas.common import ErrorResponse
 from src.api.schemas.severity_schema import SeverityRequest, SeverityResponse
+from src.api.security import verify_api_key
 from src.inference.severity_service import SeverityService
 from src.utils.date_utils import format_wat_timestamp
 from src.utils.logger import get_logger
@@ -15,7 +16,11 @@ logger = get_logger(__name__)
 router = APIRouter()
 
 
-@router.post("/api/v1/severity/predict", response_model=SeverityResponse)
+@router.post(
+    "/api/v1/severity/predict",
+    response_model=SeverityResponse,
+    dependencies=[Depends(verify_api_key)],
+)
 async def predict_severity(
     payload: SeverityRequest,
     severity_service: SeverityService = Depends(get_severity_service),

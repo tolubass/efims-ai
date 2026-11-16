@@ -11,6 +11,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from src.api.security import warn_if_api_key_missing
 from src.inference.anomaly_service import AnomalyService
 from src.inference.recovery_service import RecoveryService
 from src.inference.severity_service import SeverityService
@@ -23,6 +24,8 @@ logger = get_logger(__name__)
 async def lifespan(app: FastAPI):
     """Load all model services on startup; nothing to tear down on shutdown."""
     logger.info("EFIMS AI Service starting up...")
+
+    warn_if_api_key_missing()
 
     app.state.severity_service = SeverityService()
     app.state.anomaly_service = AnomalyService()

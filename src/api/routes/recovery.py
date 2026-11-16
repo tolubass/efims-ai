@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from src.api.dependencies import get_recovery_service
 from src.api.schemas.common import ErrorResponse
 from src.api.schemas.recovery_schema import RecoveryRequest, RecoveryResponse
+from src.api.security import verify_api_key
 from src.inference.recovery_service import RecoveryService
 from src.utils.date_utils import format_wat_timestamp
 from src.utils.logger import get_logger
@@ -15,7 +16,11 @@ logger = get_logger(__name__)
 router = APIRouter()
 
 
-@router.post("/api/v1/recovery/predict", response_model=RecoveryResponse)
+@router.post(
+    "/api/v1/recovery/predict",
+    response_model=RecoveryResponse,
+    dependencies=[Depends(verify_api_key)],
+)
 async def predict_recovery(
     payload: RecoveryRequest,
     recovery_service: RecoveryService = Depends(get_recovery_service),

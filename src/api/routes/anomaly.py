@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from src.api.dependencies import get_anomaly_service
 from src.api.schemas.anomaly_schema import AnomalyRequest, AnomalyResponse
 from src.api.schemas.common import ErrorResponse
+from src.api.security import verify_api_key
 from src.inference.anomaly_service import AnomalyService
 from src.utils.date_utils import format_wat_timestamp
 from src.utils.logger import get_logger
@@ -15,7 +16,11 @@ logger = get_logger(__name__)
 router = APIRouter()
 
 
-@router.post("/api/v1/anomaly/score", response_model=AnomalyResponse)
+@router.post(
+    "/api/v1/anomaly/score",
+    response_model=AnomalyResponse,
+    dependencies=[Depends(verify_api_key)],
+)
 async def score_anomaly(
     payload: AnomalyRequest,
     anomaly_service: AnomalyService = Depends(get_anomaly_service),

@@ -1,3 +1,13 @@
+---
+title: EFIMS AI Service
+emoji: shield
+colorFrom: blue
+colorTo: gray
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # EFIMS AI
 
 The AI layer of an Enterprise Fraud and Incident Management System (EFIMS)
@@ -186,3 +196,21 @@ any single prediction from this service:
 
 See `model_registry/{severity,anomaly,recovery}/v1.0/model_card.md` and
 `fairness_report.json` for the full detail behind each of these.
+
+## Deploying
+
+Build and run from the repo-root `Dockerfile` (`docker/Dockerfile` and
+`docker/docker-compose.yml` remain for local Docker Compose use).
+
+- **Required secret:** `EFIMS_API_KEY` — without it, the severity/anomaly/
+  recovery endpoints return 503 (see `src/api/security.py`). Never commit
+  a real value; set it in the hosting platform's own secrets configuration.
+- **Optional:** `EFIMS_CORS_ORIGINS` — comma-separated list of allowed
+  origins; defaults to none (no cross-origin access) if unset.
+- **Optional:** `PORT` — the port the server listens on; defaults to
+  `7860`.
+- **Container storage is ephemeral.** Audit logs written to `logs/` inside
+  the container (see `src/governance/prediction_audit_logger.py`) are
+  **lost on every restart** unless the platform provides persistent
+  storage mounted at that path. Do not rely on in-container `logs/` as the
+  durable audit trail.

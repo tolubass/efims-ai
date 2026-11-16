@@ -1,0 +1,9 @@
+venv/
+.git/
+logs/
+__pycache__/
+experiments/
+notebooks/
+*.ipynb
+test_*.py
+.env*

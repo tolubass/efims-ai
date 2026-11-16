@@ -1,6 +1,37 @@
+import os
 import time
 from fastapi.testclient import TestClient
+
+# EFIMS_API_KEY must already be set in the environment by whoever runs this
+# script, before the app's lifespan runs (on entering the `with` block
+# below) — src.api.security.verify_api_key reads it from the environment on
+# every call. No default/placeholder value is hardcoded here, so no
+# key-shaped literal ever ends up committed to source control.
+TEST_API_KEY = os.environ.get("EFIMS_API_KEY")
+if not TEST_API_KEY:
+    raise RuntimeError(
+        "Set EFIMS_API_KEY before running this test, e.g.\n"
+        '  EFIMS_API_KEY="some-local-test-value" python test_phase7.py'
+    )
+
 from src.api.main import app
+
+AUTH_HEADERS = {"X-API-Key": TEST_API_KEY}
+WRONG_AUTH_HEADERS = {"X-API-Key": "wrong-key"}
+
+SEVERITY_PAYLOAD = {
+    "incident_id": "INC-TEST-001",
+    "financial_exposure_ngn": 4800000.0,
+    "customer_impact_count": 3,
+    "ongoing_threat": True,
+    "insider_involvement": False,
+    "data_compromise": False,
+    "regulatory_relevance": True,
+    "source": "Customer Complaint",
+    "channel": "Mobile Banking",
+    "incident_type": "Account Takeover",
+    "reported_by_type": "Customer"
+}
 
 # This version of Starlette only runs FastAPI's lifespan (startup/shutdown)
 # when TestClient is used as a context manager. Without `with`, app.state
@@ -19,7 +50,7 @@ with TestClient(app) as client:
     assert data["status"] == "running"
     print("GET / : OK")
 
-    # Test health
+    # Test health (no API key required)
     resp = client.get("/api/v1/health")
     assert resp.status_code == 200
     health = resp.json()
@@ -28,32 +59,29 @@ with TestClient(app) as client:
     assert "severity" in health["models"]
     assert "anomaly" in health["models"]
     assert "recovery" in health["models"]
-    print("GET /api/v1/health : OK - status:", health["status"])
+    print("GET /api/v1/health : OK - status:", health["status"], "(no API key sent)")
     print("  Models:", {
     k: v["status"] for k, v in health["models"].items()
     })
 
-    # Test severity prediction
-    resp = client.post("/api/v1/severity/predict", json={
-    "incident_id": "INC-TEST-001",
-    "financial_exposure_ngn": 4800000.0,
-    "customer_impact_count": 3,
-    "ongoing_threat": True,
-    "insider_involvement": False,
-    "data_compromise": False,
-    "regulatory_relevance": True,
-    "source": "Customer Complaint",
-    "channel": "Mobile Banking",
-    "incident_type": "Account Takeover",
-    "reported_by_type": "Customer"
-    })
+    # Test API-key enforcement on a protected route
+    resp = client.post("/api/v1/severity/predict", json=SEVERITY_PAYLOAD)
+    assert resp.status_code == 401
+    print("POST /api/v1/severity/predict with no API key : OK - 401 returned")
+
+    resp = client.post("/api/v1/severity/predict", json=SEVERITY_PAYLOAD, headers=WRONG_AUTH_HEADERS)
+    assert resp.status_code == 401
+    print("POST /api/v1/severity/predict with wrong API key : OK - 401 returned")
+
+    # Test severity prediction (correct API key)
+    resp = client.post("/api/v1/severity/predict", json=SEVERITY_PAYLOAD, headers=AUTH_HEADERS)
     assert resp.status_code == 200
     sev = resp.json()
     assert sev["severity_prediction"] in ["S1","S2","S3","S4"]
     assert "confidence_score" in sev
     assert "requires_human_review" in sev
     assert "disclaimer" in sev
-    print("POST /api/v1/severity/predict : OK")
+    print("POST /api/v1/severity/predict with correct API key : OK - 200 returned")
     print("  Prediction:", sev["severity_prediction"])
     print("  Confidence:", sev["confidence_score"])
     print("  Requires review:", sev["requires_human_review"])
@@ -70,7 +98,7 @@ with TestClient(app) as client:
     "is_reversal": False,
     "is_chargeback": False,
     "account_risk_rating": "High"
-    })
+    }, headers=AUTH_HEADERS)
     assert resp.status_code == 200
     anom = resp.json()
     assert "anomaly_score" in anom
@@ -89,7 +117,7 @@ with TestClient(app) as client:
     "channel": "Mobile Banking",
     "days_to_detection": 0.5,
     "containment_confirmed": True
-    })
+    }, headers=AUTH_HEADERS)
     assert resp.status_code == 200
     rec = resp.json()
     assert "recovery_probability" in rec
@@ -99,11 +127,11 @@ with TestClient(app) as client:
     print("  Recovery probability:", rec["recovery_probability"])
     print("  Actions:", len(rec["recommended_recovery_actions"]))
 
-    # Test validation error
+    # Test validation error (correct API key, so the only failure reason is the bad payload)
     resp = client.post("/api/v1/severity/predict", json={
     "incident_id": "INC-001",
     "financial_exposure_ngn": -500.0
-    })
+    }, headers=AUTH_HEADERS)
     assert resp.status_code == 422
     print("Validation error test: OK - 422 returned correctly")
 

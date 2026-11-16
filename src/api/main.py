@@ -6,6 +6,7 @@ advisory: human review and approval is required before any action is taken
 on a case (see each response's ``disclaimer`` field).
 """
 
+import os
 import time
 
 from fastapi import FastAPI, Request
@@ -31,11 +32,18 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# EFIMS_CORS_ORIGINS is a comma-separated list of allowed origins, e.g.
+# "https://efims.example-bank.com,https://staging.example-bank.com".
+# Defaults to an empty list (no cross-origin access at all) rather than "*",
+# so nothing has to be explicitly locked down before this is safe to deploy.
+_cors_origins_env = os.environ.get("EFIMS_CORS_ORIGINS", "")
+_allowed_origins = [origin.strip() for origin in _cors_origins_env.split(",") if origin.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # development only — restrict before production
+    allow_origins=_allowed_origins,
     allow_methods=["GET", "POST"],
-    allow_headers=["*"],
+    allow_headers=["X-API-Key", "Content-Type"],
 )
 
 
