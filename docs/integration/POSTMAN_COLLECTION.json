@@ -1,0 +1,65 @@
+{
+  "info": {
+    "name": "EFIMS AI Service",
+    "description": "Built from the actual implemented routes (verified this session via app.openapi() — see OPENAPI.json in this same folder) and the real request samples in data/samples/. Every prediction is advisory; see each response's `disclaimer` field.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8000" },
+    { "key": "api_key", "value": "REPLACE_WITH_EFIMS_API_KEY" }
+  ],
+  "item": [
+    {
+      "name": "Health (no API key required)",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/v1/health"
+      }
+    },
+    {
+      "name": "Severity - Predict",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "X-API-Key", "value": "{{api_key}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{base_url}}/api/v1/severity/predict",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"incident_id\": \"INC-0000099\",\n  \"financial_exposure_ngn\": 4800000.0,\n  \"customer_impact_count\": 3,\n  \"ongoing_threat\": true,\n  \"insider_involvement\": false,\n  \"data_compromise\": false,\n  \"regulatory_relevance\": true,\n  \"source\": \"Customer Complaint\",\n  \"channel\": \"Mobile Banking\",\n  \"incident_type\": \"Account Takeover\",\n  \"reported_by_type\": \"Customer\",\n  \"narrative\": \"Customer called to report unauthorised transfers from their account.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Anomaly - Score",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "X-API-Key", "value": "{{api_key}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{base_url}}/api/v1/anomaly/score",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"transaction_id\": \"TXN-0004821\",\n  \"amount_ngn\": 2500000.0,\n  \"channel\": \"ATM\",\n  \"transaction_type\": \"ATM Withdrawal\",\n  \"velocity_indicator\": \"High\",\n  \"ip_risk_score\": 0.85,\n  \"device_risk_score\": 0.72,\n  \"is_reversal\": false,\n  \"is_chargeback\": false,\n  \"account_risk_rating\": \"High\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Recovery - Predict",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "X-API-Key", "value": "{{api_key}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{base_url}}/api/v1/recovery/predict",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-2026-000031\",\n  \"gross_actual_loss_ngn\": 9200000.0,\n  \"severity\": \"S1\",\n  \"fraud_type\": \"Account Takeover\",\n  \"channel\": \"Mobile Banking\",\n  \"days_to_detection\": 0.5,\n  \"containment_confirmed\": true\n}"
+        }
+      }
+    }
+  ]
+}

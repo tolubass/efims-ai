@@ -62,17 +62,39 @@ Then open `http://localhost:8000/docs`, or check
 `requirements.txt` lists only what's needed to **run** the API — the exact
 set of packages the process actually imports when it starts up and serves a
 request, verified by running every endpoint once and recording what got
-loaded (see the comments in that file, which also explain two non-obvious
-inclusions: `pyarrow`, needed for pandas's string-handling to behave as
-tested even though pandas doesn't require it; and `mlflow`, needed only
-because unpickling a saved model indirectly re-imports its trainer module,
-which imports `mlflow` at the top — not because inference calls it).
+loaded (see the comments in that file, which also explain one non-obvious
+inclusion: `pyarrow`, needed for pandas's string-handling to behave as
+tested even though pandas doesn't require it). `mlflow` is **not** in this
+file — the three trainers' `import mlflow` was moved inside the one
+function that actually logs to it, and this was verified by blocking
+`mlflow` from being importable at all and confirming the full API still
+starts and predicts correctly on all three models.
+
+Inference also no longer depends on `data/synthetic/` at all: each model's
+categorical feature mappings are persisted as
+`model_registry/<model>/v1.0/category_mappings.json` (generated once from
+the exact training-time join) instead of being rebuilt from the raw CSVs at
+every service startup — verified by running the full test suite with
+`data/synthetic/` moved aside. A missing mappings file now fails that
+model's `/api/v1/health` entry loudly (`model_not_loaded`, and that
+endpoint 503s) instead of silently predicting with every category coded as
+unknown.
 
 Training scripts (`run_severity_training()` etc.) and the governance
-reports script (`run_governance_reports.py`) need more than this —
-`lightgbm`, `scikit-learn`, and `mlflow` are already covered above, but
-re-running training end to end also expects the raw CSVs under
-`data/synthetic/` to be present (see `configs/models/*.yaml`).
+reports script (`run_governance_reports.py`) need more than the runtime
+file — `lightgbm`, `scikit-learn`, and `mlflow` (install separately:
+`pip install mlflow==3.17.2`) — and re-running training end to end also
+expects the raw CSVs under `data/synthetic/` to be present (see
+`configs/models/*.yaml`).
+
+## Full-stack integration
+
+See [`docs/integration/FULLSTACK_HANDOVER.md`](docs/integration/FULLSTACK_HANDOVER.md)
+for the integration-ready handover: exact endpoints, auth, CORS, example
+requests/responses, error handling, and what's still needed from the
+backend developer. `docs/integration/OPENAPI.json` is exported directly
+from the running app; `docs/integration/POSTMAN_COLLECTION.json` has
+ready-to-run requests built from the real samples in `data/samples/`.
 
 ## Running with Docker
 

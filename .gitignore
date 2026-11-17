@@ -10,3 +10,4 @@ venv/
 !model_registry/**/model.pkl
 data/raw/
 data/processed/
+EFIMS_AI_Service.zip

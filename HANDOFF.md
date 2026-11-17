@@ -62,37 +62,29 @@ In roughly the order they'd bite:
    enforces or verifies it; it's an unauthenticated free-text field, not
    an identity.
 
-3. **Persist the severity and recovery category mappings in the model
-   registry instead of rebuilding them from CSVs at startup.**
-   `SeverityService` and `RecoveryService` currently reconstruct their
-   categorical-feature encodings (source/channel/incident_type/
-   reported_by_type for severity; classification/channel for recovery) by
-   reading and re-cleaning `data/synthetic/10_incidents.csv` and
-   `data/synthetic/11_cases.csv` once at service startup (see
-   `_build_category_mappings()` in both files). **This will not work on
-   the bank's server**, which won't have `data/synthetic/` — only
-   `model_registry/`. When that happens, the mapping build fails silently
-   (caught, logged as a warning), and every categorical feature falls back
-   to `-1` ("unknown") for every request, degrading both models without
-   throwing an error anyone would notice. Fix: save each mapping as a JSON
-   artifact in `model_registry/{model}/v1.0/` at training time (the
-   pattern `features.json` already uses for the feature-column list), and
-   have the services load that instead of the raw CSVs.
+3. **FIXED.** Category mappings for severity, anomaly and recovery are now
+   persisted as `model_registry/{model}/v1.0/category_mappings.json`
+   (generated once from the exact training-time join — for recovery, this
+   also corrected a real bug: the old code rebuilt the mapping from the
+   full 70-case table, which doesn't match the 31-row subset the model was
+   actually trained on, silently shifting `classification_encoded`'s
+   integer codes). `SeverityService`/`AnomalyService`/`RecoveryService` now
+   load this file in `load_model()` instead of rebuilding from
+   `data/synthetic/*.csv` at startup; a missing/invalid file now fails that
+   model loudly (`/api/v1/health` reports `model_not_loaded`, that
+   endpoint 503s) instead of silently falling back to `-1` for every
+   category. Verified by running the full test suite with `data/synthetic/`
+   moved aside entirely.
 
-4. **Lazy-import `mlflow` in the three trainers.**
-   `src/models/{severity,anomaly,recovery}/trainer.py` each do
-   `import mlflow` at module level. Because `joblib.load()` on a saved
-   model re-imports its trainer module to reconstruct the pickled class,
-   this means the API pulls in all of mlflow's own dependency tree (Flask,
-   SQLAlchemy, matplotlib, pillow, opentelemetry, databricks-sdk,
-   google-auth, ...) at startup, purely as a side effect of unpickling —
-   inference never calls an mlflow function. Moving `import mlflow` inside
-   each trainer's `run_*_training()` function (so it's only imported during
-   training, never at inference-time unpickling) would let `mlflow` be
-   dropped from the API's runtime `requirements.txt` entirely, meaningfully
-   shrinking the production image. Flagged, not fixed here, since it means
-   touching `src/models/*/trainer.py`, which is outside this handoff task's
-   file list.
+4. **FIXED.** `import mlflow` moved from module level in
+   `src/models/{severity,anomaly,recovery}/trainer.py` into the one
+   function in each that actually calls it (`_log_to_mlflow`, training-time
+   only). `mlflow` is no longer in `requirements.txt`. Verified by blocking
+   `mlflow` from being importable at all (`sys.modules["mlflow"] = None`)
+   and separately by installing only the updated `requirements.txt` into a
+   brand-new venv (confirmed `mlflow` absent via `pip list`) and running a
+   real `uvicorn` server against it — all three models loaded and a real
+   prediction returned 200.
 
 5. **Build-test and smoke-test the Docker image on a machine with a
    reachable Docker daemon.** Covered above in the README; repeating it

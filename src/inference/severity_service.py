@@ -7,6 +7,9 @@ probabilities, and a short SHAP-based explanation.
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import shap
@@ -16,7 +19,6 @@ from src.api.schemas.severity_schema import SeverityRequest, SeverityResponse
 from src.governance.human_review_flag import requires_human_review
 from src.governance.prediction_audit_logger import log_prediction
 from src.inference.base_service import BaseInferenceService
-from src.preprocessing.cleaning import clean_incidents
 from src.utils.date_utils import format_wat_timestamp
 from src.utils.id_generator import generate_prediction_id
 from src.utils.logger import get_logger
@@ -30,12 +32,12 @@ INDEX_TO_LABEL: dict[int, str] = dict(enumerate(SEVERITY_LABELS))
 # is what the deployed model was actually trained on.
 CATEGORICAL_COLUMNS: tuple[str, ...] = ("source", "channel", "incident_type", "reported_by_type")
 
-# Used once, at service start, to rebuild the same sorted-unique label
-# encoding the training pipeline used (see src.features.incident_features
-# .encode_categoricals). A single inference request has no population of
-# values to sort against on its own, so there is no way to reproduce the
-# training-time codes without this.
-TRAINING_DATA_PATH: str = "data/synthetic/10_incidents.csv"
+# Persisted once (from the exact training-time data) alongside the model
+# artefact, instead of being rebuilt from data/synthetic/10_incidents.csv at
+# every service startup. A production server has no reason to ship that
+# development CSV, and reconstructing it there would be the only way to
+# reproduce the training-time codes without this file.
+CATEGORY_MAPPINGS_PATH: str = "model_registry/severity/v1.0/category_mappings.json"
 
 _IMPACT_BY_RANK: tuple[str, ...] = ("high", "medium", "low")
 
@@ -45,32 +47,47 @@ class SeverityService(BaseInferenceService):
 
     def __init__(self) -> None:
         super().__init__("severity")
-        self._category_mappings: dict[str, dict[str, int]] = self._build_category_mappings()
+        self._category_mappings: dict[str, dict[str, int]] = {}
+
+    def load_model(self) -> bool:
+        """Load the model, then the persisted category mappings it needs.
+
+        Mirrors ``BaseInferenceService.load_model``'s never-raise contract:
+        a missing/invalid mappings file is logged loudly and makes this
+        return False (so /health reports it and the route 503s) rather than
+        crashing startup or silently falling back to -1 for every category,
+        which would make every prediction wrong without looking unavailable.
+        """
+        if not super().load_model():
+            return False
+        try:
+            self._category_mappings = self._load_category_mappings()
+            return True
+        except Exception as error:
+            logger.error("%s", error)
+            self.is_loaded = False
+            return False
 
     @staticmethod
-    def _build_category_mappings() -> dict[str, dict[str, int]]:
-        """Rebuild the training-time category -> code mappings from the raw data.
-
-        Returns an empty dict (so every category maps to -1) if the training
-        data isn't available in this environment.
-        """
-        try:
-            raw = pd.read_csv(TRAINING_DATA_PATH)
-            cleaned = clean_incidents(raw)
-            mappings: dict[str, dict[str, int]] = {}
-            for col in CATEGORICAL_COLUMNS:
-                values = cleaned[col].astype(str)
-                uniques = sorted(values.unique())
-                mappings[col] = {value: code for code, value in enumerate(uniques)}
-            return mappings
-        except Exception as error:
-            logger.warning(
-                "SeverityService: could not rebuild category mappings from %s (%s); "
-                "all categorical features will map to -1 (unknown)",
-                TRAINING_DATA_PATH,
-                error,
+    def _load_category_mappings() -> dict[str, dict[str, int]]:
+        """Load the persisted training-time category -> code mappings."""
+        path = Path(CATEGORY_MAPPINGS_PATH)
+        if not path.exists():
+            raise RuntimeError(
+                f"SeverityService: required category mappings file not found at "
+                f"{CATEGORY_MAPPINGS_PATH!r}. Predictions cannot be computed "
+                f"correctly without it — this is a deployment configuration "
+                f"error, not a condition to degrade past silently."
             )
-            return {}
+        with path.open("r", encoding="utf-8") as f:
+            mappings: dict[str, dict[str, int]] = json.load(f)
+        missing = [col for col in CATEGORICAL_COLUMNS if col not in mappings]
+        if missing:
+            raise RuntimeError(
+                f"SeverityService: category mappings file {CATEGORY_MAPPINGS_PATH!r} "
+                f"is missing required column(s): {missing}"
+            )
+        return mappings
 
     def _encode_category(self, column: str, value: str) -> int:
         """Return the training-time code for ``value``, or -1 if unseen/unmapped."""

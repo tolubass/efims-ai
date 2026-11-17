@@ -1,0 +1,26 @@
+{
+  "channel": {
+    "ATM": 0,
+    "Agent Banking": 1,
+    "Bank Transfer": 2,
+    "Branch": 3,
+    "Card Payment": 4,
+    "Corporate Banking": 5,
+    "Internet Banking": 6,
+    "Mobile Banking": 7,
+    "POS": 8,
+    "USSD": 9
+  },
+  "transaction_type": {
+    "ATM Withdrawal": 0,
+    "Bill Payment": 1,
+    "Card Payment": 2,
+    "Cash Withdrawal": 3,
+    "Deposit": 4,
+    "Direct Debit": 5,
+    "Mobile Transfer": 6,
+    "POS Purchase": 7,
+    "Transfer": 8,
+    "USSD Transfer": 9
+  }
+}

@@ -14,7 +14,6 @@ import os
 from pathlib import Path
 
 import lightgbm as lgb
-import mlflow
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import StratifiedKFold
@@ -105,8 +104,16 @@ class RecoveryTrainer(BaseModel):
 
 
 def _log_to_mlflow(trainer: "RecoveryTrainer", metrics: dict) -> None:
-    """Best-effort MLflow logging; never lets a tracking failure fail training."""
+    """Best-effort MLflow logging; never lets a tracking failure fail training.
+
+    Imports mlflow here, not at module level: this module is re-imported by
+    joblib.load() when unpickling a saved RecoveryTrainer at inference time,
+    and inference has no need for mlflow at all — only an actual training
+    run (which calls this function) does.
+    """
     try:
+        import mlflow
+
         # mlflow>=3 refuses to write to a filesystem tracking store (the
         # default here) unless this is set. See:
         # https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store

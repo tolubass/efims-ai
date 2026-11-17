@@ -7,6 +7,9 @@ recovery actions.
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import shap
@@ -16,7 +19,6 @@ from src.api.schemas.recovery_schema import RecoveryRequest, RecoveryResponse
 from src.governance.human_review_flag import requires_human_review
 from src.governance.prediction_audit_logger import log_prediction
 from src.inference.base_service import BaseInferenceService
-from src.preprocessing.cleaning import clean_cases, clean_incidents
 from src.utils.config_loader import load_thresholds
 from src.utils.date_utils import format_wat_timestamp
 from src.utils.id_generator import generate_prediction_id
@@ -32,12 +34,16 @@ LOW_RECOVERY_LIKELIHOOD: float = 0.3
 
 _IMPACT_BY_RANK: tuple[str, ...] = ("high", "medium", "low")
 
-# Used once, at service start, to rebuild a stable sorted-unique label
-# encoding for the two categorical recovery features, the same approach used
-# by SeverityService/AnomalyService. classification values live in
-# 11_cases.csv; channel values live in 10_incidents.csv.
-CASES_DATA_PATH: str = "data/synthetic/11_cases.csv"
-INCIDENTS_DATA_PATH: str = "data/synthetic/10_incidents.csv"
+# Persisted once (from the exact training-time join over the 31 labelled
+# recovery cases — see src.features.recovery_features.build_recovery_features)
+# alongside the model artefact. The previous approach rebuilt this mapping at
+# startup from the FULL 70-case/120-incident tables; verified (empirically,
+# this session) to produce a DIFFERENT and WRONG mapping for `classification`,
+# because that full table contains 3 categories absent from the 31-case
+# training subset, which shifts every sorted-unique code after them. `channel`
+# happened to match by coincidence (same value set in both), but relying on
+# that was never safe.
+CATEGORY_MAPPINGS_PATH: str = "model_registry/recovery/v1.0/category_mappings.json"
 
 
 class RecoveryService(BaseInferenceService):
@@ -46,47 +52,44 @@ class RecoveryService(BaseInferenceService):
     def __init__(self) -> None:
         super().__init__("recovery")
         self.thresholds: dict = load_thresholds()
-        self._category_mappings: dict[str, dict[str, int]] = self._build_category_mappings()
+        self._category_mappings: dict[str, dict[str, int]] = {}
+
+    def load_model(self) -> bool:
+        """Load the model, then the persisted category mappings it needs.
+
+        See ``SeverityService.load_model`` for why this fails loudly (service
+        reports unavailable, 503) rather than silently falling back to -1 or
+        to a mismatched on-the-fly reconstruction.
+        """
+        if not super().load_model():
+            return False
+        try:
+            self._category_mappings = self._load_category_mappings()
+            return True
+        except Exception as error:
+            logger.error("%s", error)
+            self.is_loaded = False
+            return False
 
     @staticmethod
-    def _build_category_mappings() -> dict[str, dict[str, int]]:
-        """Rebuild stable classification/channel -> code mappings from the raw data.
-
-        Built from the full cases/incidents tables (not just the 31 cases
-        that have a recovery record), so real category values that simply
-        never appeared in the small labelled recovery set still get a code
-        instead of falling back to -1 (unknown). Each column that fails to
-        load is skipped independently and logged, rather than one failure
-        blocking both.
-        """
-        mappings: dict[str, dict[str, int]] = {}
-
-        try:
-            cases = clean_cases(pd.read_csv(CASES_DATA_PATH))
-            values = cases["classification"].astype(str)
-            uniques = sorted(values.unique())
-            mappings["classification"] = {value: code for code, value in enumerate(uniques)}
-        except Exception as error:
-            logger.warning(
-                "RecoveryService: could not rebuild classification mapping from %s (%s); "
-                "classification_encoded will map to -1 (unknown)",
-                CASES_DATA_PATH,
-                error,
+    def _load_category_mappings() -> dict[str, dict[str, int]]:
+        """Load the persisted training-time classification/channel -> code mappings."""
+        path = Path(CATEGORY_MAPPINGS_PATH)
+        if not path.exists():
+            raise RuntimeError(
+                f"RecoveryService: required category mappings file not found at "
+                f"{CATEGORY_MAPPINGS_PATH!r}. Predictions cannot be computed "
+                f"correctly without it — this is a deployment configuration "
+                f"error, not a condition to degrade past silently."
             )
-
-        try:
-            incidents = clean_incidents(pd.read_csv(INCIDENTS_DATA_PATH))
-            values = incidents["channel"].astype(str)
-            uniques = sorted(values.unique())
-            mappings["channel"] = {value: code for code, value in enumerate(uniques)}
-        except Exception as error:
-            logger.warning(
-                "RecoveryService: could not rebuild channel mapping from %s (%s); "
-                "channel_encoded will map to -1 (unknown)",
-                INCIDENTS_DATA_PATH,
-                error,
+        with path.open("r", encoding="utf-8") as f:
+            mappings: dict[str, dict[str, int]] = json.load(f)
+        missing = [col for col in ("classification", "channel") if col not in mappings]
+        if missing:
+            raise RuntimeError(
+                f"RecoveryService: category mappings file {CATEGORY_MAPPINGS_PATH!r} "
+                f"is missing required column(s): {missing}"
             )
-
         return mappings
 
     def _encode_category(self, column: str, value: str) -> int:

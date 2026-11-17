@@ -1,0 +1,981 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "EFIMS AI Service",
+    "description": "AI-powered fraud and incident management for Nigerian banking institutions. All predictions are advisory \u2014 human approval required before any action is taken.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "summary": "Health",
+        "description": "Return overall and per-model health.\n\nOverall status is \"healthy\" only if every model loaded successfully;\notherwise \"degraded\".",
+        "operationId": "health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Health Api V1 Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/severity/predict": {
+      "post": {
+        "summary": "Predict Severity",
+        "description": "Classify an incident's severity (S1-S4) from its intake-time details.\n\nThe prediction is advisory only: ``requires_human_review`` and the\nresponse disclaimer apply regardless of confidence. Returns 503 if the\nseverity model isn't loaded, or 500 with an ``ErrorResponse`` body if\nprediction itself fails.",
+        "operationId": "predict_severity_api_v1_severity_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeverityRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SeverityResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/api/v1/anomaly/score": {
+      "post": {
+        "summary": "Score Anomaly",
+        "description": "Score a transaction for anomalous behaviour (0-1, higher = more suspicious).\n\nThe score is advisory only: ``requires_human_review`` and the response\ndisclaimer apply regardless of how suspicious the score looks. Returns\n503 if the anomaly model isn't loaded, or 500 with an ``ErrorResponse``\nbody if scoring itself fails.",
+        "operationId": "score_anomaly_api_v1_anomaly_score_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnomalyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnomalyResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/api/v1/recovery/predict": {
+      "post": {
+        "summary": "Predict Recovery",
+        "description": "Predict recovery propensity for a confirmed-loss case, with recommended actions.\n\nThe prediction is advisory only: ``requires_human_review`` and the\nresponse disclaimer apply regardless of confidence. Returns 503 if the\nrecovery model isn't loaded, or 500 with an ``ErrorResponse`` body if\nprediction itself fails.",
+        "operationId": "predict_recovery_api_v1_recovery_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecoveryRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecoveryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Root",
+        "description": "Basic service info and pointers to the docs and health endpoint.",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Root  Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnomalyRequest": {
+        "properties": {
+          "requester_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Requester Id",
+            "description": "ID of the user or system making the request (for audit)."
+          },
+          "request_timestamp": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Timestamp",
+            "description": "When the request was made, e.g. '2026-09-23 14:52:15 WAT'."
+          },
+          "transaction_id": {
+            "type": "string",
+            "title": "Transaction Id",
+            "description": "Transaction ID, e.g. 'TXN-0004821'."
+          },
+          "amount_ngn": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Amount Ngn",
+            "description": "Transaction amount in NGN."
+          },
+          "channel": {
+            "type": "string",
+            "title": "Channel",
+            "description": "Channel used, e.g. 'ATM', 'Mobile Banking'."
+          },
+          "transaction_type": {
+            "type": "string",
+            "title": "Transaction Type",
+            "description": "Type of transaction, e.g. 'ATM Withdrawal'."
+          },
+          "velocity_indicator": {
+            "type": "string",
+            "title": "Velocity Indicator",
+            "description": "Recent transaction velocity: Normal, Elevated, or High."
+          },
+          "ip_risk_score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Ip Risk Score",
+            "description": "Risk score of the originating IP, 0-1."
+          },
+          "device_risk_score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Device Risk Score",
+            "description": "Risk score of the device used, 0-1."
+          },
+          "is_reversal": {
+            "type": "boolean",
+            "title": "Is Reversal",
+            "description": "True if this transaction reverses a prior one."
+          },
+          "is_chargeback": {
+            "type": "boolean",
+            "title": "Is Chargeback",
+            "description": "True if this transaction is a chargeback."
+          },
+          "account_risk_rating": {
+            "type": "string",
+            "title": "Account Risk Rating",
+            "description": "Account's standing risk rating, e.g. 'High'."
+          }
+        },
+        "type": "object",
+        "required": [
+          "transaction_id",
+          "amount_ngn",
+          "channel",
+          "transaction_type",
+          "velocity_indicator",
+          "ip_risk_score",
+          "device_risk_score",
+          "is_reversal",
+          "is_chargeback",
+          "account_risk_rating"
+        ],
+        "title": "AnomalyRequest",
+        "description": "Input for an anomaly score: the transaction and its risk signals.",
+        "example": {
+          "account_risk_rating": "Medium",
+          "amount_ngn": 850000.0,
+          "channel": "ATM",
+          "device_risk_score": 0.65,
+          "ip_risk_score": 0.72,
+          "is_chargeback": false,
+          "is_reversal": false,
+          "transaction_id": "TXN-0004821",
+          "transaction_type": "ATM Withdrawal",
+          "velocity_indicator": "High"
+        }
+      },
+      "AnomalyResponse": {
+        "properties": {
+          "prediction_id": {
+            "type": "string",
+            "title": "Prediction Id",
+            "description": "Unique ID, e.g. 'PRED-SEV-20260923-A3F2B1'."
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name",
+            "description": "Model that produced the prediction, e.g. 'severity'."
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version",
+            "description": "Version of the model used.",
+            "default": "v1.0"
+          },
+          "confidence_score": {
+            "type": "number",
+            "title": "Confidence Score",
+            "description": "Model confidence, from 0.0 to 1.0."
+          },
+          "requires_human_review": {
+            "type": "boolean",
+            "title": "Requires Human Review",
+            "description": "True if confidence is below the review threshold in thresholds.yaml."
+          },
+          "explanation": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionFactor"
+            },
+            "type": "array",
+            "title": "Explanation",
+            "description": "Factors that explain the prediction."
+          },
+          "timestamp_wat": {
+            "type": "string",
+            "title": "Timestamp Wat",
+            "description": "When the prediction was made, in WAT."
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "description": "Human-approval notice.",
+            "default": "This is an AI-generated suggestion. Human review and approval is required before any action is taken on a case."
+          },
+          "anomaly_score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Anomaly Score",
+            "description": "0-1; higher means more anomalous."
+          },
+          "is_suspicious": {
+            "type": "boolean",
+            "title": "Is Suspicious",
+            "description": "True if the score is above the anomaly threshold."
+          },
+          "anomaly_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly Type",
+            "description": "Likely anomaly category, e.g. 'Velocity spike', if identifiable."
+          },
+          "behavioural_signals": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Behavioural Signals",
+            "description": "Plain-text signals detected for this transaction."
+          }
+        },
+        "type": "object",
+        "required": [
+          "prediction_id",
+          "model_name",
+          "confidence_score",
+          "requires_human_review",
+          "timestamp_wat",
+          "anomaly_score",
+          "is_suspicious"
+        ],
+        "title": "AnomalyResponse",
+        "description": "Anomaly score for a transaction, with the signals behind it.",
+        "example": {
+          "anomaly_score": 0.88,
+          "anomaly_type": "Velocity spike",
+          "behavioural_signals": [
+            "Transaction at unusual hour",
+            "New device not previously seen",
+            "Velocity above normal threshold"
+          ],
+          "confidence_score": 0.88,
+          "explanation": [],
+          "is_suspicious": true,
+          "model_name": "anomaly",
+          "model_version": "v1.0",
+          "prediction_id": "PRED-ANO-20260923-C9E4F0",
+          "requires_human_review": false,
+          "timestamp_wat": "2026-09-23 11:20:00 WAT"
+        }
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "PredictionFactor": {
+        "properties": {
+          "feature": {
+            "type": "string",
+            "title": "Feature",
+            "description": "Name of the input feature."
+          },
+          "impact": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ],
+            "title": "Impact",
+            "description": "How strongly this feature influenced the prediction."
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "increases_risk",
+              "decreases_risk"
+            ],
+            "title": "Direction",
+            "description": "Whether this feature pushed the prediction up or down."
+          },
+          "value": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value",
+            "description": "The feature's input value, if useful to show."
+          }
+        },
+        "type": "object",
+        "required": [
+          "feature",
+          "impact",
+          "direction"
+        ],
+        "title": "PredictionFactor",
+        "description": "One factor that explains a prediction.\n\nExample: ``feature=\"ongoing_threat\", impact=\"high\",\ndirection=\"increases_risk\", value=True``."
+      },
+      "RecoveryRequest": {
+        "properties": {
+          "requester_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Requester Id",
+            "description": "ID of the user or system making the request (for audit)."
+          },
+          "request_timestamp": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Timestamp",
+            "description": "When the request was made, e.g. '2026-09-23 14:52:15 WAT'."
+          },
+          "case_id": {
+            "type": "string",
+            "title": "Case Id",
+            "description": "Case ID, e.g. 'CASE-2026-000031'."
+          },
+          "gross_actual_loss_ngn": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Gross Actual Loss Ngn",
+            "description": "Confirmed gross loss in NGN."
+          },
+          "severity": {
+            "type": "string",
+            "title": "Severity",
+            "description": "Incident severity: S1, S2, S3, or S4."
+          },
+          "fraud_type": {
+            "type": "string",
+            "title": "Fraud Type",
+            "description": "Fraud typology, e.g. 'SIM Swap'."
+          },
+          "channel": {
+            "type": "string",
+            "title": "Channel",
+            "description": "Channel involved, e.g. 'Mobile Banking'."
+          },
+          "days_to_detection": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Days To Detection",
+            "description": "Days from event to discovery."
+          },
+          "containment_confirmed": {
+            "type": "boolean",
+            "title": "Containment Confirmed",
+            "description": "True if the threat has been contained."
+          }
+        },
+        "type": "object",
+        "required": [
+          "case_id",
+          "gross_actual_loss_ngn",
+          "severity",
+          "fraud_type",
+          "channel",
+          "days_to_detection",
+          "containment_confirmed"
+        ],
+        "title": "RecoveryRequest",
+        "description": "Input for a recovery prediction: the case facts known once loss is confirmed.",
+        "example": {
+          "case_id": "CASE-2026-000031",
+          "channel": "Mobile Banking",
+          "containment_confirmed": true,
+          "days_to_detection": 1.5,
+          "fraud_type": "SIM Swap",
+          "gross_actual_loss_ngn": 1200000.0,
+          "severity": "S2"
+        }
+      },
+      "RecoveryResponse": {
+        "properties": {
+          "prediction_id": {
+            "type": "string",
+            "title": "Prediction Id",
+            "description": "Unique ID, e.g. 'PRED-SEV-20260923-A3F2B1'."
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name",
+            "description": "Model that produced the prediction, e.g. 'severity'."
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version",
+            "description": "Version of the model used.",
+            "default": "v1.0"
+          },
+          "confidence_score": {
+            "type": "number",
+            "title": "Confidence Score",
+            "description": "Model confidence, from 0.0 to 1.0."
+          },
+          "requires_human_review": {
+            "type": "boolean",
+            "title": "Requires Human Review",
+            "description": "True if confidence is below the review threshold in thresholds.yaml."
+          },
+          "explanation": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionFactor"
+            },
+            "type": "array",
+            "title": "Explanation",
+            "description": "Factors that explain the prediction."
+          },
+          "timestamp_wat": {
+            "type": "string",
+            "title": "Timestamp Wat",
+            "description": "When the prediction was made, in WAT."
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "description": "Human-approval notice.",
+            "default": "This is an AI-generated suggestion. Human review and approval is required before any action is taken on a case."
+          },
+          "recovery_probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Recovery Probability",
+            "description": "Probability recovery will succeed."
+          },
+          "recovery_success_prediction": {
+            "type": "boolean",
+            "title": "Recovery Success Prediction",
+            "description": "Predicted outcome at the decision threshold."
+          },
+          "key_recovery_factors": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionFactor"
+            },
+            "type": "array",
+            "title": "Key Recovery Factors",
+            "description": "Factors that most influenced the prediction."
+          },
+          "recommended_recovery_actions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Recommended Recovery Actions",
+            "description": "Ordered plain-text actions, most urgent first."
+          }
+        },
+        "type": "object",
+        "required": [
+          "prediction_id",
+          "model_name",
+          "confidence_score",
+          "requires_human_review",
+          "timestamp_wat",
+          "recovery_probability",
+          "recovery_success_prediction"
+        ],
+        "title": "RecoveryResponse",
+        "description": "Recovery prediction, with the factors behind it and suggested actions.",
+        "example": {
+          "confidence_score": 0.79,
+          "explanation": [],
+          "key_recovery_factors": [
+            {
+              "direction": "increases_risk",
+              "feature": "days_to_detection",
+              "impact": "high",
+              "value": 1.5
+            },
+            {
+              "direction": "decreases_risk",
+              "feature": "containment_confirmed",
+              "impact": "medium",
+              "value": true
+            }
+          ],
+          "model_name": "recovery",
+          "model_version": "v1.0",
+          "prediction_id": "PRED-REC-20260923-D2A8E1",
+          "recommended_recovery_actions": [
+            "Contact beneficiary bank immediately",
+            "File court order to freeze receiving account",
+            "Notify NFIU of suspected proceeds movement"
+          ],
+          "recovery_probability": 0.79,
+          "recovery_success_prediction": true,
+          "requires_human_review": false,
+          "timestamp_wat": "2026-09-23 13:05:00 WAT"
+        }
+      },
+      "SeverityRequest": {
+        "properties": {
+          "requester_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Requester Id",
+            "description": "ID of the user or system making the request (for audit)."
+          },
+          "request_timestamp": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Timestamp",
+            "description": "When the request was made, e.g. '2026-09-23 14:52:15 WAT'."
+          },
+          "incident_id": {
+            "type": "string",
+            "title": "Incident Id",
+            "description": "Incident ID, e.g. 'INC-0000042'."
+          },
+          "financial_exposure_ngn": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Financial Exposure Ngn",
+            "description": "Estimated exposure in NGN."
+          },
+          "customer_impact_count": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Customer Impact Count",
+            "description": "Number of customers affected."
+          },
+          "ongoing_threat": {
+            "type": "boolean",
+            "title": "Ongoing Threat"
+          },
+          "insider_involvement": {
+            "type": "boolean",
+            "title": "Insider Involvement"
+          },
+          "data_compromise": {
+            "type": "boolean",
+            "title": "Data Compromise"
+          },
+          "regulatory_relevance": {
+            "type": "boolean",
+            "title": "Regulatory Relevance"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "description": "How the incident was received, e.g. 'Customer Complaint'."
+          },
+          "channel": {
+            "type": "string",
+            "title": "Channel",
+            "description": "Banking channel involved, e.g. 'Mobile Banking'."
+          },
+          "incident_type": {
+            "type": "string",
+            "title": "Incident Type",
+            "description": "Type of incident, e.g. 'Account Takeover'."
+          },
+          "reported_by_type": {
+            "type": "string",
+            "title": "Reported By Type",
+            "description": "Who reported it, e.g. 'Customer'."
+          },
+          "narrative": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Narrative",
+            "description": "Free-text description of the incident."
+          },
+          "narrative_length": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Narrative Length",
+            "description": "Character count of the narrative; filled in automatically if omitted."
+          }
+        },
+        "type": "object",
+        "required": [
+          "incident_id",
+          "financial_exposure_ngn",
+          "customer_impact_count",
+          "ongoing_threat",
+          "insider_involvement",
+          "data_compromise",
+          "regulatory_relevance",
+          "source",
+          "channel",
+          "incident_type",
+          "reported_by_type"
+        ],
+        "title": "SeverityRequest",
+        "description": "Input for a severity prediction: the facts known at incident intake.",
+        "example": {
+          "channel": "Mobile Banking",
+          "customer_impact_count": 3,
+          "data_compromise": false,
+          "financial_exposure_ngn": 4800000.0,
+          "incident_id": "INC-0000042",
+          "incident_type": "Account Takeover",
+          "insider_involvement": false,
+          "narrative": "Customer called to report unauthorised transfers",
+          "ongoing_threat": true,
+          "regulatory_relevance": true,
+          "reported_by_type": "Customer",
+          "source": "Customer Complaint"
+        }
+      },
+      "SeverityResponse": {
+        "properties": {
+          "prediction_id": {
+            "type": "string",
+            "title": "Prediction Id",
+            "description": "Unique ID, e.g. 'PRED-SEV-20260923-A3F2B1'."
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name",
+            "description": "Model that produced the prediction, e.g. 'severity'."
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version",
+            "description": "Version of the model used.",
+            "default": "v1.0"
+          },
+          "confidence_score": {
+            "type": "number",
+            "title": "Confidence Score",
+            "description": "Model confidence, from 0.0 to 1.0."
+          },
+          "requires_human_review": {
+            "type": "boolean",
+            "title": "Requires Human Review",
+            "description": "True if confidence is below the review threshold in thresholds.yaml."
+          },
+          "explanation": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionFactor"
+            },
+            "type": "array",
+            "title": "Explanation",
+            "description": "Factors that explain the prediction."
+          },
+          "timestamp_wat": {
+            "type": "string",
+            "title": "Timestamp Wat",
+            "description": "When the prediction was made, in WAT."
+          },
+          "disclaimer": {
+            "type": "string",
+            "title": "Disclaimer",
+            "description": "Human-approval notice.",
+            "default": "This is an AI-generated suggestion. Human review and approval is required before any action is taken on a case."
+          },
+          "severity_prediction": {
+            "type": "string",
+            "title": "Severity Prediction",
+            "description": "Predicted class: S1, S2, S3 or S4."
+          },
+          "severity_score": {
+            "type": "number",
+            "title": "Severity Score",
+            "description": "Model's severity score for the incident."
+          },
+          "all_class_probabilities": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "All Class Probabilities",
+            "description": "Probability for each class; keys are exactly S1, S2, S3, S4."
+          },
+          "available_at_prediction_time": {
+            "type": "boolean",
+            "title": "Available At Prediction Time",
+            "description": "Confirms only intake-time features were used (no leakage).",
+            "default": true
+          },
+          "top_factors": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionFactor"
+            },
+            "type": "array",
+            "title": "Top Factors",
+            "description": "Most influential features for this prediction."
+          }
+        },
+        "type": "object",
+        "required": [
+          "prediction_id",
+          "model_name",
+          "confidence_score",
+          "requires_human_review",
+          "timestamp_wat",
+          "severity_prediction",
+          "severity_score",
+          "all_class_probabilities"
+        ],
+        "title": "SeverityResponse",
+        "description": "Severity prediction returned to the triage officer, with explanation.",
+        "example": {
+          "all_class_probabilities": {
+            "S1": 0.05,
+            "S2": 0.84,
+            "S3": 0.09,
+            "S4": 0.02
+          },
+          "available_at_prediction_time": true,
+          "confidence_score": 0.84,
+          "explanation": [],
+          "model_name": "severity",
+          "model_version": "v1.0",
+          "prediction_id": "PRED-SEV-20260923-A3F2B1",
+          "requires_human_review": false,
+          "severity_prediction": "S2",
+          "severity_score": 0.84,
+          "timestamp_wat": "2026-09-23 14:52:15 WAT",
+          "top_factors": [
+            {
+              "direction": "increases_risk",
+              "feature": "ongoing_threat",
+              "impact": "high",
+              "value": true
+            },
+            {
+              "direction": "increases_risk",
+              "feature": "financial_exposure_ngn",
+              "impact": "medium",
+              "value": 4800000.0
+            }
+          ]
+        }
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "APIKeyHeader": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key"
+      }
+    }
+  }
+}

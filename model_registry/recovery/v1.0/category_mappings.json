@@ -1,0 +1,33 @@
+{
+  "channel": {
+    "Agent Banking": 0,
+    "Atm": 1,
+    "Bank Transfer": 2,
+    "Branch": 3,
+    "Card Payment": 4,
+    "Corporate Banking": 5,
+    "Internet Banking": 6,
+    "Mobile Banking": 7,
+    "Pos": 8,
+    "Ussd": 9
+  },
+  "classification": {
+    "ATM Fraud": 0,
+    "Account Takeover": 1,
+    "Beneficiary Fraud": 2,
+    "Card-Not-Present": 3,
+    "Chargeback Abuse": 4,
+    "Corporate Compromise": 5,
+    "Credential Compromise": 6,
+    "Device Compromise": 7,
+    "Employee Collusion": 8,
+    "Identity Fraud": 9,
+    "Mule Account": 10,
+    "Phishing": 11,
+    "SIM Swap": 12,
+    "Social Engineering": 13,
+    "Synthetic Identity": 14,
+    "Transaction Laundering": 15,
+    "Unauthorized Transfer": 16
+  }
+}

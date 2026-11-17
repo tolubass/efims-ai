@@ -10,7 +10,6 @@ import json
 import os
 from pathlib import Path
 
-import mlflow
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
@@ -112,8 +111,16 @@ class AnomalyTrainer(BaseModel):
 
 
 def _log_to_mlflow(trainer: "AnomalyTrainer", metrics: dict) -> None:
-    """Best-effort MLflow logging; never lets a tracking failure fail training."""
+    """Best-effort MLflow logging; never lets a tracking failure fail training.
+
+    Imports mlflow here, not at module level: this module is re-imported by
+    joblib.load() when unpickling a saved AnomalyTrainer at inference time,
+    and inference has no need for mlflow at all — only an actual training
+    run (which calls this function) does.
+    """
     try:
+        import mlflow
+
         # mlflow>=3 refuses to write to a filesystem tracking store (the
         # default here) unless this is set. See:
         # https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store

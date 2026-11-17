@@ -1,0 +1,58 @@
+{
+  "channel": {
+    "Agent Banking": 0,
+    "Atm": 1,
+    "Bank Transfer": 2,
+    "Branch": 3,
+    "Card Payment": 4,
+    "Corporate Banking": 5,
+    "Internet Banking": 6,
+    "Mobile Banking": 7,
+    "Pos": 8,
+    "Ussd": 9
+  },
+  "incident_type": {
+    "Account Takeover": 0,
+    "Atm Fraud": 1,
+    "Beneficiary Fraud": 2,
+    "Card-Not-Present": 3,
+    "Chargeback Abuse": 4,
+    "Corporate Compromise": 5,
+    "Credential Compromise": 6,
+    "Device Compromise": 7,
+    "Employee Collusion": 8,
+    "Identity Fraud": 9,
+    "Insider Fraud": 10,
+    "Merchant Fraud": 11,
+    "Mule Account": 12,
+    "Phishing": 13,
+    "Pos Fraud": 14,
+    "Sim Swap": 15,
+    "Social Engineering": 16,
+    "Synthetic Identity": 17,
+    "Transaction Laundering": 18,
+    "Unauthorized Transfer": 19
+  },
+  "reported_by_type": {
+    "Audit": 0,
+    "Customer": 1,
+    "External": 2,
+    "Staff": 3,
+    "System": 4
+  },
+  "source": {
+    "AML Alert": 0,
+    "Automated Detection": 1,
+    "Branch Report": 2,
+    "Compliance": 3,
+    "Customer Complaint": 4,
+    "Cybersecurity Alert": 5,
+    "External Referral": 6,
+    "Internal Audit": 7,
+    "Manual Discovery": 8,
+    "SIEM Alert": 9,
+    "Staff Report": 10,
+    "Transaction Monitoring": 11,
+    "Whistleblowing": 12
+  }
+}

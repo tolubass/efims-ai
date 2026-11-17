@@ -6,6 +6,9 @@ Takes an ``AnomalyRequest`` and returns an ``AnomalyResponse``. Higher
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import joblib
 import numpy as np
 import pandas as pd
@@ -14,7 +17,6 @@ from src.api.schemas.anomaly_schema import AnomalyRequest, AnomalyResponse
 from src.governance.human_review_flag import requires_human_review
 from src.governance.prediction_audit_logger import log_prediction
 from src.inference.base_service import BaseInferenceService
-from src.preprocessing.cleaning import clean_transactions
 from src.utils.config_loader import load_thresholds
 from src.utils.date_utils import format_wat_timestamp, now_wat
 from src.utils.id_generator import generate_prediction_id
@@ -27,7 +29,12 @@ VELOCITY_ENCODING: dict[str, int] = {"Normal": 0, "Elevated": 1, "High": 2}
 # Must match src.features.transaction_features.CATEGORICAL_COLUMNS, since
 # that is what the deployed model was actually trained on.
 CATEGORICAL_COLUMNS: tuple[str, ...] = ("channel", "transaction_type")
-TRAINING_DATA_PATH: str = "data/synthetic/08_transactions.csv"
+
+# Persisted once (from the exact training-time data, over the full
+# 08_transactions.csv — verified to match what src.models.anomaly.trainer
+# .run_anomaly_training actually encodes against) alongside the model
+# artefact, instead of being rebuilt from that CSV at every service startup.
+CATEGORY_MAPPINGS_PATH: str = "model_registry/anomaly/v1.0/category_mappings.json"
 
 HIGH_RISK_SCORE_THRESHOLD: float = 0.7
 HIGH_VALUE_THRESHOLD_NGN: float = 1_000_000
@@ -40,32 +47,28 @@ class AnomalyService(BaseInferenceService):
         super().__init__("anomaly")
         self.scaler = None
         self.thresholds: dict = load_thresholds()
-        self._category_mappings: dict[str, dict[str, int]] = self._build_category_mappings()
+        self._category_mappings: dict[str, dict[str, int]] = {}
 
     @staticmethod
-    def _build_category_mappings() -> dict[str, dict[str, int]]:
-        """Rebuild the training-time category -> code mappings from the raw data.
-
-        Returns an empty dict (so every category maps to -1) if the training
-        data isn't available in this environment.
-        """
-        try:
-            raw = pd.read_csv(TRAINING_DATA_PATH)
-            cleaned = clean_transactions(raw)
-            mappings: dict[str, dict[str, int]] = {}
-            for col in CATEGORICAL_COLUMNS:
-                values = cleaned[col].astype(str)
-                uniques = sorted(values.unique())
-                mappings[col] = {value: code for code, value in enumerate(uniques)}
-            return mappings
-        except Exception as error:
-            logger.warning(
-                "AnomalyService: could not rebuild category mappings from %s (%s); "
-                "all categorical features will map to -1 (unknown)",
-                TRAINING_DATA_PATH,
-                error,
+    def _load_category_mappings() -> dict[str, dict[str, int]]:
+        """Load the persisted training-time category -> code mappings."""
+        path = Path(CATEGORY_MAPPINGS_PATH)
+        if not path.exists():
+            raise RuntimeError(
+                f"AnomalyService: required category mappings file not found at "
+                f"{CATEGORY_MAPPINGS_PATH!r}. Predictions cannot be computed "
+                f"correctly without it — this is a deployment configuration "
+                f"error, not a condition to degrade past silently."
             )
-            return {}
+        with path.open("r", encoding="utf-8") as f:
+            mappings: dict[str, dict[str, int]] = json.load(f)
+        missing = [col for col in CATEGORICAL_COLUMNS if col not in mappings]
+        if missing:
+            raise RuntimeError(
+                f"AnomalyService: category mappings file {CATEGORY_MAPPINGS_PATH!r} "
+                f"is missing required column(s): {missing}"
+            )
+        return mappings
 
     def _encode_category(self, column: str, value: str) -> int:
         """Return the training-time code for ``value``, or -1 if unseen/unmapped."""
@@ -94,6 +97,7 @@ class AnomalyService(BaseInferenceService):
                 self.scaler = scaler
 
             self.model_version = version
+            self._category_mappings = self._load_category_mappings()
             self.is_loaded = True
             logger.info("anomaly: loaded model version %s from %s", version, model_path)
             return True

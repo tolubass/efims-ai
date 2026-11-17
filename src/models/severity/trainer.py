@@ -12,7 +12,6 @@ from pathlib import Path
 from typing import Tuple
 
 import lightgbm as lgb
-import mlflow
 import pandas as pd
 from sklearn.metrics import f1_score
 
@@ -114,8 +113,16 @@ class SeverityTrainer(BaseModel):
 
 
 def _log_to_mlflow(trainer: "SeverityTrainer", metrics: dict) -> None:
-    """Best-effort MLflow logging; never lets a tracking failure fail training."""
+    """Best-effort MLflow logging; never lets a tracking failure fail training.
+
+    Imports mlflow here, not at module level: this module is re-imported by
+    joblib.load() when unpickling a saved SeverityTrainer at inference time,
+    and inference has no need for mlflow at all — only an actual training
+    run (which calls this function) does.
+    """
     try:
+        import mlflow
+
         # mlflow>=3 refuses to write to a filesystem tracking store (the kind
         # this project's config points at) unless this is set. See:
         # https://mlflow.org/docs/latest/self-hosting/migrate-from-file-store

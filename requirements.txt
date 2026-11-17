@@ -48,13 +48,12 @@ lightgbm==4.7.0
 joblib==1.6.0
 shap==0.54.1
 
-# Required at *inference* time, not just training time: src/models/*/trainer.py
-# does `import mlflow` at module level, and joblib.load() on a saved model
-# re-imports that trainer module to reconstruct the pickled class — so the
-# API will fail to load any model at startup without mlflow installed, even
-# though inference itself never calls an mlflow function. This pulls in a
-# large transitive dependency tree (Flask, SQLAlchemy, matplotlib, pillow,
-# opentelemetry, databricks-sdk, google-auth, ...) purely for that side
-# effect — see HANDOFF.md for a proposed fix (lazy-import mlflow in the
-# trainers instead).
-mlflow==3.17.2
+# mlflow is NOT listed here. It used to be required even at inference time,
+# because src/models/*/trainer.py did `import mlflow` at module level, and
+# joblib.load() on a saved model re-imports that trainer module to
+# reconstruct the pickled class. That import was moved inside the one
+# function that actually calls mlflow (_log_to_mlflow, training-time only);
+# verified this session by blocking mlflow from being importable at all
+# (sys.modules["mlflow"] = None) and confirming the full API still starts
+# and predicts correctly. Install mlflow==3.17.2 separately only if you need
+# to re-run training (see README's "Running training" section).
