@@ -12,7 +12,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import shap
 
 from src.api.schemas.common import PredictionFactor
 from src.api.schemas.severity_schema import SeverityRequest, SeverityResponse
@@ -125,8 +124,16 @@ class SeverityService(BaseInferenceService):
         return pd.DataFrame([row]).reindex(columns=columns, fill_value=0)
 
     def _explain(self, X: pd.DataFrame, predicted_index: int) -> list[PredictionFactor]:
-        """Return up to 3 PredictionFactors from SHAP, or [] if SHAP fails."""
+        """Return up to 3 PredictionFactors from SHAP, or [] if SHAP fails.
+
+        Imports shap here, not at module level: shap (and the matplotlib/
+        scikit-learn/scipy it pulls in) is the single heaviest import in
+        this service, so this way it's only paid for on the first
+        prediction that actually needs an explanation, not at startup.
+        """
         try:
+            import shap
+
             explainer = shap.TreeExplainer(self.model)
             shap_values = explainer.shap_values(X)
 

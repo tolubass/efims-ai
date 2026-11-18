@@ -12,7 +12,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import shap
 
 from src.api.schemas.common import PredictionFactor
 from src.api.schemas.recovery_schema import RecoveryRequest, RecoveryResponse
@@ -134,8 +133,13 @@ class RecoveryService(BaseInferenceService):
 
         Direction is relative to the positive class (recovery_success=True):
         a positive SHAP value pushed the prediction toward "will recover".
+
+        Imports shap here, not at module level — see SeverityService
+        ._explain for why.
         """
         try:
+            import shap
+
             explainer = shap.TreeExplainer(self.model)
             shap_values = explainer.shap_values(X)
 
