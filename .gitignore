@@ -13,3 +13,4 @@ data/processed/
 EFIMS_AI_Service.zip
 *.zip
 .claude/
+experiments/
