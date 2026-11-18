@@ -48,19 +48,18 @@ no trainer, inference service, or route:
 
 In roughly the order they'd bite:
 
-1. **Restrict CORS.** `src/api/main.py` currently sets
-   `allow_origins=["*"]`, explicitly flagged in that file's own comment as
-   development-only. Anyone, from anywhere, can currently call this API
-   cross-origin. Replace with the actual list of origins allowed to call
-   this service before it's reachable from outside your own machine.
+1. **FIXED.** `src/api/main.py` no longer sets `allow_origins=["*"]`.
+   Allowed origins now come from the `EFIMS_CORS_ORIGINS` environment
+   variable (comma-separated), defaulting to an empty list — no
+   cross-origin access at all until explicitly configured.
 
-2. **Add API-key (or equivalent) authentication.** There is currently none.
-   Every endpoint — including `/api/v1/severity/predict`,
-   `/api/v1/anomaly/score`, `/api/v1/recovery/predict` — is open to anyone
-   who can reach the port. `BaseRequest.requester_id` already exists in the
-   schema and flows through to the audit log, but nothing currently
-   enforces or verifies it; it's an unauthenticated free-text field, not
-   an identity.
+2. **FIXED.** Every prediction endpoint now requires an `X-API-Key` header,
+   checked against `EFIMS_API_KEY` (see `src/api/security.py`). Missing or
+   wrong key returns `401`; if `EFIMS_API_KEY` isn't set on the server at
+   all, those endpoints return `503` instead of silently serving
+   unauthenticated. `BaseRequest.requester_id` is still a free-text
+   audit-trail field, not an identity — it is not, and was never meant to
+   be, authentication.
 
 3. **FIXED.** Category mappings for severity, anomaly and recovery are now
    persisted as `model_registry/{model}/v1.0/category_mappings.json`
@@ -86,12 +85,24 @@ In roughly the order they'd bite:
    real `uvicorn` server against it — all three models loaded and a real
    prediction returned 200.
 
-5. **Build-test and smoke-test the Docker image on a machine with a
+5. **FIXED.** `shap` is now imported lazily inside `SeverityService` and
+   `RecoveryService`'s `_explain()`, not at module level — it's only paid
+   for (import time and memory) on the first severity or recovery
+   prediction, not at every startup. Verified: `test_phase7.py` still
+   passes, startup import time for `src.api.main` dropped from ~23.9s to
+   ~4.4s, and `shap`/`matplotlib` no longer appear in a startup
+   `python -X importtime` trace. The first prediction after startup is
+   noticeably slower (single-digit seconds) while `shap` imports; every
+   prediction after that is fast. Peak memory under load is essentially
+   unchanged once `shap` is actually used — this fix helps startup time and
+   idle memory, not steady-state memory.
+
+6. **Build-test and smoke-test the Docker image on a machine with a
    reachable Docker daemon.** Covered above in the README; repeating it
    here because it's a hard prerequisite for everything else — nothing in
    `docker/` has actually been built or run yet, only checked for
    structural correctness.
 
-6. **Decide what to do about duplicate/NLP/next-action/summarisation**
+7. **Decide what to do about duplicate/NLP/next-action/summarisation**
    before anyone outside this handoff assumes they exist — the schemas are
    present and might look "ready" to someone skimming `src/api/schemas/`.

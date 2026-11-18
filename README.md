@@ -35,6 +35,13 @@ Built entirely on **synthetic data** — see **Known limitations**.
 | POST | `/api/v1/anomaly/score` | `AnomalyRequest` | `AnomalyResponse` | Score a transaction 0–1 for anomalous behaviour (higher = more suspicious) |
 | POST | `/api/v1/recovery/predict` | `RecoveryRequest` | `RecoveryResponse` | Predict the probability a confirmed-loss case recovers >50% of its gross loss |
 
+**Authentication:** every prediction endpoint (`/severity/predict`,
+`/anomaly/score`, `/recovery/predict`) requires an `X-API-Key` header,
+checked against the `EFIMS_API_KEY` environment variable set on the server
+(see `src/api/security.py`). Missing or wrong key returns `401`. If
+`EFIMS_API_KEY` isn't set on the server at all, those endpoints return `503`
+instead. `GET /api/v1/health` and `GET /` do **not** require a key.
+
 Interactive docs (request/response schemas, "Try it out"): `/docs` once the
 service is running. Full request/response examples, captured from a real
 run of this service, are in [`data/samples/`](data/samples/).
@@ -152,8 +159,13 @@ follow the same shape):
    loaded LightGBM classifier.
 3. **SHAP explanation** — the top 3 features behind that specific prediction
    are extracted via `shap.TreeExplainer` and returned as `top_factors` /
-   `explanation`. If SHAP fails for any reason, the response still succeeds
-   with an empty explanation list rather than erroring out.
+   `explanation`. `shap` is imported lazily, inside this step, the first
+   time a severity or recovery prediction needs it — not at service
+   startup — so the very first prediction after startup is noticeably
+   slower (single-digit seconds) while `shap` and its dependencies import;
+   every prediction after that is fast. If SHAP fails for any reason, the
+   response still succeeds with an empty explanation list rather than
+   erroring out.
 4. **Human-review flag** — `requires_human_review()`
    (`src/governance/human_review_flag.py`) compares the prediction's
    confidence against both the model's own threshold and a global floor
