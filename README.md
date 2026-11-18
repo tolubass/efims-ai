@@ -52,6 +52,33 @@ next-action recommendation, and summarisation. Their schemas
 but there are no trainers, no inference services, and no routes for them —
 see **Known limitations**.
 
+## Tests and CI
+
+Tests live under `tests/` (`tests/api/`, `tests/unit/`, `tests/model/`),
+using `pytest` with a shared fixture in `tests/conftest.py` that runs the
+app's real startup once per session and redirects audit logging to a
+temporary directory, so running the suite never touches the real `logs/`.
+Run them with:
+
+```bash
+pip install -r requirements.txt -r requirements-dev.txt
+pytest -q
+```
+
+The root-level `test_phase*.py` and `test_schemas2.py` scripts are separate,
+standalone scripts (not part of the `pytest` suite — `pytest.ini` scopes
+collection to `tests/` specifically so a bare `pytest -q` doesn't also
+import and execute them as a side effect); run any of them directly with
+`python test_phase7.py`, for example.
+
+`.github/workflows/ci.yaml` runs this same `pytest -q` suite, and
+separately builds the root `Dockerfile` and smoke-tests the running
+container (health check, an authenticated request, an unauthenticated
+request) on every push and pull request to `main`. **This describes what
+the workflow is configured to do — it has not been confirmed to pass on
+GitHub Actions yet.** Check the Actions tab for the actual result before
+relying on it.
+
 ## Running locally
 
 Requires Python 3.14 (the venv this project was built and tested against).
@@ -248,3 +275,9 @@ Build and run from the repo-root `Dockerfile` (`docker/Dockerfile` and
   **lost on every restart** unless the platform provides persistent
   storage mounted at that path. Do not rely on in-container `logs/` as the
   durable audit trail.
+- **Free hosting tiers sleep.** If deployed on a free tier (e.g. Render's
+  free plan), the service is stopped after about 15 minutes of no
+  incoming requests and restarted on the next one — that first request
+  after a sleep pays the full model-loading startup cost again and will
+  be noticeably slower than normal. This is a platform behaviour, not an
+  application bug.

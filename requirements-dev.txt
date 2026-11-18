@@ -1,0 +1,7 @@
+# EFIMS AI — Test-only dependencies, on top of requirements.txt
+# Install with: pip install -r requirements.txt -r requirements-dev.txt
+#
+# httpx is required by FastAPI's TestClient (used throughout tests/), not by
+# the running API itself — see requirements.txt's own note on this.
+pytest==9.2.0
+httpx==0.28.1

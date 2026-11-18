@@ -8,7 +8,9 @@ what must be resolved before this touches production traffic.
 - **Three working models behind a live API**: severity (LightGBM
   multiclass), anomaly (Isolation Forest), recovery (LightGBM binary).
   Trained, evaluated, saved to `model_registry/`, served through
-  `POST /api/v1/{severity,anomaly,recovery}/...`.
+  `POST /api/v1/{severity,anomaly,recovery}/...`. **All three are trained
+  and evaluated on synthetic data only** — see README's Known limitations
+  for what that means per model.
 - **A full request pipeline per prediction**: pydantic validation → feature
   construction → prediction → SHAP explanation → human-review threshold
   check → audit log entry → typed response. See README's "How a request
@@ -97,12 +99,33 @@ In roughly the order they'd bite:
    unchanged once `shap` is actually used — this fix helps startup time and
    idle memory, not steady-state memory.
 
-6. **Build-test and smoke-test the Docker image on a machine with a
-   reachable Docker daemon.** Covered above in the README; repeating it
-   here because it's a hard prerequisite for everything else — nothing in
-   `docker/` has actually been built or run yet, only checked for
-   structural correctness.
+6. **Partially addressed.** `.github/workflows/ci.yaml` now has a `docker`
+   job that builds the root `Dockerfile` and smoke-tests the running
+   container (health check, an authenticated request, an unauthenticated
+   request) on every push/PR to `main` — but **this has not yet been
+   confirmed to actually pass on GitHub**, and Docker still has not been
+   built or run locally (the daemon on this machine is unreachable).
+   `docker/` itself remains only structurally checked, not built.
 
 7. **Decide what to do about duplicate/NLP/next-action/summarisation**
    before anyone outside this handoff assumes they exist — the schemas are
    present and might look "ready" to someone skimming `src/api/schemas/`.
+
+## Tests and CI
+
+A real `pytest` suite now exists under `tests/` (`tests/api/`,
+`tests/unit/`, `tests/model/`) — run it with
+`pip install -r requirements.txt -r requirements-dev.txt && pytest -q`.
+`pytest.ini` scopes collection to `tests/` only, so this never imports (and
+accidentally re-runs) the root `test_phase*.py` scripts, which remain
+separate, standalone scripts run directly with e.g. `python test_phase7.py`.
+
+`.github/workflows/ci.yaml` runs this suite and the Docker smoke test
+described in item 6 above on every push/PR to `main`. **Whether CI actually
+passes on GitHub has not been confirmed** — check the Actions tab yourself
+before relying on it; nothing here should be read as a claim that it does.
+
+If this is deployed on a free hosting tier (e.g. Render's free plan), the
+service sleeps after about 15 minutes idle and the next request after that
+pays the full startup cost again — expect that first request to be slow,
+not broken.

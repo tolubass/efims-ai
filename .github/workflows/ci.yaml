@@ -1,0 +1,112 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Run pytest
+        env:
+          EFIMS_API_KEY: ci-test-key-not-secret
+        run: pytest -q
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t efims-ai .
+
+      - name: Run container
+        run: |
+          docker run -d --name efims-ai \
+            -e EFIMS_API_KEY=ci-test-key-not-secret \
+            -e PORT=7860 \
+            -p 7860:7860 \
+            efims-ai
+
+      - name: Wait for /api/v1/health to report healthy
+        run: |
+          for i in $(seq 1 60); do
+            if curl -sf http://localhost:7860/api/v1/health | grep -q '"status":"healthy"'; then
+              echo "Service is healthy."
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Service did not become healthy within 120 seconds."
+          docker logs efims-ai
+          exit 1
+
+      - name: Severity request WITH the API key expects 200
+        run: |
+          status=$(curl -s -o /tmp/with_key.json -w '%{http_code}' \
+            -X POST http://localhost:7860/api/v1/severity/predict \
+            -H "X-API-Key: ci-test-key-not-secret" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "incident_id": "INC-CI-0001",
+              "financial_exposure_ngn": 4800000.0,
+              "customer_impact_count": 3,
+              "ongoing_threat": true,
+              "insider_involvement": false,
+              "data_compromise": false,
+              "regulatory_relevance": true,
+              "source": "Customer Complaint",
+              "channel": "Mobile Banking",
+              "incident_type": "Account Takeover",
+              "reported_by_type": "Customer"
+            }')
+          if [ "$status" != "200" ]; then
+            echo "Expected 200, got $status"
+            cat /tmp/with_key.json
+            docker logs efims-ai
+            exit 1
+          fi
+
+      - name: Severity request WITHOUT the API key expects 401
+        run: |
+          status=$(curl -s -o /tmp/no_key.json -w '%{http_code}' \
+            -X POST http://localhost:7860/api/v1/severity/predict \
+            -H "Content-Type: application/json" \
+            -d '{
+              "incident_id": "INC-CI-0002",
+              "financial_exposure_ngn": 4800000.0,
+              "customer_impact_count": 3,
+              "ongoing_threat": true,
+              "insider_involvement": false,
+              "data_compromise": false,
+              "regulatory_relevance": true,
+              "source": "Customer Complaint",
+              "channel": "Mobile Banking",
+              "incident_type": "Account Takeover",
+              "reported_by_type": "Customer"
+            }')
+          if [ "$status" != "401" ]; then
+            echo "Expected 401, got $status"
+            cat /tmp/no_key.json
+            docker logs efims-ai
+            exit 1
+          fi
+
+      - name: Print container logs
+        if: failure()
+        run: docker logs efims-ai
